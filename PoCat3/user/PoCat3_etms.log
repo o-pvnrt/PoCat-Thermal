@@ -1,0 +1,73 @@
+/* ESATAN-TMS version 2022, run date 21:22 Tue 10 Dec 2024 */
+BEGIN_MODEL PoCat3 WORKBENCH_V1
+BULK FR4;
+DEFINE_BULK (
+    bulk = FR4,
+    description = "Flame Retardant, used in PCBs",
+    density = 1850.0,
+    sp_heat = 1100.0,
+    type = "Orthotropic",
+    cond1 = 0.9,
+    cond2 = 0.9,
+    cond3 = 0.3);
+
+BULK PFTEMolded;
+DEFINE_BULK (
+    bulk = PFTEMolded,
+    description = "PFTE Molded, used in the structure of the battery",
+    density = 2070.0,
+    sp_heat = 1.01,
+    type = "Isotropic",
+    cond = 0.270);
+
+BULK AISI304SS;
+DEFINE_BULK (
+    bulk = AISI304SS,
+    description = "Stainless Steel,screws and spacers",
+    density = 8000.0,
+    sp_heat = 0.5,
+    type = "Isotropic",
+    cond = 15.0);
+
+BULK RSRogers;
+DEFINE_BULK (
+    bulk = RSRogers,
+    description = "Rogers,K-Band antenna",
+    density = 2200.0,
+    sp_heat = 960.0,
+    type = "Isotropic",
+    cond = 0.2);
+
+DEFINE_BULK (
+    bulk = PFTEMolded,
+    description = "PFTE Molded, used in the structure of the battery",
+    density = 2070.0,
+    sp_heat = 1010.0,
+    type = "Isotropic",
+    cond = 0.270);
+
+DEFINE_BULK (
+    bulk = AISI304SS,
+    description = "Stainless Steel,screws and spacers",
+    density = 8000.0,
+    sp_heat = 500.0,
+    type = "Isotropic",
+    cond = 15.0);
+
+DEFINE_BULK (
+    bulk = AISI304SS,
+    description = "Stainless Steel,screws and spacers",
+    density = 8000.0,
+    sp_heat = 500.0,
+    type = "Isotropic",
+    cond = 15.0);
+
+BULK AlAloy;
+DEFINE_BULK (
+    bulk = AlAloy,
+    description = "Aluminum Alloy , K-Band Support",
+    density = 2810.0,
+    sp_heat = 960.0,
+    type = "Isotropic",
+    cond = 130.0);
+
