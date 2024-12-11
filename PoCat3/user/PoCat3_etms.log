@@ -71,3 +71,100 @@ DEFINE_BULK (
     type = "Isotropic",
     cond = 130.0);
 
+/* ESATAN-TMS version 2022, run date 17:14 Wed 11 Dec 2024 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+BULK Copper;
+DEFINE_BULK (
+    bulk = Copper,
+    description = "Copper",
+    density = 4200.0,
+    sp_heat = 200.0,
+    type = "Isotropic",
+    cond = 10.0);
+
+BULK SolarCells;
+DEFINE_BULK (
+    bulk = SolarCells,
+    description = "SolarCells, aproximation from the materials they are made of.",
+    density = 5000.0,
+    sp_heat = 320.0,
+    type = "Isotropic",
+    cond = 50.0);
+
+OPTICAL Sc_Optics;
+DEFINE_OPTICAL (
+    optical = Sc_Optics,
+    description = "Solar Cells optical properties, from thershold values",
+    ir_emiss = 0.8,
+    ir_transm = 0.0,
+    solar_absorb = 0.9,
+    solar_transm = 0.0,
+    ir_spec_refl = 0.0,
+    solar_spec_refl = 0.0);
+
+OPTICAL Opt_SolarCells;
+DEFINE_OPTICAL (
+    optical = Opt_SolarCells,
+    description = "Solar Cells optical properties, from thershold values",
+    ir_emiss = 0.8,
+    ir_transm = 0.0,
+    solar_absorb = 0.9,
+    solar_transm = 0.0,
+    ir_spec_refl = 0.0,
+    solar_spec_refl = 0.0);
+
+DELETE Sc_Optics;
+OPTICAL Opt_White_Paint;
+DEFINE_OPTICAL (
+    optical = Opt_White_Paint,
+    description = "White pint used un lateral boards and both slider and bottom board.",
+    ir_emiss = 0.9,
+    ir_transm = 0.0,
+    solar_absorb = 0.2,
+    solar_transm = 0.0,
+    ir_spec_refl = 0.0,
+    solar_spec_refl = 0.0);
+
+OPTICAL Opt_Battery;
+DEFINE_OPTICAL (
+    optical = Opt_Battery,
+    description = "White pint used un lateral boards and both slider and bottom board.",
+    ir_emiss = 0.2,
+    ir_transm = 0.0,
+    solar_absorb = 0.0,
+    solar_transm = 0.0,
+    ir_spec_refl = 0.0,
+    solar_spec_refl = 0.0);
+
+OPTICAL Opt_PCB;
+DEFINE_OPTICAL (
+    optical = Opt_PCB,
+    description = "White pint used un lateral boards and both slider and bottom board.",
+    ir_emiss = 0.8,
+    ir_transm = 0.0,
+    solar_absorb = 0.0,
+    solar_transm = 0.0,
+    ir_spec_refl = 0.0,
+    solar_spec_refl = 0.0);
+
+DEFINE_OPTICAL (
+    optical = Opt_PCB,
+    description = "PCB FR4",
+    ir_emiss = 0.8,
+    ir_transm = 0.0,
+    solar_absorb = 0.0,
+    solar_transm = 0.0,
+    ir_spec_refl = 0.0,
+    solar_spec_refl = 0.0);
+
+OPTICAL Opt_StSt;
+DEFINE_OPTICAL (
+    optical = Opt_StSt,
+    description = "Stainless Steel Optical Properties, used in screws",
+    ir_emiss = 0.2,
+    ir_transm = 0.0,
+    solar_absorb = 0.4,
+    solar_transm = 0.0,
+    ir_spec_refl = 0.0,
+    solar_spec_refl = 0.0);
+
