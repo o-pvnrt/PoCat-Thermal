@@ -1,0 +1,41 @@
+
+BULK:
+
+FR-4: wikipedia,  hhttps://en.wikipedia.org/wiki/FR-4
+
+COPPER: https://www.matweb.com/search/DataSheet.aspx?MatGUID=9aebe83845c04c1db5126fada6f76f7e
+
+PFTE (Molded) : https://www.matweb.com/search/DataSheet.aspx?MatGUID=4d14eac958e5401a8fd152e1261b6843&ckck=1
+
+Stainless Steel (AlSl304) : https://www.matweb.com/search/datasheet_print.aspx?matguid=e2147b8f727343b0b0d51efe02a6127e
+
+7075 Aluminum Alloy: https://www.matweb.com/search/datasheet.aspx?MatGUID=4f19a42be94546b686bbf43f79c51b7d 
+
+RT (Rogers) : https://www.rogerscorp.com/advanced-electronics-solutions/rt-duroid-laminates/rt-duroid-5880-laminates
+
+Kapton : 3Cat4 ARPT (Internal)
+
+Tin: https://www.matweb.com/search/DataSheet.aspx?MatGUID=64d7cf04332e428dbca9f755f4624a6c
+
+Epoxy: 3Cat4 ARPT (Internal)
+
+LiPo Battery: Estimation, density computed
+
+Phosphor Brozne: https://www.matweb.com/search/datasheettext.aspx?matguid=ff0c4419106b43daa306ceb3f95602df
+
+Aluminum 6063-T5: https://www.matweb.com/search/DataSheet.aspx?MatGUID=79875d1b30c94af39029470988004fb6
+
+Galium Arsenide: https://www.matweb.com/search/DataSheet.aspx?MatGUID=029a4ff04bdc46d5906b29e0a36dba36
+
+ABS: https://www.matweb.com/search/DataSheet.aspx?MatGUID=eb7a78f5948d481c9493a67f0d089646
+
+
+OPTICAL:
+
+7075 Alumimun Alloy: http://imartinez.etsiae.upm.es/dat1/eSol.pdf
+
+PCB: Luis  APPLIED SUBSYSTEM DESIGN (Internal)
+
+White Paint: Luis  APPLIED SUBSYSTEM DESIGN (Internal)
+
+Battery: Luis APPLIED SUBSYSTEM DESIGN (Internal)
