@@ -4876,3 +4876,213 @@ RENAME(
     old_name = "SD_KS_NX1",
     new_name = "SD_KS_PX"
 );
+/* ESATAN-TMS version 2022, run date 16:12 Wed 26 Feb 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+GROUP KBandSupport = {"SD_PLSupp_Aux1a", "SD_PLSupp_Aux1b", "SD_PLSupp_Aux2a", "SD_PLSupp_Aux2b", "SD_PLSupp_Aux3a", "SD_PLSupp_Aux3b", "SD_PLSupp_Aux4a", "SD_PLSupp_Aux4b"};
+
+/* ESATAN-TMS version 2022, run date 19:17 Sat 1 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+DEFINE_BULK (
+    bulk = Copper,
+    description = "Copper",
+    density = 8930.0,
+    sp_heat = 386.0,
+    type = "Isotropic",
+    cond = 398.0);
+
+/* ESATAN-TMS version 2022, run date 11:23 Thu 6 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+GROUP KBandSupport = {"SD_PLSupp_Aux1a", "SD_PLSupp_Aux1b", "SD_PLSupp_Aux2a", "SD_PLSupp_Aux2b", "SD_PLSupp_Aux3a", "SD_PLSupp_Aux3b", "SD_PLSupp_Aux4a", "SD_PLSupp_Aux4b", "SD_PLSupp_Mid", "SD_PLSupp_Top"};
+
+/* ESATAN-TMS version 2022, run date 19:51 Sat 8 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+DELETE_GEOMETRY (geometry = SD_Slider_Board, recursive = FALSE, unassign = FALSE);
+GEOMETRY SD_Slider_L;
+SD_Slider_L = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.029, -0.0016, -0.032],
+    point2 = [-0.029, -0.0016, 0.032],
+    point4 = [-0.016, -0.0016, -0.032],
+    point5 = [-0.029, -0.0, -0.032],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "BLUE_CYAN");
+
+SD_Slider_L = ROTATE (
+    object_name = SD_Slider_L,
+    clear = TRUE);
+
+SD_Slider_L = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.029, -0.0016, -0.032],
+    point2 = [-0.029, -0.0016, 0.032],
+    point4 = [-0.016, -0.0016, -0.032],
+    point5 = [-0.029, -0.0, -0.032],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "GREY");
+
+SD_Slider_L = ROTATE (
+    object_name = SD_Slider_L,
+    clear = TRUE);
+
+SD_Slider_L = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.029, -0.0016, -0.032],
+    point2 = [-0.029, -0.0016, 0.032],
+    point4 = [-0.016, -0.0016, -0.032],
+    point5 = [-0.029, -0.0, -0.032],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_Slider_L = ROTATE (
+    object_name = SD_Slider_L,
+    clear = TRUE);
+
+GEOMETRY SD_Slider_R;
+SD_Slider_R = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.029, -0.0016, -0.032],
+    point2 = [-0.029, -0.0016, 0.032],
+    point4 = [-0.016, -0.0016, -0.032],
+    point5 = [-0.029, -0.0, -0.032],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_Slider_R = TRANSLATE (
+    object_name = SD_Slider_R,
+    x_dist = 0.045,
+    clear = TRUE);
+
+GEOMETRY SD_Slider_Back;
+SD_Slider_Back = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.016, -0.0016, -0.032],
+    point2 = [-0.016, -0.0016, -0.016],
+    point4 = [0.016, -0.0016, -0.032],
+    point5 = [-0.016, 0.0, -0.032],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_Slider_Back = TRANSLATE (
+    object_name = SD_Slider_Back,
+    x_dist = 0.045,
+    clear = TRUE);
+
+SD_Slider_Back = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.016, -0.0016, -0.032],
+    point2 = [-0.016, -0.0016, -0.016],
+    point4 = [0.016, -0.0016, -0.032],
+    point5 = [-0.016, 0.0, -0.032],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_Slider_Back = ROTATE (
+    object_name = SD_Slider_Back,
+    clear = TRUE);
+
+GEOMETRY SD_Slider_Front;
+SD_Slider_Front = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.016, -0.0016, -0.032],
+    point2 = [-0.016, -0.0016, -0.016],
+    point4 = [0.016, -0.0016, -0.032],
+    point5 = [-0.016, 0.0, -0.032],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_Slider_Front = TRANSLATE (
+    object_name = SD_Slider_Front,
+    z_dist = 0.048,
+    clear = TRUE);
+
