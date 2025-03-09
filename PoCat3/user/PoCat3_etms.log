@@ -5086,3 +5086,1129 @@ SD_Slider_Front = TRANSLATE (
     z_dist = 0.048,
     clear = TRUE);
 
+/* ESATAN-TMS version 2022, run date 18:07 Sun 9 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+BULK Al7075;
+DEFINE_BULK (
+    bulk = Al7075,
+    description = "Aluminum Alloy , K-Band Support",
+    density = 2810.0,
+    sp_heat = 960.0,
+    type = "Isotropic",
+    cond = 130.0);
+
+DELETE AlAloy;
+/* ESATAN-TMS version 2022, run date 18:37 Sun 9 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+SD_NZ_Lateral_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.023, 0.048, 0.025],
+    point2 = [0.025, 0.048, 0.025],
+    point4 = [-0.023, 0.0, 0.025],
+    point5 = [-0.023, 0.048, 0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = FR4,
+    meshType1 = "regular",
+    nodes1 = 5,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 8,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_NZ_Lateral_Board = ROTATE (
+    object_name = SD_NZ_Lateral_Board,
+    y_ang = 180.0,
+    clear = TRUE);
+
+SD_NZ_Lateral_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.023, 0.048, 0.025],
+    point2 = [0.025, 0.048, 0.025],
+    point4 = [-0.023, 0.0, 0.025],
+    point5 = [-0.023, 0.048, 0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = FR4,
+    meshType1 = "regular",
+    nodes1 = 5,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 8,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 7,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_NZ_Lateral_Board = ROTATE (
+    object_name = SD_NZ_Lateral_Board,
+    y_ang = 180.0,
+    clear = TRUE);
+
+SD_NZ_Lateral_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.023, 0.048, 0.025],
+    point2 = [0.025, 0.048, 0.025],
+    point4 = [-0.023, 0.0, 0.025],
+    point5 = [-0.023, 0.048, 0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = FR4,
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_NZ_Lateral_Board = ROTATE (
+    object_name = SD_NZ_Lateral_Board,
+    y_ang = 180.0,
+    clear = TRUE);
+
+CONDUCTIVE_INTERFACE test_Remove;
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = test_Remove,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_SP_NZ_Board,
+    surfaceA = 1,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 1.0);
+
+BULK Al7075;
+DEFINE_BULK (
+    bulk = Al7075,
+    description = "Aluminum Alloy , K-Band Support",
+    density = 2810.0,
+    sp_heat = 960.0,
+    type = "Isotropic",
+    cond = 130.0);
+
+DEFINE_BULK (
+    bulk = Copper,
+    description = "Copper",
+    density = 8930.0,
+    sp_heat = 385.0,
+    type = "Isotropic",
+    cond = 400.0);
+
+DEFINE_BULK (
+    bulk = FR4,
+    description = "Flame Retardant, used in PCBs",
+    density = 1850.0,
+    sp_heat = 1200.0,
+    type = "Orthotropic",
+    cond1 = 0.81,
+    cond2 = 0.81,
+    cond3 = 0.29);
+
+DELETE SolarCells;
+DELETE RSRogers;
+DELETE PFTEMolded;
+DELETE FR4;
+DELETE AlAloy;
+BULK Tin;
+DEFINE_BULK (
+    bulk = Tin,
+    description = "Tin (solder)",
+    density = 5765.0,
+    sp_heat = 250.0,
+    type = "Isotropic",
+    cond = 62.0);
+
+BULK AlT5;
+DEFINE_BULK (
+    bulk = AlT5,
+    description = "Al 6063-T5",
+    density = 2700.0,
+    sp_heat = 900.0,
+    type = "Isotropic",
+    cond = 209.0);
+
+BULK Bulk_Copper;
+DEFINE_BULK (
+    bulk = Bulk_Copper,
+    description = "Copper",
+    density = 8930.0,
+    sp_heat = 385.0,
+    type = "Isotropic",
+    cond = 400.0);
+
+BULK Bulk_AISI304SS;
+DEFINE_BULK (
+    bulk = Bulk_AISI304SS,
+    description = "Stainless Steel,screws and spacers",
+    density = 8000.0,
+    sp_heat = 500.0,
+    type = "Isotropic",
+    cond = 15.0);
+
+BULK Bulk_AlT5;
+DEFINE_BULK (
+    bulk = Bulk_AlT5,
+    description = "Al 6063-T5",
+    density = 2700.0,
+    sp_heat = 900.0,
+    type = "Isotropic",
+    cond = 209.0);
+
+BULK Bulk_Al7075;
+DEFINE_BULK (
+    bulk = Bulk_Al7075,
+    description = "Aluminum Alloy , K-Band Support",
+    density = 2810.0,
+    sp_heat = 960.0,
+    type = "Isotropic",
+    cond = 130.0);
+
+BULK Bulk_Tin;
+DEFINE_BULK (
+    bulk = Bulk_Tin,
+    description = "Tin (solder)",
+    density = 5765.0,
+    sp_heat = 250.0,
+    type = "Isotropic",
+    cond = 62.0);
+
+DELETE AISI304SS;
+DELETE Al7075;
+DELETE AlT5;
+DELETE Copper;
+DELETE Tin;
+BULK Bulk_KS;
+DEFINE_BULK (
+    bulk = Bulk_KS,
+    description = "Killswitches (ABS)",
+    density = 2631.0,
+    sp_heat = 1990.0,
+    type = "Isotropic",
+    cond = 0.162);
+
+BULK Bulk_BotLat;
+DEFINE_BULK (
+    bulk = Bulk_BotLat,
+    description = "Bottom Board, Lateral Board (FR4,Copper, Solder Mask)
+",
+    density = 2133.0,
+    sp_heat = 904.0,
+    type = "Orthotropic",
+    cond1 = 1.0,
+    cond2 = -10000.0,
+    cond3 = -10000.0);
+
+BULK Bulk_BottomBoard;
+DEFINE_BULK (
+    bulk = Bulk_BottomBoard,
+    description = "Bottom Board (FR4,Copper,Solder)",
+    density = 2133.0,
+    sp_heat = 904.0,
+    type = "Orthotropic",
+    cond1 = 170.9,
+    cond2 = 170.9,
+    cond3 = 0.45);
+
+SD_Bottom_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.026, -0.0032, 0.032],
+    point2 = [0.026, -0.0032, 0.032],
+    point4 = [-0.026, -0.0032, -0.032],
+    point5 = [-0.026, -0.0016, 0.032],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_Bottom_Board = ROTATE (
+    object_name = SD_Bottom_Board,
+    clear = TRUE);
+
+DEFINE_BULK (
+    bulk = Bulk_BotLat,
+    description = "Bottom Board, Lateral Board (FR4,Copper, Solder Mask)
+",
+    density = 2133.0,
+    sp_heat = 904.0,
+    type = "Orthotropic",
+    cond1 = 170.9,
+    cond2 = 170.9,
+    cond3 = 0.45);
+
+BULK Bulk_Slider;
+DEFINE_BULK (
+    bulk = Bulk_Slider,
+    description = "Bottom Board, Lateral Board (FR4,Copper, Solder Mask)
+",
+    density = 1953.0,
+    sp_heat = 1050.4,
+    type = "Orthotropic",
+    cond1 = 46.8,
+    cond2 = 46.8,
+    cond3 = 0.35);
+
+DEFINE_BULK (
+    bulk = Bulk_Slider,
+    description = "Slider Board (FR4,Copper, Solder Mask)
+",
+    density = 1953.0,
+    sp_heat = 1050.4,
+    type = "Orthotropic",
+    cond1 = 46.8,
+    cond2 = 46.8,
+    cond3 = 0.35);
+
+BULK Bulk_MTQPY;
+DEFINE_BULK (
+    bulk = Bulk_MTQPY,
+    description = "Magnetorquer Board (FR4,Copper, Solder Mask)
+",
+    density = 1753.0,
+    sp_heat = 904.0,
+    type = "Orthotropic",
+    cond1 = 170.9,
+    cond2 = 170.9,
+    cond3 = 0.45);
+
+SD_MTQ_PY_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.0225, 0.016, 0.0225],
+    point2 = [0.0225, 0.016, 0.0225],
+    point4 = [-0.0225, 0.016, -0.0225],
+    point5 = [-0.0225, 0.018, 0.0225],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Conductive",
+    criticality = "NORMAL",
+    colour = "PALE_RED");
+
+SD_MTQ_PY_Board = ROTATE (
+    object_name = SD_MTQ_PY_Board,
+    clear = TRUE);
+
+SD_AOCS_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.020, 0.0227, 0.02],
+    point2 = [0.020, 0.0227, 0.02],
+    point4 = [-0.020, 0.0227, -0.02],
+    point5 = [-0.020, 0.0243, 0.02],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Conductive",
+    criticality = "NORMAL",
+    colour = "PALE_RED");
+
+SD_AOCS_Board = ROTATE (
+    object_name = SD_AOCS_Board,
+    clear = TRUE);
+
+SD_AOCS_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.020, 0.0227, 0.02],
+    point2 = [0.020, 0.0227, 0.02],
+    point4 = [-0.020, 0.0227, -0.02],
+    point5 = [-0.020, 0.0243, 0.02],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Conductive",
+    criticality = "NORMAL",
+    colour = "PALE_RED");
+
+SD_AOCS_Board = ROTATE (
+    object_name = SD_AOCS_Board,
+    clear = TRUE);
+
+SD_EPS_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.020, 0.0227, 0.02],
+    point2 = [0.020, 0.0227, 0.02],
+    point4 = [-0.020, 0.0227, -0.02],
+    point5 = [-0.020, 0.0243, -0.02],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Conductive",
+    criticality = "NORMAL",
+    colour = "PALE_RED");
+
+SD_EPS_Board = TRANSLATE (
+    object_name = SD_EPS_Board,
+    y_dist = 6.222e-03,
+    clear = TRUE);
+
+SD_EPS_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.020, 0.0227, 0.02],
+    point2 = [0.020, 0.0227, 0.02],
+    point4 = [-0.020, 0.0227, -0.02],
+    point5 = [-0.020, 0.0243, 0.02],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Conductive",
+    criticality = "NORMAL",
+    colour = "PALE_RED");
+
+SD_EPS_Board = TRANSLATE (
+    object_name = SD_EPS_Board,
+    y_dist = 6.222e-03,
+    clear = TRUE);
+
+SD_OBCCOMMS_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.020, 0.0227, 0.02],
+    point2 = [0.020, 0.0227, 0.02],
+    point4 = [-0.020, 0.0227, -0.02],
+    point5 = [-0.020, 0.0243, -0.02],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Conductive",
+    criticality = "NORMAL",
+    colour = "PALE_RED");
+
+SD_OBCCOMMS_Board = TRANSLATE (
+    object_name = SD_OBCCOMMS_Board,
+    y_dist = 0.012444,
+    clear = TRUE);
+
+SD_OBCCOMMS_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.020, 0.0227, 0.02],
+    point2 = [0.020, 0.0227, 0.02],
+    point4 = [-0.020, 0.0227, -0.02],
+    point5 = [-0.020, 0.0243, 0.02],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Conductive",
+    criticality = "NORMAL",
+    colour = "PALE_RED");
+
+SD_OBCCOMMS_Board = TRANSLATE (
+    object_name = SD_OBCCOMMS_Board,
+    y_dist = 0.012444,
+    clear = TRUE);
+
+SD_PL_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.020, 0.0227, 0.02],
+    point2 = [0.020, 0.0227, 0.02],
+    point4 = [-0.020, 0.0227, -0.02],
+    point5 = [-0.020, 0.0243, 0.02],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Conductive",
+    criticality = "NORMAL",
+    colour = "PALE_RED");
+
+SD_PL_Board = TRANSLATE (
+    object_name = SD_PL_Board,
+    y_dist = 0.018666,
+    clear = TRUE);
+
+SD_PLAntenna_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.020, 0.051816, 0.02],
+    point2 = [0.020, 0.051816, 0.02],
+    point4 = [-0.020, 0.051816, -0.02],
+    point5 = [-0.020, 0.053416, 0.02],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    activity = "Conductive",
+    criticality = "NORMAL",
+    colour = "PALE_RED");
+
+SD_PLAntenna_Board = ROTATE (
+    object_name = SD_PLAntenna_Board,
+    clear = TRUE);
+
+BULK Bulk_AOCS;
+DEFINE_BULK (
+    bulk = Bulk_AOCS,
+    description = "AOCS Board (Components, PCB)",
+    density = 3125.0,
+    sp_heat = 940.3,
+    type = "Orthotropic",
+    cond1 = 170.1,
+    cond2 = 170.1,
+    cond3 = 0.45);
+
+BULK Bulk_EPS;
+DEFINE_BULK (
+    bulk = Bulk_EPS,
+    description = "EPS Board (Components, PCB)",
+    density = 2773.0,
+    sp_heat = 940.3,
+    type = "Orthotropic",
+    cond1 = 170.1,
+    cond2 = 170.1,
+    cond3 = 0.45);
+
+BULK Bulk_OBCCOMMS;
+DEFINE_BULK (
+    bulk = Bulk_OBCCOMMS,
+    description = "OBCComms Board (Components, PCB)",
+    density = 2734.0,
+    sp_heat = 940.3,
+    type = "Orthotropic",
+    cond1 = 170.1,
+    cond2 = 170.1,
+    cond3 = 0.45);
+
+BULK Bulk_PLUnder;
+DEFINE_BULK (
+    bulk = Bulk_PLUnder,
+    description = "PL Board Inferior (Components, Multiple PCBs)",
+    density = 3594.0,
+    sp_heat = 783.2,
+    type = "Orthotropic",
+    cond1 = 110.1,
+    cond2 = 110.1,
+    cond3 = 0.49);
+
+DEFINE_BULK (
+    bulk = Bulk_OBCCOMMS,
+    description = "OBCComms Board (Components, PCB)",
+    density = 2734.0,
+    sp_heat = 940.3,
+    type = "Orthotropic",
+    cond1 = 170.1,
+    cond2 = 170.1,
+    cond3 = 0.42);
+
+DEFINE_BULK (
+    bulk = Bulk_EPS,
+    description = "EPS Board (Components, PCB)",
+    density = 2773.0,
+    sp_heat = 940.3,
+    type = "Orthotropic",
+    cond1 = 170.1,
+    cond2 = 170.1,
+    cond3 = 0.42);
+
+DEFINE_BULK (
+    bulk = Bulk_AOCS,
+    description = "AOCS Board (Components, PCB)",
+    density = 3125.0,
+    sp_heat = 940.3,
+    type = "Orthotropic",
+    cond1 = 170.1,
+    cond2 = 170.1,
+    cond3 = 0.42);
+
+BULK Bulk_PLAntenna;
+DEFINE_BULK (
+    bulk = Bulk_PLAntenna,
+    description = "PL Board Over (Components, PCB,Antenna)",
+    density = 3594.0,
+    sp_heat = 783.2,
+    type = "Orthotropic",
+    cond1 = 110.1,
+    cond2 = 110.1,
+    cond3 = 0.49);
+
+BULK Bulk_KBandSupport_Revise;
+DEFINE_BULK (
+    bulk = Bulk_KBandSupport_Revise,
+    description = "KBand Support with VCs and Screw and so on (Big)",
+    density = 1418.0,
+    sp_heat = 960.0,
+    type = "Orthotropic",
+    cond1 = 130.0,
+    cond2 = 130.0,
+    cond3 = 130.0);
+
+BULK Bulk_SolarPanels;
+DEFINE_BULK (
+    bulk = Bulk_SolarPanels,
+    description = "KBand Support with VCs and Screw and so on (Big)",
+    density = 2273.0,
+    sp_heat = 325.0,
+    type = "Isotropic",
+    cond = 50.0);
+
+BULK Bulk_BatteryLiPo;
+DEFINE_BULK (
+    bulk = Bulk_BatteryLiPo,
+    description = "LiPo Battery",
+    density = 2796.0,
+    sp_heat = 1000.0,
+    type = "Orthotropic",
+    cond1 = 2.5,
+    cond2 = 2.5,
+    cond3 = 0.6);
+
+BULK Bulk_JxSSConnectors;
+DEFINE_BULK (
+    bulk = Bulk_JxSSConnectors,
+    description = "Subsystem vertical connectors (Phosphor Bronze, ABS)",
+    density = 2502.0,
+    sp_heat = 1268.0,
+    type = "Isotropic",
+    cond = 27.9);
+
+DEFINE_BULK (
+    bulk = Bulk_JxSSConnectors,
+    description = "Subsystem vertical connectors (Phosphor Bronze, ABS)",
+    density = 2502.0,
+    sp_heat = 1268.0,
+    type = "Isotropic",
+    cond = 27.9);
+
+SD_PX_Lateral_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.023, 0.048, 0.025],
+    point2 = [0.025, 0.048, 0.025],
+    point4 = [-0.023, 0.0, 0.025],
+    point5 = [-0.023, 0.048, 0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_PX_Lateral_Board = ROTATE (
+    object_name = SD_PX_Lateral_Board,
+    y_ang = 90.0,
+    clear = TRUE);
+
+SD_Battery = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.019, 0.003, -0.016],
+    point2 = [-0.019, 0.003, 0.016],
+    point4 = [0.019, 0.003, -0.016],
+    point5 = [-0.019, 0.013, -0.016],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_Battery,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "YELLOW");
+
+SD_Battery = ROTATE (
+    object_name = SD_Battery,
+    clear = TRUE);
+
+SD_BottStruc_BackMid = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.019, 0.003, -0.023],
+    point2 = [-0.019, 0.003, -0.016],
+    point4 = [0.019, 0.003, -0.023],
+    point5 = [-0.019, 0.013, -0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "GREY");
+
+SD_BottStruc_BackMid = ROTATE (
+    object_name = SD_BottStruc_BackMid,
+    clear = TRUE);
+
+SD_BottStruc_DownBack = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.019, 0.00, -0.023],
+    point2 = [-0.019, 0.00, -0.016],
+    point4 = [0.019, 0.00, -0.023],
+    point5 = [-0.019, 0.003, -0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "GREY");
+
+SD_BottStruc_DownBack = ROTATE (
+    object_name = SD_BottStruc_DownBack,
+    clear = TRUE);
+
+SD_BottStruc_DownFront = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.019, 0.00, -0.023],
+    point2 = [-0.019, 0.00, -0.016],
+    point4 = [0.019, 0.00, -0.023],
+    point5 = [-0.019, 0.003, -0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "GREY");
+
+SD_BottStruc_DownFront = TRANSLATE (
+    object_name = SD_BottStruc_DownFront,
+    z_dist = 0.039,
+    clear = TRUE);
+
+SD_BottStruc_L = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.023, 0.0, -0.023],
+    point2 = [-0.023, 0.0, 0.023],
+    point4 = [-0.019, 0.0, -0.023],
+    point5 = [-0.023, 0.016, -0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "GREY");
+
+SD_BottStruc_L = ROTATE (
+    object_name = SD_BottStruc_L,
+    clear = TRUE);
+
+SD_BottStruc_R = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.023, 0.0, -0.023],
+    point2 = [-0.023, 0.0, 0.023],
+    point4 = [-0.019, 0.0, -0.023],
+    point5 = [-0.023, 0.016, -0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "GREY");
+
+SD_BottStruc_R = TRANSLATE (
+    object_name = SD_BottStruc_R,
+    x_dist = 0.042,
+    clear = TRUE);
+
+SD_BottStruc_Up = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.019, 0.013, -0.023],
+    point2 = [-0.019, 0.013, 0.023],
+    point4 = [0.019, 0.013, -0.023],
+    point5 = [-0.019, 0.016, -0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "GREY");
+
+SD_BottStruc_Up = ROTATE (
+    object_name = SD_BottStruc_Up,
+    clear = TRUE);
+
+SD_NX_Lateral_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.023, 0.048, 0.025],
+    point2 = [0.025, 0.048, 0.025],
+    point4 = [-0.023, 0.0, 0.025],
+    point5 = [-0.023, 0.048, 0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_NX_Lateral_Board = ROTATE (
+    object_name = SD_NX_Lateral_Board,
+    y_ang = 270.0,
+    clear = TRUE);
+
+SD_NZ_Lateral_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.023, 0.048, 0.025],
+    point2 = [0.025, 0.048, 0.025],
+    point4 = [-0.023, 0.0, 0.025],
+    point5 = [-0.023, 0.048, 0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_NZ_Lateral_Board = ROTATE (
+    object_name = SD_NZ_Lateral_Board,
+    y_ang = 180.0,
+    clear = TRUE);
+
+SD_PZ_Lateral_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.023, 0.048, 0.025],
+    point2 = [0.025, 0.048, 0.025],
+    point4 = [-0.023, 0.0, 0.025],
+    point5 = [-0.023, 0.048, 0.023],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_PCB,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "WHITE");
+
+SD_PZ_Lateral_Board = ROTATE (
+    object_name = SD_PZ_Lateral_Board,
+    clear = TRUE);
+
+SD_SP_NX_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [0.0253, 0.042, 0.017],
+    point2 = [0.0253, 0.042, -0.016],
+    point4 = [0.0253, 0.002, 0.017],
+    point5 = [0.025, 0.042, 0.017],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_SolarCells,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "DARK_BLUE");
+
+SD_SP_NX_Board = ROTATE (
+    object_name = SD_SP_NX_Board,
+    y_ang = 180.0,
+    clear = TRUE);
+
+SD_SP_NZ_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [0.0253, 0.042, 0.017],
+    point2 = [0.0253, 0.042, -0.016],
+    point4 = [0.0253, 0.002, 0.017],
+    point5 = [0.025, 0.042, 0.017],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_SolarCells,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "DARK_BLUE");
+
+SD_SP_NZ_Board = ROTATE (
+    object_name = SD_SP_NZ_Board,
+    y_ang = 90.0,
+    clear = TRUE);
+
+SD_SP_NZ_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [0.0253, 0.042, 0.017],
+    point2 = [0.0253, 0.042, -0.016],
+    point4 = [0.0253, 0.002, 0.017],
+    point5 = [0.025, 0.042, 0.017],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_SolarCells,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "DARK_BLUE");
+
+SD_SP_NZ_Board = ROTATE (
+    object_name = SD_SP_NZ_Board,
+    y_ang = 90.0,
+    clear = TRUE);
+
+SD_SP_PX_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [0.0253, 0.042, 0.017],
+    point2 = [0.0253, 0.042, -0.016],
+    point4 = [0.0253, 0.002, 0.017],
+    point5 = [0.025, 0.042, 0.017],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_SolarCells,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "DARK_BLUE");
+
+SD_SP_PX_Board = ROTATE (
+    object_name = SD_SP_PX_Board,
+    clear = TRUE);
+
+SD_SP_PZ_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [0.0253, 0.042, 0.017],
+    point2 = [0.0253, 0.042, -0.016],
+    point4 = [0.0253, 0.002, 0.017],
+    point5 = [0.025, 0.042, 0.017],
+    analysis_type = "Lumped Parameter",
+    bulk = [-10000.0, -10000.0, -10000.0],
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_SolarCells,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "DARK_BLUE");
+
+SD_SP_PZ_Board = ROTATE (
+    object_name = SD_SP_PZ_Board,
+    y_ang = 270.0,
+    clear = TRUE);
+
