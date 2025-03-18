@@ -39,3 +39,5 @@ PCB: Luis  APPLIED SUBSYSTEM DESIGN (Internal)
 White Paint: Luis  APPLIED SUBSYSTEM DESIGN (Internal)
 
 Battery: Luis APPLIED SUBSYSTEM DESIGN (Internal)
+
+https://www.engineeringtoolbox.com/emissivity-coefficients-d_447.html
