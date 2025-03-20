@@ -42,4 +42,4 @@ Battery: Luis APPLIED SUBSYSTEM DESIGN (Internal)
 
 https://www.engineeringtoolbox.com/emissivity-coefficients-d_447.html
 
-Pepe
+Pepe Juan
