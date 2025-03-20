@@ -12257,3 +12257,293 @@ SH_COMMS_Antenna = ROTATE (
     object_name = SH_COMMS_Antenna,
     clear = TRUE);
 
+/* ESATAN-TMS version 2022, run date 10:03 Wed 19 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+SD_MTQ_PY_Board = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.0225, 0.016, 0.0225],
+    point2 = [0.0225, 0.016, 0.0225],
+    point4 = [-0.0225, 0.016, -0.0225],
+    point5 = [-0.0225, 0.018, 0.0225],
+    analysis_type = "Lumped Parameter",
+    bulk = Bulk_PCB_MTQPY,
+    meshType1 = "regular",
+    nodes1 = 6,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 6,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_Black_Paint,
+    activity = "Conductive",
+    criticality = "NORMAL",
+    colour = "PALE_RED");
+
+SD_MTQ_PY_Board = ROTATE (
+    object_name = SD_MTQ_PY_Board,
+    clear = TRUE);
+
+SD_PCB_PLAntenna = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.020, 0.051816, 0.02],
+    point2 = [0.020, 0.051816, 0.02],
+    point4 = [-0.020, 0.051816, -0.02],
+    point5 = [-0.020, 0.053416, 0.02],
+    analysis_type = "Lumped Parameter",
+    bulk = Bulk_PCB_PLAntenna,
+    meshType1 = "regular",
+    nodes1 = 6,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 6,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 2,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_Black_Paint,
+    activity = "Conductive",
+    criticality = "NORMAL",
+    colour = "PALE_RED");
+
+SD_PCB_PLAntenna = ROTATE (
+    object_name = SD_PCB_PLAntenna,
+    clear = TRUE);
+
+CND_PLTOP_Y1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLTOP_U1",
+    destination_reference = "SD_PCB_PLAntenna:face16",
+    conductor_override = 0.0);
+
+/* ESATAN-TMS version 2022, run date 13:12 Wed 19 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+NGTN_ADCS_U1 = NON_GEOMETRIC_THERMAL_NODE (
+    origin = [-0.0113, 0.026, -0.00625],
+    radius = 0.001,
+    node_number = 0,
+    volume = 0.0,
+    bulk = [-10000.0, -10000.0, -10000.0],
+    capacitance_override = 0.00735,
+    colour1 = "BLUE_CYAN",
+    colour2 = "BLUE_CYAN");
+
+NGTN_ADCS_U1 = ROTATE (
+    object_name = NGTN_ADCS_U1,
+    clear = TRUE);
+
+/* ESATAN-TMS version 2022, run date 11:29 Thu 20 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+CONDUCTOR UDC_AODCS_U1;
+UDC_AODCS_U1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_ADCS_U1",
+    destination_reference = "SD_PCB_AOCS:face56",
+    conductor_override = 0.05);
+
+CONDUCTOR UDC_AODCS_U2;
+UDC_AODCS_U2 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_ADCS_U2",
+    destination_reference = "SD_PCB_AOCS:face57",
+    conductor_override = 0.05);
+
+CONDUCTOR UDC_AODCS_U3;
+UDC_AODCS_U3 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_ADCS_U3",
+    destination_reference = "SD_PCB_AOCS:face58",
+    conductor_override = 0.05);
+
+CONDUCTOR UDC_AODCS_U4;
+UDC_AODCS_U4 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_ADCS_U4",
+    destination_reference = "SD_PCB_AOCS:face58",
+    conductor_override = 0.07);
+
+CONDUCTOR UDC_AODCS_U5;
+UDC_AODCS_U5 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_ADCS_U5",
+    destination_reference = "SD_PCB_AOCS:face47",
+    conductor_override = 0.25);
+
+CONDUCTOR UDC_AODCS_U6;
+UDC_AODCS_U6 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_ADCS_U6",
+    destination_reference = "SD_PCB_AOCS:face59",
+    conductor_override = 0.25);
+
+UDC_AODCS_U6 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_ADCS_U6",
+    destination_reference = "SD_PCB_AOCS:face59",
+    conductor_override = 0.20);
+
+CONDUCTOR UDC_AODCS_U7;
+UDC_AODCS_U7 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_ADCS_U7",
+    destination_reference = "SD_PCB_AOCS:face45",
+    conductor_override = 0.07);
+
+CONDUCTOR UDC_EPS_IC1;
+UDC_EPS_IC1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_EPS_IC1",
+    destination_reference = "SD_PCB_EPS:face64",
+    conductor_override = 0.14);
+
+CONDUCTOR UDC_EPS_IC2;
+UDC_EPS_IC2 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_EPS_IC2",
+    destination_reference = "SD_PCB_EPS:face65",
+    conductor_override = 0.14);
+
+CONDUCTOR UDC_EPS_U4;
+UDC_EPS_U4 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_EPS_U4",
+    destination_reference = "SD_PCB_EPS:face57",
+    conductor_override = 0.33);
+
+CONDUCTOR UDC_EPS_U1;
+UDC_EPS_U1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_EPS_U1",
+    destination_reference = "SD_PCB_EPS:face23",
+    conductor_override = 0.05);
+
+CONDUCTOR UDC_EPS_U2;
+UDC_EPS_U2 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_EPS_U2",
+    destination_reference = "SD_PCB_EPS:face21",
+    conductor_override = 0.05);
+
+CONDUCTOR UDC_EPS_U3;
+UDC_EPS_U3 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_EPS_U3",
+    destination_reference = "SD_PCB_EPS:face20",
+    conductor_override = 0.05);
+
+RENAME(
+    old_name = "UDC_AODCS_U1",
+    new_name = "UDC_AOCS_U1"
+);
+RENAME(
+    old_name = "UDC_AODCS_U2",
+    new_name = "UDC_AOCS_U2"
+);
+RENAME(
+    old_name = "UDC_AODCS_U3",
+    new_name = "UDC_AOCS_U3"
+);
+RENAME(
+    old_name = "UDC_AODCS_U4",
+    new_name = "UDC_AOCS_U4"
+);
+RENAME(
+    old_name = "UDC_AODCS_U5",
+    new_name = "UDC_AOCS_U5"
+);
+RENAME(
+    old_name = "UDC_AODCS_U6",
+    new_name = "UDC_AOCS_U6"
+);
+RENAME(
+    old_name = "UDC_AODCS_U7",
+    new_name = "UDC_AOCS_U7"
+);
+DELETE CND_PLTOP_Y1;
+CONDUCTOR UDC_OBCCOMMS_STM32;
+UDC_OBCCOMMS_STM32 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_OBC_STM32",
+    destination_reference = "SD_PCB_OBCCOMMS:face57",
+    conductor_override = 0.1);
+
+UDC_OBCCOMMS_STM32 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_OBC_SX1262",
+    destination_reference = "SD_PCB_OBCCOMMS:face65",
+    conductor_override = 0.25);
+
+CONDUCTOR UDC_OBCCOMMS_SX1262;
+UDC_OBCCOMMS_SX1262 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_OBC_SX1262",
+    destination_reference = "SD_PCB_OBCCOMMS:face65",
+    conductor_override = 0.25);
+
+UDC_OBCCOMMS_SX1262 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_OBC_STM32",
+    destination_reference = "SD_PCB_OBCCOMMS:face65",
+    conductor_override = 0.1);
+
+UDC_OBCCOMMS_SX1262 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_OBC_STM32",
+    destination_reference = "SD_PCB_OBCCOMMS:face57",
+    conductor_override = 0.1);
+
+CONDUCTOR UDC_OBCCOMMS_SX12621;
+UDC_OBCCOMMS_SX12621 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_OBC_STM32",
+    destination_reference = "SD_PCB_OBCCOMMS:face57",
+    conductor_override = 0.1);
+
+UDC_OBCCOMMS_STM32 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_OBC_SX1262",
+    destination_reference = "SD_PCB_OBCCOMMS:face65",
+    conductor_override = 0.25);
+
+DELETE UDC_OBCCOMMS_SX12621;
+RENAME(
+    old_name = "UDC_OBCCOMMS_STM32",
+    new_name = "UDC_OBCCOMMS_STM32s"
+);
+RENAME(
+    old_name = "UDC_OBCCOMMS_SX1262",
+    new_name = "UDC_OBCCOMMS_STM32"
+);
+RENAME(
+    old_name = "UDC_OBCCOMMS_STM32s",
+    new_name = "UDC_OBCCOMMS_SX1262"
+);
+CONDUCTOR UDC_PLBot_U1;
+UDC_PLBot_U1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLUNDER_U1",
+    destination_reference = "SD_PCB_PL:face63",
+    conductor_override = 0.2);
+
+CONDUCTOR UDC_PLBot_U4;
+UDC_PLBot_U4 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLUNDER_U4",
+    destination_reference = "SD_PCB_PL:face57",
+    conductor_override = 0.2);
+
+CONDUCTOR UDC_PLBot_U5;
+UDC_PLBot_U5 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLUNDER_U5",
+    destination_reference = "SD_PCB_PL:face58",
+    conductor_override = 0.1);
+
+CONDUCTOR UDC_PLBot_U3;
+UDC_PLBot_U3 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLUNDER_U3",
+    destination_reference = "SD_PCB_PL:face47",
+    conductor_override = 0.14);
+
+CONDUCTOR UDC_PLBot_U7;
+UDC_PLBot_U7 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLUNDER_U7",
+    destination_reference = "SD_PCB_PL:face44",
+    conductor_override = 0.05);
+
+CONDUCTOR UDC_PLTop_Y1;
+UDC_PLTop_Y1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLTOP_Y1",
+    destination_reference = "SD_PCB_PLAntenna:face8",
+    conductor_override = 0.25);
+
+CONDUCTOR UDC_PLTop_U1;
+UDC_PLTop_U1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLTOP_U1",
+    destination_reference = "SD_PCB_PLAntenna:face16",
+    conductor_override = 0.2);
+
+CONDUCTOR UDC_PLTop_U2;
+UDC_PLTop_U2 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLTOP_U2",
+    destination_reference = "SD_PCB_PLAntenna:face26",
+    conductor_override = 0.2);
+
