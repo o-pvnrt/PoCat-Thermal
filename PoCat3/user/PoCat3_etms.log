@@ -12547,3 +12547,3922 @@ UDC_PLTop_U2 = CONDUCTIVE_CONDUCTOR (
     destination_reference = "SD_PCB_PLAntenna:face26",
     conductor_override = 0.2);
 
+/* ESATAN-TMS version 2022, run date 19:04 Thu 20 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+PoCat3 = ASSEMBLE(
+    ref_comp = SH_COMMS_Antenna,
+    moving_comp = NGTN_Batt_Heater,
+    orientation = "NADIR",
+    rot_point = [0.0, 0.0, 0.0],
+    rot_axis = [1.0, 0.0, 0.0],
+    rot_min_ang = 0.0,
+    rot_max_ang = 360.0,
+    point_vect = [0.0, 1.0, 0.0]
+);
+PoCat3 = ASSEMBLE(
+    ref_comp = SH_COMMS_Antenna,
+    moving_comp = NGTN_Batt_Heater,
+    orientation = "NADIR",
+    rot_point = [0.0, 0.0, 0.0],
+    rot_axis = [1.0, 0.0, 0.0],
+    rot_min_ang = 0.0,
+    rot_max_ang = 360.0,
+    point_vect = [0.0, 1.0, 0.0]
+);
+GEOMETRY Full_Spacecraft;
+Full_Spacecraft = SD_Spacer_OBCtoPL4 + SD_Spacer_OBCtoPL3 + SD_Spacer_OBCtoPL2 + SD_Spacer_OBCtoPL1 + SD_Spacer_EPStoOBC4 + SD_Spacer_EPStoOBC3 + SD_Spacer_EPStoOBC2 + SD_Spacer_EPStoOBC1 + SD_Spacer_ADCStoEPS4 + SD_Spacer_ADCStoEPS3 + SD_Spacer_ADCStoEPS2 + SD_Spacer_ADCStoEPS1 + SD_SP_PZ_Board + SD_SP_PX_Board + SD_SP_NZ_Board + SD_SP_NY_Board + SD_SP_NX_Board + SD_PZ_Lateral_Board + SD_PX_Lateral_Board + SD_PLSupp_Top + SD_PLSupp_Mid + SD_PLSupp_Aux4b + SD_PLSupp_Aux4a + SD_PLSupp_Aux3b + SD_PLSupp_Aux3a + SD_PLSupp_Aux2b + SD_PLSupp_Aux2a + SD_PLSupp_Aux1b + SD_PLSupp_Aux1a + SD_PCB_PLAntenna + SD_PCB_PL + SD_PCB_OBCCOMMS + SD_PCB_EPS + SD_PCB_AOCS + SD_NZ_Lateral_Board + SD_NX_Lateral_Board + SD_MTQ_PY_Board + SD_KS_PX + SD_KS_NX + SD_KBand_Support + SD_J4OBCPL_VC + SD_J4EPSOBC_VC + SD_J4ADCSEPS_VC + SD_J3OBCPL_VC + SD_J3EPSOBC_VC + SD_J3ADCSEPS_VC + SD_J2OBCPL_VC + SD_J2EPSOBC_VC + SD_J2ADCSEPS_VC + SD_J1OBCPL_VC + SD_J1EPSOBC_VC + SD_J1ADCSEPS_VC + SD_Bottom_Board + SD_BottStruc_Up + SD_BottStruc_R + SD_BottStruc_L + SD_BottStruc_DownFront + SD_BottStruc_DownBack + SD_BottStruc_BackMid + SD_Battery_Support + SD_Battery + SD_BattSuppSpacer_4 + SD_BattSuppSpacer_3 + SD_BattSuppSpacer_2 + SD_BattSuppSpacer_1 + NGTN_PLUNDER_U7 + NGTN_PLUNDER_U5 + NGTN_PLUNDER_U4 + NGTN_PLUNDER_U3 + NGTN_PLUNDER_U1 + NGTN_PLTOP_Y1 + NGTN_PLTOP_U2 + NGTN_PLTOP_U1 + NGTN_OBC_SX1262 + NGTN_OBC_STM32 + NGTN_EPS_U4 + NGTN_EPS_U3 + NGTN_EPS_U2 + NGTN_EPS_U1 + NGTN_EPS_IC2 + NGTN_EPS_IC1 + NGTN_ADCS_U7 + NGTN_ADCS_U6 + NGTN_ADCS_U5 + NGTN_ADCS_U4 + NGTN_ADCS_U3 + NGTN_ADCS_U2 + NGTN_ADCS_U1 + SD_Slider_Board;
+PoCat3 = ASSEMBLE(
+    ref_comp = Full_Spacecraft,
+    moving_comp = SH_COMMS_Antenna,
+    orientation = "NADIR",
+    rot_point = [0.0, 0.0, 0.0],
+    rot_axis = [1.0, 0.0, 0.0],
+    rot_min_ang = 0.0,
+    rot_max_ang = 360.0,
+    point_vect = [0.0, 1.0, 0.0]
+);
+
+CONDUCTIVE_INTERFACE ci_1;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_1,
+	primitiveA = SD_PZ_Lateral_Board,
+	primitiveB = SD_Slider_Front,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_2;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_2,
+	primitiveA = SD_PZ_Lateral_Board,
+	primitiveB = SD_Slider_L,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_3;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_3,
+	primitiveA = SD_PZ_Lateral_Board,
+	primitiveB = SD_Slider_R,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_4;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_4,
+	primitiveA = SD_Slider_Back,
+	primitiveB = SD_Slider_R,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_5;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_5,
+	primitiveA = SD_PX_Lateral_Board,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_6;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_6,
+	primitiveA = SD_PX_Lateral_Board,
+	primitiveB = SD_SP_PX_Board,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_7;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_7,
+	primitiveA = SD_PZ_Lateral_Board,
+	primitiveB = SD_SP_PZ_Board,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_8;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_8,
+	primitiveA = SD_PX_Lateral_Board,
+	primitiveB = SD_Slider_R,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_9;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_9,
+	primitiveA = SD_Slider_Back,
+	primitiveB = SD_Slider_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_10;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_10,
+	primitiveA = SD_Slider_Front,
+	primitiveB = SD_Slider_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_11;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_11,
+	primitiveA = SD_Slider_Front,
+	primitiveB = SD_Slider_R,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_12;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_12,
+	primitiveA = SD_BottStruc_DownFront,
+	primitiveB = SD_BottStruc_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_13;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_13,
+	primitiveA = SD_BottStruc_BackMid,
+	primitiveB = SD_BottStruc_R,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_14;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_14,
+	primitiveA = SD_BottStruc_DownFront,
+	primitiveB = SD_Slider_Front,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_15;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_15,
+	primitiveA = SD_BottStruc_DownFront,
+	primitiveB = SD_Slider_L,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_16;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_16,
+	primitiveA = SD_BottStruc_DownFront,
+	primitiveB = SD_Slider_R,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_17;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_17,
+	primitiveA = SD_BottStruc_L,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 6,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_18;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_18,
+	primitiveA = SD_BottStruc_R,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_19;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_19,
+	primitiveA = SD_Battery_Support,
+	primitiveB = SD_BottStruc_Up,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_20;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_20,
+	primitiveA = SD_BattSuppSpacer_2,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_21;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_21,
+	primitiveA = SD_Battery_Support,
+	primitiveB = SD_BottStruc_R,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_22;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_22,
+	primitiveA = SD_Battery_Support,
+	primitiveB = SD_BottStruc_BackMid,
+	surfaceA = 5,
+	surfaceB = 6,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_23;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_23,
+	primitiveA = SD_BottStruc_BackMid,
+	primitiveB = SD_BottStruc_DownBack,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_24;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_24,
+	primitiveA = SD_BattSuppSpacer_3,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_25;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_25,
+	primitiveA = SD_BattSuppSpacer_1,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_26;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_26,
+	primitiveA = SD_Battery,
+	primitiveB = SD_BottStruc_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_27;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_27,
+	primitiveA = SD_BottStruc_BackMid,
+	primitiveB = SD_BottStruc_Up,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_28;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_28,
+	primitiveA = SD_BottStruc_BackMid,
+	primitiveB = SD_NZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_29;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_29,
+	primitiveA = SD_BottStruc_DownBack,
+	primitiveB = SD_Slider_Back,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_30;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_30,
+	primitiveA = SD_BottStruc_DownBack,
+	primitiveB = SD_Slider_L,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_31;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_31,
+	primitiveA = SD_BottStruc_DownBack,
+	primitiveB = SD_Slider_R,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_32;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_32,
+	primitiveA = SD_BottStruc_DownBack,
+	primitiveB = SD_BottStruc_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_33;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_33,
+	primitiveA = SD_BottStruc_DownBack,
+	primitiveB = SD_BottStruc_R,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_34;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_34,
+	primitiveA = SD_Battery_Support,
+	primitiveB = SD_BottStruc_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_35;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_35,
+	primitiveA = SD_BottStruc_BackMid,
+	primitiveB = SD_BottStruc_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_36;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_36,
+	primitiveA = SD_BottStruc_DownBack,
+	primitiveB = SD_NZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_37;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_37,
+	primitiveA = SD_BattSuppSpacer_4,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_38;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_38,
+	primitiveA = SD_Battery,
+	primitiveB = SD_BottStruc_BackMid,
+	surfaceA = 5,
+	surfaceB = 6,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_39;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_39,
+	primitiveA = SD_BottStruc_DownFront,
+	primitiveB = SD_BottStruc_R,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_40;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_40,
+	primitiveA = SD_BottStruc_DownFront,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 6,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_41;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_41,
+	primitiveA = SD_BottStruc_L,
+	primitiveB = SD_Slider_L,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_42;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_42,
+	primitiveA = SD_BottStruc_L,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_43;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_43,
+	primitiveA = SD_BottStruc_L,
+	primitiveB = SD_NX_Lateral_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_44;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_44,
+	primitiveA = SD_BottStruc_L,
+	primitiveB = SD_BottStruc_Up,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_45;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_45,
+	primitiveA = SD_BottStruc_L,
+	primitiveB = SD_NZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_46;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_46,
+	primitiveA = SD_BottStruc_R,
+	primitiveB = SD_Slider_R,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_47;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_47,
+	primitiveA = SD_BottStruc_R,
+	primitiveB = SD_BottStruc_Up,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_48;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_48,
+	primitiveA = SD_BottStruc_R,
+	primitiveB = SD_NZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_49;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_49,
+	primitiveA = SD_BottStruc_R,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 6,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_50;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_50,
+	primitiveA = SD_BottStruc_R,
+	primitiveB = SD_PX_Lateral_Board,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_51;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_51,
+	primitiveA = SD_BottStruc_Up,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_52;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_52,
+	primitiveA = SD_BottStruc_Up,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 6,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_53;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_53,
+	primitiveA = SD_J1OBCPL_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_54;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_54,
+	primitiveA = SD_BottStruc_Up,
+	primitiveB = SD_NZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_55;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_55,
+	primitiveA = SD_J1EPSOBC_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_56;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_56,
+	primitiveA = SD_J1OBCPL_VC,
+	primitiveB = SD_PCB_PL,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_57;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_57,
+	primitiveA = SD_J1EPSOBC_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_58;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_58,
+	primitiveA = SD_Bottom_Board,
+	primitiveB = SD_Slider_Back,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_59;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_59,
+	primitiveA = SD_Bottom_Board,
+	primitiveB = SD_Slider_Front,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_60;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_60,
+	primitiveA = SD_Bottom_Board,
+	primitiveB = SD_Slider_L,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_61;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_61,
+	primitiveA = SD_Bottom_Board,
+	primitiveB = SD_Slider_R,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_62;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_62,
+	primitiveA = SD_J2ADCSEPS_VC,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_63;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_63,
+	primitiveA = SD_J1ADCSEPS_VC,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_64;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_64,
+	primitiveA = SD_J1ADCSEPS_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_65;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_65,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux4a,
+	surfaceA = 6,
+	surfaceB = 6,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_66;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_66,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux3b,
+	surfaceA = 6,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_67;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_67,
+	primitiveA = SD_PLSupp_Aux4a,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_68;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_68,
+	primitiveA = SD_PLSupp_Aux4a,
+	primitiveB = SD_PLSupp_Aux4b,
+	surfaceA = 6,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_69;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_69,
+	primitiveA = SD_PLSupp_Aux4b,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_70;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_70,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux1b,
+	surfaceA = 5,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_71;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_71,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux2a,
+	surfaceA = 5,
+	surfaceB = 6,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_72;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_72,
+	primitiveA = SD_PLSupp_Aux1a,
+	primitiveB = SD_PLSupp_Aux1b,
+	surfaceA = 6,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_73;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_73,
+	primitiveA = SD_PLSupp_Aux2a,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_74;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_74,
+	primitiveA = SD_PLSupp_Aux2b,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_75;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_75,
+	primitiveA = SD_PLSupp_Aux3a,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_76;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_76,
+	primitiveA = SD_PLSupp_Aux1a,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_77;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_77,
+	primitiveA = SD_PLSupp_Aux3b,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_78;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_78,
+	primitiveA = SD_PLSupp_Aux3b,
+	primitiveB = SD_PX_Lateral_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_79;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_79,
+	primitiveA = SD_PLSupp_Aux3a,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_80;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_80,
+	primitiveA = SD_PLSupp_Aux1b,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_81;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_81,
+	primitiveA = SD_PLSupp_Aux2a,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_82;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_82,
+	primitiveA = SD_PLSupp_Aux3a,
+	primitiveB = SD_PLSupp_Aux3b,
+	surfaceA = 6,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_83;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_83,
+	primitiveA = SD_PLSupp_Aux3a,
+	primitiveB = SD_PX_Lateral_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_84;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_84,
+	primitiveA = SD_PCB_PLAntenna,
+	primitiveB = SD_PLSupp_Top,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_85;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_85,
+	primitiveA = SD_PLSupp_Aux2a,
+	primitiveB = SD_PLSupp_Aux2b,
+	surfaceA = 6,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_86;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_86,
+	primitiveA = SD_PLSupp_Aux2b,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_87;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_87,
+	primitiveA = SD_PLSupp_Aux4a,
+	primitiveB = SD_PX_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_88;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_88,
+	primitiveA = SD_PLSupp_Mid,
+	primitiveB = SD_PLSupp_Top,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_89;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_89,
+	primitiveA = SD_PLSupp_Mid,
+	primitiveB = SD_PX_Lateral_Board,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_90;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_90,
+	primitiveA = SD_PLSupp_Mid,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 6,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_91;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_91,
+	primitiveA = SD_J3ADCSEPS_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_92;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_92,
+	primitiveA = SD_J4EPSOBC_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_93;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_93,
+	primitiveA = SD_J2EPSOBC_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_94;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_94,
+	primitiveA = SD_J3OBCPL_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_95;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_95,
+	primitiveA = SD_J3EPSOBC_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_96;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_96,
+	primitiveA = SD_J3EPSOBC_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_97;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_97,
+	primitiveA = SD_J3OBCPL_VC,
+	primitiveB = SD_PCB_PL,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_98;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_98,
+	primitiveA = SD_J4EPSOBC_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_99;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_99,
+	primitiveA = SD_J2EPSOBC_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_100;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_100,
+	primitiveA = SD_J4ADCSEPS_VC,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_101;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_101,
+	primitiveA = SD_J2OBCPL_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_102;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_102,
+	primitiveA = SD_J2ADCSEPS_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_103;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_103,
+	primitiveA = SD_J3ADCSEPS_VC,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_104;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_104,
+	primitiveA = SD_J2OBCPL_VC,
+	primitiveB = SD_PCB_PL,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_105;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_105,
+	primitiveA = SD_J4ADCSEPS_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_106;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_106,
+	primitiveA = SD_J4OBCPL_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_107;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_107,
+	primitiveA = SD_KBand_Support,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_108;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_108,
+	primitiveA = SD_KBand_Support,
+	primitiveB = SD_PCB_PL,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_109;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_109,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_ADCStoEPS2,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_110;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_110,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_ADCStoEPS1,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_111;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_111,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_ADCStoEPS3,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_112;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_112,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_ADCStoEPS4,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_113;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_113,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_Spacer_OBCtoPL1,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_114;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_114,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_Spacer_OBCtoPL2,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_115;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_115,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_Spacer_OBCtoPL3,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_116;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_116,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_Spacer_OBCtoPL4,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_117;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_117,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_SP_NZ_Board,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_118;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_118,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_SP_NX_Board,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_119;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_119,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_Slider_Back,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_120;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_120,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_Slider_L,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_121;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_121,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_Slider_R,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_122;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_122,
+	primitiveA = SD_PCB_AOCS,
+	primitiveB = SD_Spacer_ADCStoEPS2,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_123;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_123,
+	primitiveA = SD_PCB_AOCS,
+	primitiveB = SD_Spacer_ADCStoEPS3,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_124;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_124,
+	primitiveA = SD_PCB_AOCS,
+	primitiveB = SD_Spacer_ADCStoEPS1,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_125;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_125,
+	primitiveA = SD_PCB_AOCS,
+	primitiveB = SD_Spacer_ADCStoEPS4,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_126;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_126,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_EPStoOBC1,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_127;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_127,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_EPStoOBC2,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_128;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_128,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_EPStoOBC3,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_129;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_129,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_EPStoOBC4,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_130;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_130,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_OBCtoPL2,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_131;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_131,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_OBCtoPL1,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_132;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_132,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_OBCtoPL3,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_133;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_133,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_OBCtoPL4,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_134;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_134,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_PLSupp_Aux1a,
+	surfaceA = 2,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_135;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_135,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_PLSupp_Aux4a,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_136;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_136,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_PLSupp_Aux4b,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_137;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_137,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_138;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_138,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 2,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_139;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_139,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_PLSupp_Aux1b,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_140;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_140,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_PLSupp_Aux1a,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_141;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_141,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_PLSupp_Aux2a,
+	surfaceA = 2,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_142;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_142,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_143;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_143,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_Slider_L,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_144;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_144,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_PX_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_145;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_145,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_NZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_146;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_146,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_EPStoOBC3,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_147;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_147,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_EPStoOBC2,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_148;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_148,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_EPStoOBC1,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_149;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_149,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_EPStoOBC4,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_150;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_150,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux2b,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_151;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_151,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux3a,
+	surfaceA = 3,
+	surfaceB = 6,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_152;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_152,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux1a,
+	surfaceA = 4,
+	surfaceB = 6,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_153;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_153,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux4b,
+	surfaceA = 4,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+/* ESATAN-TMS version 2022, run date 19:10 Thu 20 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+DELETE test_Remove;
+PURGE_MODEL()
+   /* Error: current function is purge_model */
+   /* Model is not defined*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+/* ESATAN-TMS version 2022, run date 10:10 Fri 21 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+/* /* END_MODEL */ */
+/* ESATAN-TMS version 2022, run date 10:14 Mon 24 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+RENAME(
+    old_name = "SD_Slider_Board",
+    new_name = "slider_board"
+);
+GEOMETRY solar_panels;
+solar_panels = SD_SP_NX_Board + SD_SP_NY_Board + SD_SP_NZ_Board + SD_SP_PX_Board + SD_SP_PZ_Board;
+GEOMETRY lateral_bot_boards;
+lateral_bot_boards = SD_PZ_Lateral_Board + SD_PX_Lateral_Board + SD_NZ_Lateral_Board + SD_NX_Lateral_Board;
+DELETE_GEOMETRY (geometry = SD_Battery_Support, recursive = FALSE, unassign = FALSE);
+GEOMETRY battery_and_support;
+battery_and_support = SD_BattSuppSpacer_1 + SD_BattSuppSpacer_2 + SD_BattSuppSpacer_3 + SD_BattSuppSpacer_4 + SD_Battery + SD_BottStruc_BackMid + SD_BottStruc_DownBack + SD_BottStruc_DownFront + SD_BottStruc_L + SD_BottStruc_R + SD_BottStruc_Up;
+GEOMETRY vertical_connectors;
+vertical_connectors = SD_J1ADCSEPS_VC + SD_J1EPSOBC_VC + SD_J1OBCPL_VC + SD_J2EPSOBC_VC + SD_J2OBCPL_VC + SD_J3EPSOBC_VC + SD_J3OBCPL_VC + SD_J4EPSOBC_VC + SD_J2ADCSEPS_VC + SD_J3ADCSEPS_VC + SD_J4ADCSEPS_VC + SD_J4OBCPL_VC;
+GEOMETRY pcb_stack;
+pcb_stack = SD_PCB_AOCS + SD_PCB_EPS + SD_PCB_OBCCOMMS + SD_PCB_PL;
+GEOMETRY k_band_struc_and_top;
+k_band_struc_and_top = SD_PLSupp_Aux1a + SD_PLSupp_Top + SD_PLSupp_Mid + SD_PLSupp_Aux4b + SD_PLSupp_Aux4a + SD_PLSupp_Aux3b + SD_PLSupp_Aux3a + SD_PLSupp_Aux2b + SD_PLSupp_Aux2a + SD_PLSupp_Aux1b;
+pcb_stack = SD_PCB_AOCS + SD_PCB_EPS + SD_PCB_OBCCOMMS + SD_PCB_PL + SD_MTQ_PY_Board;
+GEOMETRY spacers;
+spacers = SD_Spacer_OBCtoPL4 + SD_Spacer_OBCtoPL3 + SD_Spacer_OBCtoPL2 + SD_Spacer_OBCtoPL1 + SD_Spacer_EPStoOBC4 + SD_Spacer_EPStoOBC3 + SD_Spacer_EPStoOBC2 + SD_Spacer_EPStoOBC1 + SD_Spacer_ADCStoEPS4 + SD_Spacer_ADCStoEPS3 + SD_Spacer_ADCStoEPS2 + SD_Spacer_ADCStoEPS1;
+lateral_bot_boards = SD_PZ_Lateral_Board + SD_PX_Lateral_Board + SD_NZ_Lateral_Board + SD_NX_Lateral_Board + SD_Bottom_Board;
+GEOMETRY killswitches;
+killswitches = SD_KS_PX + SD_KS_NX;
+GEOMETRY kband_pltop;
+kband_pltop = SD_PCB_PLAntenna + SD_KBand_Support;
+GEOMETRY ngtn;
+ngtn = NGTN_PLUNDER_U7 + NGTN_PLUNDER_U5 + NGTN_PLUNDER_U4 + NGTN_PLUNDER_U3 + NGTN_PLUNDER_U1 + NGTN_PLTOP_Y1 + NGTN_PLTOP_U2 + NGTN_PLTOP_U1 + NGTN_OBC_SX1262 + NGTN_OBC_STM32 + NGTN_EPS_U4 + NGTN_EPS_U3 + NGTN_EPS_U2 + NGTN_EPS_U1 + NGTN_EPS_IC2 + NGTN_EPS_IC1 + NGTN_Batt_Heater + NGTN_ADCS_U7 + NGTN_ADCS_U6 + NGTN_ADCS_U5 + NGTN_ADCS_U4 + NGTN_ADCS_U3 + NGTN_ADCS_U2 + NGTN_ADCS_U1;
+PoCat3 = ASSEMBLE(
+    ref_comp = lateral_bot_boards,
+    moving_comp = SH_COMMS_Antenna,
+    orientation = "NADIR",
+    rot_point = [0.0228, 0.02198, -0.125],
+    rot_axis = [1.0, 0.0, 0.0],
+    rot_min_ang = 0.0,
+    rot_max_ang = 360.0,
+    point_vect = [0.0, 1.0, .0]
+);
+CALCULATE_CONDUCTORS()
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_AOCS_U1 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_AOCS_U2 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_AOCS_U3 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_AOCS_U4 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_AOCS_U5 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_AOCS_U6 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_AOCS_U7 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_EPS_IC1 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_EPS_IC2 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_EPS_U1 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_EPS_U2 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_EPS_U3 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_EPS_U4 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_OBCCOMMS_STM32 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_OBCCOMMS_SX1262 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_PLBot_U1 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_PLBot_U3 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_PLBot_U4 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_PLBot_U5 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_PLBot_U7 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_PLTop_U1 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_PLTop_U2 references non-existent primitive/face/node*/
+
+   /* Error: current function is addConductor */
+   /* Error: Conductor UDC_PLTop_Y1 references non-existent primitive/face/node*/
+;
+CONDUCTIVE_INTERFACE NZLB_to_PXLB;
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZLB_to_PXLB,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_PX_Lateral_Board,
+    surfaceA = 1,
+    surfaceB = 6,
+    connect_type = "FUSED");
+
+CONDUCTIVE_INTERFACE test;
+DELETE NZLB_to_PXLB;
+DELETE test;
+
+CONDUCTIVE_INTERFACE ci_1;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_1,
+	primitiveA = SD_PX_Lateral_Board,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_2;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_2,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_PX_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_3;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_3,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 2,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_4;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_4,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_NZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+GEOMETRY Rigid;
+Rigid = vertical_connectors + spacers + solar_panels + slider_board + pcb_stack + ngtn + killswitches + kband_pltop + k_band_struc_and_top + battery_and_support;
+PoCat3 = ASSEMBLE(
+    ref_comp = Rigid,
+    moving_comp = SH_COMMS_Antenna,
+    orientation = "NADIR",
+    rot_point = [0.0228, 0.02198, -0.125],
+    rot_axis = [1.0, 0.0, 0.0],
+    rot_min_ang = 0.0,
+    rot_max_ang = 360.0,
+    point_vect = [0.0, 1.0, 0.0]
+);
+
+CONDUCTIVE_INTERFACE ci_A1;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A1,
+	primitiveA = SD_PLSupp_Aux2a,
+	primitiveB = SD_PLSupp_Aux2b,
+	surfaceA = 6,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A2;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A2,
+	primitiveA = SD_PLSupp_Aux3a,
+	primitiveB = SD_PLSupp_Aux3b,
+	surfaceA = 6,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A3;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A3,
+	primitiveA = SD_PLSupp_Aux4a,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A4;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A4,
+	primitiveA = SD_PLSupp_Mid,
+	primitiveB = SD_PLSupp_Top,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A5;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A5,
+	primitiveA = SD_PLSupp_Aux2a,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A6;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A6,
+	primitiveA = SD_PLSupp_Aux2b,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A7;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A7,
+	primitiveA = SD_PLSupp_Aux3b,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A8;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A8,
+	primitiveA = SD_PLSupp_Aux4a,
+	primitiveB = SD_PLSupp_Aux4b,
+	surfaceA = 6,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A9;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A9,
+	primitiveA = SD_PLSupp_Aux4b,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A10;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A10,
+	primitiveA = SD_PLSupp_Aux3a,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A11;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A11,
+	primitiveA = SD_Slider_Back,
+	primitiveB = SD_Slider_R,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A12;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A12,
+	primitiveA = SD_Slider_Back,
+	primitiveB = SD_Slider_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A13;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A13,
+	primitiveA = SD_Slider_Front,
+	primitiveB = SD_Slider_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A14;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A14,
+	primitiveA = SD_Slider_Front,
+	primitiveB = SD_Slider_R,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A15;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A15,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_EPStoOBC1,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A16;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A16,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_EPStoOBC3,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A17;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A17,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_EPStoOBC2,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A18;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A18,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_EPStoOBC4,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A19;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A19,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_OBCtoPL1,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A20;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A20,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_OBCtoPL4,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A21;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A21,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_OBCtoPL2,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A22;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A22,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_OBCtoPL3,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A23;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A23,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux4b,
+	surfaceA = 4,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A24;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A24,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux1a,
+	surfaceA = 4,
+	surfaceB = 6,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A25;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A25,
+	primitiveA = SD_PCB_AOCS,
+	primitiveB = SD_Spacer_ADCStoEPS1,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A26;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A26,
+	primitiveA = SD_PCB_AOCS,
+	primitiveB = SD_Spacer_ADCStoEPS2,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A27;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A27,
+	primitiveA = SD_PCB_AOCS,
+	primitiveB = SD_Spacer_ADCStoEPS3,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A28;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A28,
+	primitiveA = SD_PCB_AOCS,
+	primitiveB = SD_Spacer_ADCStoEPS4,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A29;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A29,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_Spacer_OBCtoPL4,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A30;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A30,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_Spacer_OBCtoPL3,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A31;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A31,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_Spacer_OBCtoPL2,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A32;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A32,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_Spacer_OBCtoPL1,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A33;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A33,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux2a,
+	surfaceA = 5,
+	surfaceB = 6,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A34;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A34,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux1b,
+	surfaceA = 5,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A35;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A35,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_EPStoOBC4,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A36;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A36,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_EPStoOBC1,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A37;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A37,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_EPStoOBC2,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A38;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A38,
+	primitiveA = SD_PCB_OBCCOMMS,
+	primitiveB = SD_Spacer_EPStoOBC3,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A39;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A39,
+	primitiveA = SD_PLSupp_Aux1a,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A40;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A40,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_ADCStoEPS1,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A41;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A41,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_ADCStoEPS2,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A42;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A42,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_ADCStoEPS3,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A43;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A43,
+	primitiveA = SD_PCB_EPS,
+	primitiveB = SD_Spacer_ADCStoEPS4,
+	surfaceA = 1,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A44;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A44,
+	primitiveA = SD_PLSupp_Aux1a,
+	primitiveB = SD_PLSupp_Aux1b,
+	surfaceA = 6,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A45;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A45,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux3a,
+	surfaceA = 3,
+	surfaceB = 6,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A46;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A46,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux2b,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A47;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A47,
+	primitiveA = SD_PLSupp_Aux1b,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A48;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A48,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux3b,
+	surfaceA = 6,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A49;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A49,
+	primitiveA = SD_PCB_PL,
+	primitiveB = SD_PLSupp_Aux4a,
+	surfaceA = 6,
+	surfaceB = 6,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A50;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A50,
+	primitiveA = SD_PCB_PLAntenna,
+	primitiveB = SD_PLSupp_Top,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A51;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A51,
+	primitiveA = SD_J4ADCSEPS_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A52;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A52,
+	primitiveA = SD_J4EPSOBC_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A53;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A53,
+	primitiveA = SD_J4OBCPL_VC,
+	primitiveB = SD_PCB_PL,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A54;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A54,
+	primitiveA = SD_J3OBCPL_VC,
+	primitiveB = SD_PCB_PL,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A55;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A55,
+	primitiveA = SD_J3ADCSEPS_VC,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A56;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A56,
+	primitiveA = SD_J2OBCPL_VC,
+	primitiveB = SD_PCB_PL,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A57;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A57,
+	primitiveA = SD_J3EPSOBC_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A58;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A58,
+	primitiveA = SD_J4ADCSEPS_VC,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A59;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A59,
+	primitiveA = SD_J2ADCSEPS_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A60;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A60,
+	primitiveA = SD_J2EPSOBC_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A61;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A61,
+	primitiveA = SD_J2OBCPL_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A62;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A62,
+	primitiveA = SD_J1OBCPL_VC,
+	primitiveB = SD_PCB_PL,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A63;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A63,
+	primitiveA = SD_J3ADCSEPS_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A64;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A64,
+	primitiveA = SD_J2EPSOBC_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A65;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A65,
+	primitiveA = SD_J3EPSOBC_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A66;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A66,
+	primitiveA = SD_J2ADCSEPS_VC,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A67;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A67,
+	primitiveA = SD_J3OBCPL_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A68;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A68,
+	primitiveA = SD_J4EPSOBC_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A69;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A69,
+	primitiveA = SD_J4OBCPL_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A70;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A70,
+	primitiveA = SD_BottStruc_DownBack,
+	primitiveB = SD_Slider_L,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A71;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A71,
+	primitiveA = SD_BottStruc_DownBack,
+	primitiveB = SD_Slider_Back,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A72;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A72,
+	primitiveA = SD_BottStruc_DownBack,
+	primitiveB = SD_Slider_R,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A73;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A73,
+	primitiveA = SD_BottStruc_DownBack,
+	primitiveB = SD_BottStruc_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A74;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A74,
+	primitiveA = SD_BottStruc_R,
+	primitiveB = SD_BottStruc_Up,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A75;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A75,
+	primitiveA = SD_BottStruc_L,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A76;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A76,
+	primitiveA = SD_BottStruc_DownBack,
+	primitiveB = SD_BottStruc_R,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A77;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A77,
+	primitiveA = SD_BottStruc_BackMid,
+	primitiveB = SD_BottStruc_Up,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A78;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A78,
+	primitiveA = SD_BottStruc_DownFront,
+	primitiveB = SD_BottStruc_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A79;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A79,
+	primitiveA = SD_BottStruc_L,
+	primitiveB = SD_BottStruc_Up,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A80;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A80,
+	primitiveA = SD_BottStruc_Up,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A81;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A81,
+	primitiveA = SD_BottStruc_BackMid,
+	primitiveB = SD_BottStruc_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A82;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A82,
+	primitiveA = SD_BottStruc_R,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A83;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A83,
+	primitiveA = SD_BottStruc_BackMid,
+	primitiveB = SD_BottStruc_DownBack,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A84;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A84,
+	primitiveA = SD_Battery,
+	primitiveB = SD_BottStruc_BackMid,
+	surfaceA = 5,
+	surfaceB = 6,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A85;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A85,
+	primitiveA = SD_BottStruc_L,
+	primitiveB = SD_Slider_L,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A86;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A86,
+	primitiveA = SD_BottStruc_R,
+	primitiveB = SD_Slider_R,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A87;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A87,
+	primitiveA = SD_BottStruc_BackMid,
+	primitiveB = SD_BottStruc_R,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A88;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A88,
+	primitiveA = SD_Battery,
+	primitiveB = SD_BottStruc_R,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A89;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A89,
+	primitiveA = SD_BottStruc_DownFront,
+	primitiveB = SD_Slider_L,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A90;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A90,
+	primitiveA = SD_BottStruc_DownFront,
+	primitiveB = SD_Slider_Front,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A91;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A91,
+	primitiveA = SD_BottStruc_DownFront,
+	primitiveB = SD_Slider_R,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A92;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A92,
+	primitiveA = SD_BottStruc_DownFront,
+	primitiveB = SD_BottStruc_R,
+	surfaceA = 4,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A93;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A93,
+	primitiveA = SD_J1ADCSEPS_VC,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A94;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A94,
+	primitiveA = SD_J1ADCSEPS_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A95;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A95,
+	primitiveA = SD_J1EPSOBC_VC,
+	primitiveB = SD_PCB_EPS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A96;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A96,
+	primitiveA = SD_J1EPSOBC_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A97;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A97,
+	primitiveA = SD_J1OBCPL_VC,
+	primitiveB = SD_PCB_OBCCOMMS,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A98;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A98,
+	primitiveA = SD_Battery,
+	primitiveB = SD_BottStruc_L,
+	surfaceA = 3,
+	surfaceB = 4,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A99;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A99,
+	primitiveA = SD_BattSuppSpacer_2,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A100;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A100,
+	primitiveA = SD_BattSuppSpacer_3,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A101;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A101,
+	primitiveA = SD_BattSuppSpacer_1,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A102;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A102,
+	primitiveA = SD_BattSuppSpacer_4,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_A103;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_A103,
+	primitiveA = SD_Battery,
+	primitiveB = SD_BottStruc_Up,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+Rigid = vertical_connectors + spacers + solar_panels + slider_board + pcb_stack + ngtn + killswitches + kband_pltop + k_band_struc_and_top + battery_and_support + lateral_bot_boards;
+
+CONDUCTIVE_INTERFACE ci_B1;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B1,
+	primitiveA = SD_PLSupp_Aux3a,
+	primitiveB = SD_PX_Lateral_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B2;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B2,
+	primitiveA = SD_PLSupp_Aux2b,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B3;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B3,
+	primitiveA = SD_PX_Lateral_Board,
+	primitiveB = SD_Slider_R,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B4;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B4,
+	primitiveA = SD_PLSupp_Aux2a,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B5;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B5,
+	primitiveA = SD_PLSupp_Mid,
+	primitiveB = SD_PX_Lateral_Board,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B6;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B6,
+	primitiveA = SD_PLSupp_Aux3a,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B7;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B7,
+	primitiveA = SD_PLSupp_Aux3b,
+	primitiveB = SD_PX_Lateral_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B8;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B8,
+	primitiveA = SD_PLSupp_Aux4a,
+	primitiveB = SD_PX_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B9;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B9,
+	primitiveA = SD_PLSupp_Mid,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 6,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B10;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B10,
+	primitiveA = SD_PX_Lateral_Board,
+	primitiveB = SD_SP_PX_Board,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B11;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B11,
+	primitiveA = SD_PZ_Lateral_Board,
+	primitiveB = SD_SP_PZ_Board,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B12;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B12,
+	primitiveA = SD_PZ_Lateral_Board,
+	primitiveB = SD_Slider_L,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B13;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B13,
+	primitiveA = SD_PZ_Lateral_Board,
+	primitiveB = SD_Slider_Front,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B14;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B14,
+	primitiveA = SD_PZ_Lateral_Board,
+	primitiveB = SD_Slider_R,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B15;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B15,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_Slider_L,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B16;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B16,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_Slider_Back,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B17;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B17,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_Slider_R,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B18;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B18,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_PLSupp_Aux4a,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B19;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B19,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B20;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B20,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_PLSupp_Aux4b,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B21;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B21,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_PLSupp_Aux1a,
+	surfaceA = 2,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B22;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B22,
+	primitiveA = SD_NZ_Lateral_Board,
+	primitiveB = SD_SP_NZ_Board,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B23;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B23,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_SP_NX_Board,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B24;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B24,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_PLSupp_Mid,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B25;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B25,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_PLSupp_Aux2a,
+	surfaceA = 2,
+	surfaceB = 5,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B26;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B26,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_PLSupp_Aux1a,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B27;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B27,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_PLSupp_Aux1b,
+	surfaceA = 2,
+	surfaceB = 3,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B28;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B28,
+	primitiveA = SD_NX_Lateral_Board,
+	primitiveB = SD_Slider_L,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B29;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B29,
+	primitiveA = SD_BottStruc_R,
+	primitiveB = SD_PX_Lateral_Board,
+	surfaceA = 4,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B30;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B30,
+	primitiveA = SD_BottStruc_R,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 6,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B31;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B31,
+	primitiveA = SD_BottStruc_L,
+	primitiveB = SD_NX_Lateral_Board,
+	surfaceA = 3,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B32;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B32,
+	primitiveA = SD_BottStruc_BackMid,
+	primitiveB = SD_NZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B33;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B33,
+	primitiveA = SD_BottStruc_L,
+	primitiveB = SD_NZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B34;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B34,
+	primitiveA = SD_BottStruc_DownBack,
+	primitiveB = SD_NZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B35;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B35,
+	primitiveA = SD_BottStruc_DownFront,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 6,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B36;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B36,
+	primitiveA = SD_BottStruc_L,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 6,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B37;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B37,
+	primitiveA = SD_BottStruc_Up,
+	primitiveB = SD_NZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B38;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B38,
+	primitiveA = SD_BottStruc_Up,
+	primitiveB = SD_PZ_Lateral_Board,
+	surfaceA = 6,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B39;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B39,
+	primitiveA = SD_Bottom_Board,
+	primitiveB = SD_Slider_Front,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B40;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B40,
+	primitiveA = SD_Bottom_Board,
+	primitiveB = SD_Slider_L,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B41;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B41,
+	primitiveA = SD_Bottom_Board,
+	primitiveB = SD_Slider_R,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B42;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B42,
+	primitiveA = SD_Bottom_Board,
+	primitiveB = SD_Slider_Back,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_B43;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_B43,
+	primitiveA = SD_BottStruc_R,
+	primitiveB = SD_NZ_Lateral_Board,
+	surfaceA = 5,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+CONDUCTIVE_INTERFACE PXL_to_PZL;
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PXL_to_PZL,
+    primitiveA = SD_PX_Lateral_Board,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DELETE ci_1;
+RENAME(
+    old_name = "ci_2",
+    new_name = "NZL_to_PZL"
+);
+RENAME(
+    old_name = "NZL_to_PZL",
+    new_name = "Lat_NZ_to_PX"
+);
+RENAME(
+    old_name = "PXL_to_PZL",
+    new_name = "Lat_PX_to_PZ"
+);
+RENAME(
+    old_name = "ci_3",
+    new_name = "Lat_NX_to_PZ"
+);
+RENAME(
+    old_name = "ci_4",
+    new_name = "Lat_NX_to_NZ"
+);
+RENAME(
+    old_name = "ci_A1",
+    new_name = "KBandSup_2a_to_2b"
+);
+RENAME(
+    old_name = "KBandSup_2a_to_2b",
+    new_name = "KSupp_2a_to_2b"
+);
+RENAME(
+    old_name = "ci_A10",
+    new_name = "KBand_3a_to_mid"
+);
+RENAME(
+    old_name = "ci_A100",
+    new_name = "BatSupp3_to_MQT"
+);
+RENAME(
+    old_name = "ci_A101",
+    new_name = "BatSupp1_to_MQT"
+);
+RENAME(
+    old_name = "ci_A102",
+    new_name = "BatSupp4_to_MQT"
+);
+RENAME(
+    old_name = "ci_A103",
+    new_name = "BatSupp2_to_MQT"
+);
+RENAME(
+    old_name = "ci_A11",
+    new_name = "Slider_B_to_R"
+);
+RENAME(
+    old_name = "ci_A12",
+    new_name = "Slider_B_to_L"
+);
+RENAME(
+    old_name = "ci_A13",
+    new_name = "Slider_F_to_L"
+);
+RENAME(
+    old_name = "ci_A14",
+    new_name = "Slider_B_to_R"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_A14",
+    new_name = "Slider_F_to_R"
+);
+RENAME(
+    old_name = "ci_A15",
+    new_name = "Spacer1_OBC_to_EPS"
+);
+RENAME(
+    old_name = "Spacer1_OBC_to_EPS",
+    new_name = "EPS_to_Spacer_OBC1"
+);
+RENAME(
+    old_name = "ci_A16",
+    new_name = "EPS_to_Spacer_OBC3"
+);
+RENAME(
+    old_name = "ci_A17",
+    new_name = "EPS_to_Spacer_OBC2"
+);
+RENAME(
+    old_name = "ci_A18",
+    new_name = "EPS_to_Spacer_OBC4"
+);
+RENAME(
+    old_name = "ci_A19",
+    new_name = "OBC_to_Spacer_PL1"
+);
+RENAME(
+    old_name = "KBand_3a_to_mid",
+    new_name = "KSupp_3a_to_mid"
+);
+RENAME(
+    old_name = "ci_A2",
+    new_name = "KSupp_3a_to_3b"
+);
+RENAME(
+    old_name = "ci_A20",
+    new_name = "OBC_to_Spacer_PL4"
+);
+RENAME(
+    old_name = "ci_A21",
+    new_name = "OBC_to_Spacer_PL2"
+);
+RENAME(
+    old_name = "ci_A22",
+    new_name = "OBC_to_Spacer_PL3"
+);
+RENAME(
+    old_name = "ci_A23",
+    new_name = "PL_to_KSupp4b"
+);
+RENAME(
+    old_name = "ci_A24",
+    new_name = "PL_to_KSupp1b"
+);
+RENAME(
+    old_name = "PL_to_KSupp1b",
+    new_name = "PL_to_KSupp1a"
+);
+/* ESATAN-TMS version 2022, run date 22:47 Mon 24 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+RENAME(
+    old_name = "ci_A25",
+    new_name = "AOCS_to_Spacer_EPS1"
+);
+RENAME(
+    old_name = "ci_A26",
+    new_name = "AOCS_to_Spacer_EPS2"
+);
+RENAME(
+    old_name = "ci_A27",
+    new_name = "AOCS_to_Spacer_EPS3"
+);
+RENAME(
+    old_name = "ci_A28",
+    new_name = "AOCS_to_Spacer_EPS4"
+);
+RENAME(
+    old_name = "ci_A29",
+    new_name = "PL_to_Spacer_OBC4"
+);
+RENAME(
+    old_name = "ci_A3",
+    new_name = "KSupp_4a_to_mid"
+);
+RENAME(
+    old_name = "ci_A30",
+    new_name = "PL_to_Spacer_OBC3"
+);
+RENAME(
+    old_name = "ci_A31",
+    new_name = "PL_to_Spacer_OBC2"
+);
+RENAME(
+    old_name = "ci_A32",
+    new_name = "PL_to_Spacer_OBC1"
+);
+RENAME(
+    old_name = "ci_A33",
+    new_name = "PL_t_Ksupp2a"
+);
+RENAME(
+    old_name = "ci_A34",
+    new_name = "PL_to_KSupp1b"
+);
+RENAME(
+    old_name = "ci_A35",
+    new_name = "OBC_to_Spacer_EPS4ç"
+)
+   /* Error: current function is rename */
+   /* Names can only contain alphabetic, digits or '_'.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "PL_t_Ksupp2a",
+    new_name = "PL_to_Ksupp2a"
+);
+RENAME(
+    old_name = "ci_A35",
+    new_name = "OBC_to_Spacer_EPS4"
+);
+RENAME(
+    old_name = "ci_A36",
+    new_name = "OBC_to_Spacer_EPS1"
+);
+RENAME(
+    old_name = "ci_A37",
+    new_name = "OBC_to_Spacer_EPS2"
+);
+RENAME(
+    old_name = "ci_A38",
+    new_name = "OBC_to_Spacer_EPS3"
+);
+RENAME(
+    old_name = "ci_A39",
+    new_name = "KSupp_1a_to_mid"
+);
+RENAME(
+    old_name = "ci_A4",
+    new_name = "KSupp_mid_to_top"
+);
+RENAME(
+    old_name = "ci_A40",
+    new_name = "EPS_to_Spacer_AOCS1"
+);
+RENAME(
+    old_name = "ci_A41",
+    new_name = "EPS_to_Spacer_AOCS2"
+);
+RENAME(
+    old_name = "ci_A42",
+    new_name = "EPS_to_Spacer_AOCS3"
+);
+RENAME(
+    old_name = "ci_A43",
+    new_name = "EPS_to_Spacer_AOCS4"
+);
+RENAME(
+    old_name = "ci_A44",
+    new_name = "KSupp_1a_to_1b"
+);
+RENAME(
+    old_name = "ci_A45",
+    new_name = "PL_to_KSupp3a"
+);
+RENAME(
+    old_name = "ci_A46",
+    new_name = "PL_to_Ksupp2b"
+);
+RENAME(
+    old_name = "ci_A47",
+    new_name = "KSupp_1b_to_mid"
+);
+RENAME(
+    old_name = "ci_A48",
+    new_name = "PL_to_KSupp3b"
+);
+RENAME(
+    old_name = "ci_A49",
+    new_name = "PL_to_Ksupp4a"
+);
+RENAME(
+    old_name = "ci_A5",
+    new_name = "KSupp_2a_to_mid"
+);
+RENAME(
+    old_name = "ci_A50",
+    new_name = "PLAntenna_to_KSuppTop"
+);
+RENAME(
+    old_name = "ci_A51",
+    new_name = "EPS_J4AOCS"
+);
+RENAME(
+    old_name = "EPS_J4AOCS",
+    new_name = "EPS_to_J4AOCS"
+);
+RENAME(
+    old_name = "ci_A52",
+    new_name = "OBC_to_J4EPS"
+);
+RENAME(
+    old_name = "ci_A53",
+    new_name = "PL_to_J4OBC"
+);
+RENAME(
+    old_name = "ci_A54",
+    new_name = "PL_to_J3OBC"
+);
+RENAME(
+    old_name = "ci_A55",
+    new_name = "AOCS_to_J3EPS"
+);
+RENAME(
+    old_name = "ci_A56",
+    new_name = "PL_to_J2OBC"
+);
+RENAME(
+    old_name = "ci_A57",
+    new_name = "OBC_to_J3EPS"
+);
+RENAME(
+    old_name = "ci_A58",
+    new_name = "AOCS_to_J4EPS"
+);
+RENAME(
+    old_name = "ci_A59",
+    new_name = "EPS_to_J2AOCS"
+);
+RENAME(
+    old_name = "ci_A6",
+    new_name = "KSupp_2b_to_mid"
+);
+RENAME(
+    old_name = "ci_A60",
+    new_name = "OBC_to_J2EPS"
+);
+RENAME(
+    old_name = "ci_A61",
+    new_name = "OBC_to_J2PL"
+);
+RENAME(
+    old_name = "ci_A62",
+    new_name = "PL_to_J1OBC"
+);
+RENAME(
+    old_name = "ci_A63",
+    new_name = "EPS_to_J3AOCS"
+);
+RENAME(
+    old_name = "ci_A64",
+    new_name = "EPS_to_J2OBC"
+);
+RENAME(
+    old_name = "ci_A65",
+    new_name = "EPS_to_J3OBC"
+);
+RENAME(
+    old_name = "ci_A66",
+    new_name = "AOCS_to_J2EPS"
+);
+RENAME(
+    old_name = "ci_A67",
+    new_name = "OBC_to_J3PL"
+);
+RENAME(
+    old_name = "ci_A68",
+    new_name = "EPS_to_J3OBC"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_A68",
+    new_name = "EPS_to_J4OBC"
+);
+RENAME(
+    old_name = "ci_A69",
+    new_name = "OBC_to_J4PL"
+);
+RENAME(
+    old_name = "ci_A7",
+    new_name = "KSupp_mid_to_3b"
+);
+RENAME(
+    old_name = "ci_A70",
+    new_name = "BattSupp_DB_to_SliderL"
+);
+RENAME(
+    old_name = "BattSupp_DB_to_SliderL",
+    new_name = "BattSupp_DB_to_Slider_L"
+);
+RENAME(
+    old_name = "ci_A71",
+    new_name = "BattSupp_DB_to_Slider_B"
+);
+RENAME(
+    old_name = "ci_A72",
+    new_name = "BattSupp_DB_to_Slider_R"
+);
+RENAME(
+    old_name = "ci_A73",
+    new_name = "BattSupp_DB_to_BattStruc_L"
+);
+RENAME(
+    old_name = "BattSupp_DB_to_BattStruc_L",
+    new_name = "BattSupp_DB_to_BattSupp_L"
+);
+RENAME(
+    old_name = "ci_A74",
+    new_name = "BattSupp_R_to_BattSupp_Up"
+);
+RENAME(
+    old_name = "ci_A75",
+    new_name = "BattSup_L_to_MTQ"
+);
+RENAME(
+    old_name = "ci_A76",
+    new_name = "BattSupp_DB_to_BattStruc_R"
+);
+RENAME(
+    old_name = "ci_A77",
+    new_name = "BattSupp_BM_to_BattStruc_Up"
+);
+RENAME(
+    old_name = "ci_A78",
+    new_name = "BattSupp_DF_to_BattSupp_L"
+);
+RENAME(
+    old_name = "ci_A79",
+    new_name = "BattSupp_L_to_BattSupp_Up"
+);
+RENAME(
+    old_name = "ci_A8",
+    new_name = "KSupp_4a_to_4b"
+);
+RENAME(
+    old_name = "ci_A80",
+    new_name = "BattSupp_Up_to_MTQ"
+);
+RENAME(
+    old_name = "ci_A81",
+    new_name = "BattSupp_BM_to_BattSupp_L"
+);
+RENAME(
+    old_name = "ci_A82",
+    new_name = "BattSupp_R_to_MTQ"
+);
+RENAME(
+    old_name = "ci_A83",
+    new_name = "BattSupp_BM_to_BattSupp_DB"
+);
+RENAME(
+    old_name = "ci_A84",
+    new_name = "Battey_to_BattSupp_BM"
+);
+RENAME(
+    old_name = "ci_A85",
+    new_name = "BattSupp_L_to_Sider_L"
+);
+RENAME(
+    old_name = "ci_A86",
+    new_name = "BattSupp_R_to_Slider_R"
+);
+RENAME(
+    old_name = "ci_A87",
+    new_name = "BattSupp_BM_to_BattSupp_R"
+);
+RENAME(
+    old_name = "ci_A88",
+    new_name = "Batt_to_BattSupp_R"
+);
+RENAME(
+    old_name = "ci_A89",
+    new_name = "BattSupp_DF_to_Slider_L"
+);
+RENAME(
+    old_name = "ci_A9",
+    new_name = "KSupp_4b_to_Mid"
+);
+RENAME(
+    old_name = "ci_A90",
+    new_name = "BattSupp_DF_to_Slider_F"
+);
+RENAME(
+    old_name = "ci_A91",
+    new_name = "BattSupp_DF_to_Slider_R"
+);
+RENAME(
+    old_name = "ci_A92",
+    new_name = "BattSupp_DF_to_BattSupp_R"
+);
+RENAME(
+    old_name = "ci_A93",
+    new_name = "AOCS_to_J1EPS"
+);
+RENAME(
+    old_name = "ci_A94",
+    new_name = "EPS_to_J1AOCS"
+);
+RENAME(
+    old_name = "ci_A95",
+    new_name = "EPS_to_J1OBC"
+);
+RENAME(
+    old_name = "ci_A96",
+    new_name = "OBC_to_J1EPS"
+);
+RENAME(
+    old_name = "ci_A97",
+    new_name = "OBC_to_J1PL"
+);
+RENAME(
+    old_name = "ci_A98",
+    new_name = "Battery_To_BattSupp_L"
+);
+RENAME(
+    old_name = "ci_A99",
+    new_name = "BattSpacer2_MTQ"
+);
+RENAME(
+    old_name = "ci_B1",
+    new_name = "KSupp_3a_to_PX"
+);
+RENAME(
+    old_name = "ci_B10",
+    new_name = "PX_to_SP_PX"
+);
+RENAME(
+    old_name = "ci_B11",
+    new_name = "PZ_to_SP_PZ"
+);
+RENAME(
+    old_name = "ci_B12",
+    new_name = "PZ_to_Slider_L"
+);
+RENAME(
+    old_name = "ci_B13",
+    new_name = "PZ_to_Slider_F"
+);
+RENAME(
+    old_name = "ci_B14",
+    new_name = "PZ_to_Slider_L"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_B14",
+    new_name = "PZ_to_Slider_R"
+);
+RENAME(
+    old_name = "ci_B15",
+    new_name = "NZ_to_Slider_L"
+);
+RENAME(
+    old_name = "ci_B16",
+    new_name = "NZ_to_Slider_B"
+);
+RENAME(
+    old_name = "ci_B17",
+    new_name = "NZ_to_Slider_R"
+);
+RENAME(
+    old_name = "ci_B18",
+    new_name = "NZ_to_KSupp_4a"
+);
+RENAME(
+    old_name = "ci_B19",
+    new_name = "NZ_to_KSupp_Mid"
+);
+RENAME(
+    old_name = "ci_B2",
+    new_name = "PZ_to_KSupp_2b"
+);
+RENAME(
+    old_name = "ci_B20",
+    new_name = "NZ_to_KSupp_4b"
+);
+RENAME(
+    old_name = "ci_B21",
+    new_name = "NZ_to_KSupp_1a"
+);
+RENAME(
+    old_name = "ci_B22",
+    new_name = "NZ_to_SP_NZ"
+);
+RENAME(
+    old_name = "ci_B23",
+    new_name = "NX_to_SP_NX"
+);
+RENAME(
+    old_name = "ci_B24",
+    new_name = "NX_to_KSupp_Mid"
+);
+RENAME(
+    old_name = "ci_B25",
+    new_name = "NX_to_KSupp_2a"
+);
+RENAME(
+    old_name = "ci_B26",
+    new_name = "NX_to_KSupp_1a"
+);
+RENAME(
+    old_name = "ci_B27",
+    new_name = "NX_to_KSupp_1b"
+);
+RENAME(
+    old_name = "ci_B28",
+    new_name = "NX_to_Slider_L"
+);
+RENAME(
+    old_name = "ci_B29",
+    new_name = "BattSupp_R_to_PX"
+);
+RENAME(
+    old_name = "ci_B3",
+    new_name = "PX_to_Slider_R"
+);
+RENAME(
+    old_name = "ci_B30",
+    new_name = "PZ_to_BattSupp_R"
+);
+RENAME(
+    old_name = "ci_B31",
+    new_name = "NX_to_BattSupp_L"
+);
+RENAME(
+    old_name = "ci_B32",
+    new_name = "NZ_to_BattSupp_BM"
+);
+RENAME(
+    old_name = "ci_B33",
+    new_name = "NZ_to_BattSupp_L"
+);
+RENAME(
+    old_name = "ci_B34",
+    new_name = "NZ_BattSupp_DB"
+);
+RENAME(
+    old_name = "ci_B35",
+    new_name = "PZ_BattSupp_DF"
+);
+RENAME(
+    old_name = "ci_B36",
+    new_name = "PZ_to_BattSupp_L"
+);
+RENAME(
+    old_name = "ci_B37",
+    new_name = "NZ_to_BattSupp_Up"
+);
+RENAME(
+    old_name = "ci_B38",
+    new_name = "NZ_to_BattSupp_Up"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_B38",
+    new_name = "PZ_to_BattSupp_Up"
+);
+RENAME(
+    old_name = "ci_B39",
+    new_name = "Slider_F_to_Bottom"
+);
+RENAME(
+    old_name = "ci_B4",
+    new_name = "PZ_to_KSupp2a"
+);
+RENAME(
+    old_name = "ci_B40",
+    new_name = "Slider_L_to_Bottom"
+);
+RENAME(
+    old_name = "ci_B41",
+    new_name = "Slider_R_to_Bottom"
+);
+RENAME(
+    old_name = "ci_B42",
+    new_name = "Slider_B_to_Bottom"
+);
+RENAME(
+    old_name = "ci_B43",
+    new_name = "NZ_to_BattSupp_R"
+);
+RENAME(
+    old_name = "ci_B5",
+    new_name = "PX_to_KSupp_Mid"
+);
+RENAME(
+    old_name = "ci_B6",
+    new_name = "PZ_to_KSupp_3a"
+);
+RENAME(
+    old_name = "ci_B7",
+    new_name = "PX_to_KSupp_3b"
+);
+RENAME(
+    old_name = "ci_B8",
+    new_name = "PX_to_KSupp_4a"
+);
+RENAME(
+    old_name = "ci_B9",
+    new_name = "PX_to_KSupp_Mid"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_B9",
+    new_name = "PZ_to_KSupp_Mid"
+);
