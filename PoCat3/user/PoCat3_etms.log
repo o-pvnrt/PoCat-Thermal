@@ -14123,7 +14123,7 @@ PURGE_MODEL()
 ;
 /* ESATAN-TMS version 2022, run date 10:10 Fri 21 Mar 2025 */
 /* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
-/* /* END_MODEL */ */
+/* /* /* END_MODEL */ */ */
 /* ESATAN-TMS version 2022, run date 10:14 Mon 24 Mar 2025 */
 /* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
 RENAME(
@@ -16465,4 +16465,174 @@ RENAME(
 RENAME(
     old_name = "ci_B9",
     new_name = "PZ_to_KSupp_Mid"
+);
+/* ESATAN-TMS version 2022, run date 10:03 Tue 25 Mar 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+CONDUCTIVE_INTERFACE Bottom_to_SP_NY;
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_SP_NY,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_SP_NY_Board,
+    surfaceA = 1,
+    surfaceB = 1,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_SP_NY,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_SP_NY_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_SP_NY,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_SP_NY_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_SP_NY,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_SP_NY_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+CONDUCTIVE_INTERFACE Bottom_to_KS_L;
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_KS_L,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_KS_NX,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+CONDUCTIVE_INTERFACE Bottom_to_KS_P;
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_KS_P,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_KS_PX,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_KS_P,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_KS_PX,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+RENAME(
+    old_name = "Bottom_to_KS_L",
+    new_name = "Bottom_to_KS_N"
+);
+CONDUCTIVE_INTERFACE Antenna_to_PX;
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Antenna_to_PX,
+    primitiveA = SH_COMMS_Antenna,
+    primitiveB = SD_PX_Lateral_Board,
+    surfaceA = 2,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Antenna_to_PX,
+    primitiveA = SH_COMMS_Antenna,
+    primitiveB = SD_PX_Lateral_Board,
+    surfaceA = 2,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+CONDUCTIVE_INTERFACE BattSpacer2_AOCS;
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer2_AOCS,
+    primitiveA = SD_BattSuppSpacer_2,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 4,
+    surfaceB = 1,
+    connect_type = "FUSED");
+
+CONDUCTIVE_INTERFACE BattSpacer4_AOCS;
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer4_AOCS,
+    primitiveA = SD_BattSuppSpacer_4,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 4,
+    surfaceB = 1,
+    connect_type = "FUSED");
+
+CONDUCTIVE_INTERFACE BattSpacer3_AOCS;
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer3_AOCS,
+    primitiveA = SD_BattSuppSpacer_3,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 4,
+    surfaceB = 1,
+    connect_type = "FUSED");
+
+CONDUCTIVE_INTERFACE BattSpacer1_AOCS;
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer1_AOCS,
+    primitiveA = SD_BattSuppSpacer_1,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 4,
+    surfaceB = 1,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer1_AOCS,
+    primitiveA = SD_BattSuppSpacer_1,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 4,
+    surfaceB = 1,
+    connect_type = "FUSED");
+
+RENAME(
+    old_name = "BatSupp1_to_MQT",
+    new_name = "BattSpacer1_to_MQT"
+);
+RENAME(
+    old_name = "BatSupp2_to_MQT",
+    new_name = "BattSpacer2_to_MQT"
+);
+RENAME(
+    old_name = "BatSupp3_to_MQT",
+    new_name = "BattSpacer_to_MQT"
+);
+RENAME(
+    old_name = "BatSupp4_to_MQT",
+    new_name = "BattSpacer4_to_MQT"
+);
+RENAME(
+    old_name = "BattSpacer1_AOCS",
+    new_name = "BattSpacer1_to_AOCS"
+);
+RENAME(
+    old_name = "BattSpacer2_AOCS",
+    new_name = "BattSpacer2_to_AOCS"
+);
+RENAME(
+    old_name = "BattSpacer2_MTQ",
+    new_name = "BattSpacer2_to_MTQ"
+);
+RENAME(
+    old_name = "BattSpacer3_AOCS",
+    new_name = "BattSpacer3_to_AOCS"
+);
+RENAME(
+    old_name = "BattSpacer4_AOCS",
+    new_name = "BattSpacer4_to_AOCS"
+);
+RENAME(
+    old_name = "PZ_BattSupp_DF",
+    new_name = "PZ_to_BattSupp_DF"
+);
+RENAME(
+    old_name = "NZ_BattSupp_DB",
+    new_name = "NZ_to_BattSupp_DB"
 );
