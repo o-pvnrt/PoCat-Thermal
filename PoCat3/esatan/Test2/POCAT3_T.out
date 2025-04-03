@@ -1,0 +1,14 @@
+@                          
+@---------------------------------------------------- | MESSAGE    2 |-
+@                          
+@@@@  FATAL ERROR          
+@                          
+@     Problem............: Singular submatrix encountered - run aborted
+@                          A group of nodes are connected to each other 
+@                          but not to a boundary - including node      
+@                          1492 of submodel POCAT3_TEST2
+@                          
+@     Reference..........: (S3slve,   1)
+@                          
+@----------------------------------------------------------------------
+@                          

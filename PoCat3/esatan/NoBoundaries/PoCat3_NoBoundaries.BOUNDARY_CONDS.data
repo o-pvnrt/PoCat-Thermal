@@ -1,0 +1,317 @@
+# Results Generated from
+# ESATAN-TMS 2022, run date 10:26 Mon 31 Mar 2025
+# Model name: PoCat3        Analysis case: NoBoundaries
+C
+C Boundary Condition Temperature - Test
+      CALL STATST('N133','B')
+      T133 = 2.D+01
+      CALL STATST('N134','B')
+      T134 = 2.D+01
+      CALL STATST('N135','B')
+      T135 = 2.D+01
+      CALL STATST('N136','B')
+      T136 = 2.D+01
+      CALL STATST('N137','B')
+      T137 = 2.D+01
+      CALL STATST('N138','B')
+      T138 = 2.D+01
+      CALL STATST('N139','B')
+      T139 = 2.D+01
+      CALL STATST('N140','B')
+      T140 = 2.D+01
+      CALL STATST('N141','B')
+      T141 = 2.D+01
+      CALL STATST('N142','B')
+      T142 = 2.D+01
+      CALL STATST('N143','B')
+      T143 = 2.D+01
+      CALL STATST('N144','B')
+      T144 = 2.D+01
+      CALL STATST('N145','B')
+      T145 = 2.D+01
+      CALL STATST('N146','B')
+      T146 = 2.D+01
+      CALL STATST('N147','B')
+      T147 = 2.D+01
+      CALL STATST('N148','B')
+      T148 = 2.D+01
+      CALL STATST('N149','B')
+      T149 = 2.D+01
+      CALL STATST('N150','B')
+      T150 = 2.D+01
+      CALL STATST('N151','B')
+      T151 = 2.D+01
+      CALL STATST('N152','B')
+      T152 = 2.D+01
+      CALL STATST('N153','B')
+      T153 = 2.D+01
+      CALL STATST('N154','B')
+      T154 = 2.D+01
+      CALL STATST('N155','B')
+      T155 = 2.D+01
+      CALL STATST('N156','B')
+      T156 = 2.D+01
+      CALL STATST('N157','B')
+      T157 = 2.D+01
+      CALL STATST('N158','B')
+      T158 = 2.D+01
+      CALL STATST('N159','B')
+      T159 = 2.D+01
+      CALL STATST('N160','B')
+      T160 = 2.D+01
+      CALL STATST('N161','B')
+      T161 = 2.D+01
+      CALL STATST('N162','B')
+      T162 = 2.D+01
+      CALL STATST('N163','B')
+      T163 = 2.D+01
+      CALL STATST('N164','B')
+      T164 = 2.D+01
+      CALL STATST('N165','B')
+      T165 = 2.D+01
+      CALL STATST('N166','B')
+      T166 = 2.D+01
+      CALL STATST('N167','B')
+      T167 = 2.D+01
+      CALL STATST('N168','B')
+      T168 = 2.D+01
+      CALL STATST('N169','B')
+      T169 = 2.D+01
+      CALL STATST('N170','B')
+      T170 = 2.D+01
+      CALL STATST('N171','B')
+      T171 = 2.D+01
+      CALL STATST('N211','B')
+      T211 = 2.D+01
+      CALL STATST('N212','B')
+      T212 = 2.D+01
+      CALL STATST('N213','B')
+      T213 = 2.D+01
+      CALL STATST('N214','B')
+      T214 = 2.D+01
+      CALL STATST('N215','B')
+      T215 = 2.D+01
+      CALL STATST('N216','B')
+      T216 = 2.D+01
+      CALL STATST('N217','B')
+      T217 = 2.D+01
+      CALL STATST('N218','B')
+      T218 = 2.D+01
+      CALL STATST('N219','B')
+      T219 = 2.D+01
+      CALL STATST('N220','B')
+      T220 = 2.D+01
+      CALL STATST('N221','B')
+      T221 = 2.D+01
+      CALL STATST('N222','B')
+      T222 = 2.D+01
+      CALL STATST('N223','B')
+      T223 = 2.D+01
+      CALL STATST('N224','B')
+      T224 = 2.D+01
+      CALL STATST('N225','B')
+      T225 = 2.D+01
+      CALL STATST('N226','B')
+      T226 = 2.D+01
+      CALL STATST('N227','B')
+      T227 = 2.D+01
+      CALL STATST('N228','B')
+      T228 = 2.D+01
+      CALL STATST('N229','B')
+      T229 = 2.D+01
+      CALL STATST('N230','B')
+      T230 = 2.D+01
+      CALL STATST('N231','B')
+      T231 = 2.D+01
+      CALL STATST('N232','B')
+      T232 = 2.D+01
+      CALL STATST('N233','B')
+      T233 = 2.D+01
+      CALL STATST('N234','B')
+      T234 = 2.D+01
+      CALL STATST('N235','B')
+      T235 = 2.D+01
+      CALL STATST('N236','B')
+      T236 = 2.D+01
+      CALL STATST('N237','B')
+      T237 = 2.D+01
+      CALL STATST('N238','B')
+      T238 = 2.D+01
+      CALL STATST('N239','B')
+      T239 = 2.D+01
+      CALL STATST('N240','B')
+      T240 = 2.D+01
+      CALL STATST('N241','B')
+      T241 = 2.D+01
+      CALL STATST('N242','B')
+      T242 = 2.D+01
+      CALL STATST('N243','B')
+      T243 = 2.D+01
+      CALL STATST('N244','B')
+      T244 = 2.D+01
+      CALL STATST('N245','B')
+      T245 = 2.D+01
+      CALL STATST('N246','B')
+      T246 = 2.D+01
+      CALL STATST('N247','B')
+      T247 = 2.D+01
+      CALL STATST('N248','B')
+      T248 = 2.D+01
+      CALL STATST('N249','B')
+      T249 = 2.D+01
+      CALL STATST('N250','B')
+      T250 = 2.D+01
+      CALL STATST('N251','B')
+      T251 = 2.D+01
+      CALL STATST('N252','B')
+      T252 = 2.D+01
+      CALL STATST('N253','B')
+      T253 = 2.D+01
+      CALL STATST('N254','B')
+      T254 = 2.D+01
+      CALL STATST('N255','B')
+      T255 = 2.D+01
+      CALL STATST('N256','B')
+      T256 = 2.D+01
+      CALL STATST('N257','B')
+      T257 = 2.D+01
+      CALL STATST('N258','B')
+      T258 = 2.D+01
+      CALL STATST('N259','B')
+      T259 = 2.D+01
+      CALL STATST('N260','B')
+      T260 = 2.D+01
+      CALL STATST('N261','B')
+      T261 = 2.D+01
+      CALL STATST('N262','B')
+      T262 = 2.D+01
+      CALL STATST('N263','B')
+      T263 = 2.D+01
+      CALL STATST('N264','B')
+      T264 = 2.D+01
+      CALL STATST('N265','B')
+      T265 = 2.D+01
+      CALL STATST('N266','B')
+      T266 = 2.D+01
+      CALL STATST('N267','B')
+      T267 = 2.D+01
+      CALL STATST('N268','B')
+      T268 = 2.D+01
+      CALL STATST('N269','B')
+      T269 = 2.D+01
+      CALL STATST('N270','B')
+      T270 = 2.D+01
+      CALL STATST('N271','B')
+      T271 = 2.D+01
+      CALL STATST('N272','B')
+      T272 = 2.D+01
+      CALL STATST('N273','B')
+      T273 = 2.D+01
+      CALL STATST('N274','B')
+      T274 = 2.D+01
+      CALL STATST('N275','B')
+      T275 = 2.D+01
+      CALL STATST('N276','B')
+      T276 = 2.D+01
+      CALL STATST('N277','B')
+      T277 = 2.D+01
+      CALL STATST('N278','B')
+      T278 = 2.D+01
+      CALL STATST('N279','B')
+      T279 = 2.D+01
+      CALL STATST('N280','B')
+      T280 = 2.D+01
+      CALL STATST('N281','B')
+      T281 = 2.D+01
+      CALL STATST('N282','B')
+      T282 = 2.D+01
+      CALL STATST('N283','B')
+      T283 = 2.D+01
+      CALL STATST('N284','B')
+      T284 = 2.D+01
+      CALL STATST('N285','B')
+      T285 = 2.D+01
+      CALL STATST('N286','B')
+      T286 = 2.D+01
+      CALL STATST('N287','B')
+      T287 = 2.D+01
+      CALL STATST('N288','B')
+      T288 = 2.D+01
+      CALL STATST('N289','B')
+      T289 = 2.D+01
+      CALL STATST('N290','B')
+      T290 = 2.D+01
+      CALL STATST('N291','B')
+      T291 = 2.D+01
+      CALL STATST('N292','B')
+      T292 = 2.D+01
+      CALL STATST('N293','B')
+      T293 = 2.D+01
+      CALL STATST('N294','B')
+      T294 = 2.D+01
+      CALL STATST('N295','B')
+      T295 = 2.D+01
+      CALL STATST('N296','B')
+      T296 = 2.D+01
+      CALL STATST('N297','B')
+      T297 = 2.D+01
+      CALL STATST('N298','B')
+      T298 = 2.D+01
+      CALL STATST('N299','B')
+      T299 = 2.D+01
+      CALL STATST('N300','B')
+      T300 = 2.D+01
+      CALL STATST('N301','B')
+      T301 = 2.D+01
+      CALL STATST('N302','B')
+      T302 = 2.D+01
+      CALL STATST('N303','B')
+      T303 = 2.D+01
+      CALL STATST('N304','B')
+      T304 = 2.D+01
+      CALL STATST('N305','B')
+      T305 = 2.D+01
+      CALL STATST('N306','B')
+      T306 = 2.D+01
+      CALL STATST('N307','B')
+      T307 = 2.D+01
+      CALL STATST('N308','B')
+      T308 = 2.D+01
+      CALL STATST('N309','B')
+      T309 = 2.D+01
+      CALL STATST('N310','B')
+      T310 = 2.D+01
+      CALL STATST('N311','B')
+      T311 = 2.D+01
+      CALL STATST('N312','B')
+      T312 = 2.D+01
+      CALL STATST('N313','B')
+      T313 = 2.D+01
+      CALL STATST('N314','B')
+      T314 = 2.D+01
+      CALL STATST('N315','B')
+      T315 = 2.D+01
+      CALL STATST('N316','B')
+      T316 = 2.D+01
+      CALL STATST('N317','B')
+      T317 = 2.D+01
+      CALL STATST('N318','B')
+      T318 = 2.D+01
+      CALL STATST('N319','B')
+      T319 = 2.D+01
+      CALL STATST('N320','B')
+      T320 = 2.D+01
+      CALL STATST('N321','B')
+      T321 = 2.D+01
+      CALL STATST('N322','B')
+      T322 = 2.D+01
+      CALL STATST('N323','B')
+      T323 = 2.D+01
+      CALL STATST('N324','B')
+      T324 = 2.D+01
+      CALL STATST('N325','B')
+      T325 = 2.D+01
+      CALL STATST('N326','B')
+      T326 = 2.D+01
+      CALL STATST('N327','B')
+      T327 = 2.D+01

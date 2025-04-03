@@ -1,0 +1,64 @@
+# Results Generated from
+# ESATAN-TMS 2022, run date 10:26 Mon 31 Mar 2025
+# Model name: PoCat3        Analysis case: NoBoundaries
+    $REAL
+      #
+      # Material properties from bulk 'Bulk_Comp_Batt_Spacers' 
+      k_Bulk_Comp_001 = 15.0000;  Cp_Bulk_Comp_001 = 500.000;  Dens_Bulk_Comp_001 = 4207.00;  
+      #
+      # Material properties from bulk 'Bulk_Comp_Batt_Support' 
+      k_Bulk_Comp_002 = 0.270000;  Cp_Bulk_Comp_002 = 1010.00;  Dens_Bulk_Comp_002 = 1886.00;  
+      #
+      # Material properties from bulk 'Bulk_Comp_BatteryLiPo' 
+      k1_Bulk_Comp_003 = 2.50000;  k2_Bulk_Comp_003 = 2.50000;  k3_Bulk_Comp_003 = 0.600000;  
+      Cp_Bulk_Comp_003 = 1000.00;  Dens_Bulk_Comp_003 = 2796.00;  
+      #
+      # Material properties from bulk 'Bulk_Comp_JxSSConnectors' 
+      k_Bulk_Comp_004 = 27.9000;  Cp_Bulk_Comp_004 = 1268.00;  Dens_Bulk_Comp_004 = 2502.00;  
+      #
+      # Material properties from bulk 'Bulk_Comp_KBSupp' 
+      k_Bulk_Comp_005 = 121.300;  Cp_Bulk_Comp_005 = 925.100;  Dens_Bulk_Comp_005 = 1401.00;  
+      #
+      # Material properties from bulk 'Bulk_Comp_KS' 
+      k_Bulk_Comp_KS = 0.162000;  Cp_Bulk_Comp_KS = 1990.00;  Dens_Bulk_Comp_KS = 2631.00;  
+      #
+      # Material properties from bulk 'Bulk_Comp_SolarPanels' 
+      k_Bulk_Comp_006 = 50.0000;  Cp_Bulk_Comp_006 = 325.000;  Dens_Bulk_Comp_006 = 2273.00;  
+      #
+      # Material properties from bulk 'Bulk_Comp_Spacers' 
+      k_Bulk_Comp_007 = 15.0000;  Cp_Bulk_Comp_007 = 547.300;  Dens_Bulk_Comp_007 = 4551.92;  
+      #
+      # Material properties from bulk 'Bulk_PCB_AOCS' 
+      k1_Bulk_PCB_AOCS = 170.100;  k2_Bulk_PCB_AOCS = 170.100;  k3_Bulk_PCB_AOCS = 0.420000;  
+      Cp_Bulk_PCB_AOCS = 940.300;  Dens_Bulk_PCB_AOCS = 3125.00;  
+      #
+      # Material properties from bulk 'Bulk_PCB_BotLat' 
+      k1_Bulk_PCB_B001 = 170.900;  k2_Bulk_PCB_B001 = 170.900;  k3_Bulk_PCB_B001 = 0.450000;  
+      Cp_Bulk_PCB_B001 = 904.000;  Dens_Bulk_PCB_B001 = 2133.00;  
+      #
+      # Material properties from bulk 'Bulk_PCB_EPS' 
+      k1_Bulk_PCB_EPS = 170.100;  k2_Bulk_PCB_EPS = 170.100;  k3_Bulk_PCB_EPS = 0.420000;  
+      Cp_Bulk_PCB_EPS = 940.300;  Dens_Bulk_PCB_EPS = 2773.00;  
+      #
+      # Material properties from bulk 'Bulk_PCB_MTQPY' 
+      k1_Bulk_PCB_M001 = 170.900;  k2_Bulk_PCB_M001 = 170.900;  k3_Bulk_PCB_M001 = 0.450000;  
+      Cp_Bulk_PCB_M001 = 904.000;  Dens_Bulk_PCB_M001 = 1753.00;  
+      #
+      # Material properties from bulk 'Bulk_PCB_OBCCOMMS' 
+      k1_Bulk_PCB_O001 = 170.100;  k2_Bulk_PCB_O001 = 170.100;  k3_Bulk_PCB_O001 = 0.420000;  
+      Cp_Bulk_PCB_O001 = 940.300;  Dens_Bulk_PCB_O001 = 2734.00;  
+      #
+      # Material properties from bulk 'Bulk_PCB_PLAntenna' 
+      k1_Bulk_PCB_P001 = 88.5000;  k2_Bulk_PCB_P001 = 88.5000;  k3_Bulk_PCB_P001 = 0.380000;  
+      Cp_Bulk_PCB_P001 = 904.900;  Dens_Bulk_PCB_P001 = 3242.00;  
+      #
+      # Material properties from bulk 'Bulk_PCB_PLUnder' 
+      k1_Bulk_PCB_P002 = 110.100;  k2_Bulk_PCB_P002 = 110.100;  k3_Bulk_PCB_P002 = 0.490000;  
+      Cp_Bulk_PCB_P002 = 783.200;  Dens_Bulk_PCB_P002 = 3594.00;  
+      #
+      # Material properties from bulk 'Bulk_PCB_Slider' 
+      k1_Bulk_PCB_S001 = 46.8000;  k2_Bulk_PCB_S001 = 46.8000;  k3_Bulk_PCB_S001 = 0.350000;  
+      Cp_Bulk_PCB_S001 = 1050.40;  Dens_Bulk_PCB_S001 = 1953.00;  
+      #
+      # Material properties from bulk 'Bulk_Raw_AISI304SS' 
+      k_Bulk_Raw_A001 = 15.0000;  Cp_Bulk_Raw_A001 = 500.000;  Dens_Bulk_Raw_A001 = 8000.00;  
