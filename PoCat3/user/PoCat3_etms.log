@@ -25947,4 +25947,4507 @@ END_IF
 DELETE analysis_case_error_flag2;
 RUN_ANALYSIS (
     analysis_case = Thermal1);
+/* /* /* END_MODEL */ */ */
+/* ESATAN-TMS version 2022, run date 16:59 Sat 5 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+
+INTEGER analysis_case_error_flag2 = 0;
+
+DEFINE_ANALYSIS_CASE (
+    analysis_case = Thermal1,
+    title = "Th1",
+    solver = "ESATAN",
+    analysis_file = "PoCat3_Thermal1.d",
+    error_code =  analysis_case_error_flag2,
+    analysis_case_type = "Single Radiative Case",
+    radiative_case = Test1);
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_TEMPLATE (
+        analysis_case = Thermal1,
+        submodel_files = FALSE,
+        maxmin = FALSE,
+        error_code =  analysis_case_error_flag2,
+        execution_block = 
+"
+C
+      NLOOP=100
+      RELXCA=0.01
+      CALL SOLVFM
+C
+C
+      TIMEND=5612.749
+      OUTINT=561.2749
+      NLOOP=100
+      RELXCA=0.01
+      DTIMEI=100.0
+      CALL SOLCYC('SLCRNC',0.01D0,0.01D0,5612.749D0,100,' ','NONE')
+C
+      CALL SLCRNC
+C
+
+",
+        output_block = 
+"      CALL PRNDTB(' ', 'L, T, QS, QE, QA, QI, C', CURRENT)
+C
+      CALL DMPTMD(' ', 'NODES, CONDUCTORS, CONSTANTS', CURRENT, ' ')
+
+
+
+",
+        update = TRUE);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    SET_BOUNDARY_CONDITION(
+        analysis_case = Thermal1,
+        boundary_condition = Test,
+        applies = FALSE);
+
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    UNSET_HF_MULTIPLIERS(analysis_case = Thermal1);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_AE_EO_1,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_AE_EO_2,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_AE_EO_3,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_AE_EO_4,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_AOCS_U1,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_AOCS_U2,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_AOCS_U3,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_AOCS_U4,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_AOCS_U5,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_AOCS_U6,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_AOCS_U7,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_EO_OP_1,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_EO_OP_2,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_EO_OP_3,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_EO_OP_4,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_EPS_IC1,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_EPS_IC2,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_EPS_U1,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_EPS_U2,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_EPS_U3,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_EPS_U4,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_OBCCOMMS_STM32,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_OBCCOMMS_SX1262,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_PLBot_U1,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_PLBot_U3,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_PLBot_U4,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_PLBot_U5,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_PLBot_U7,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_PLTop_U1,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_PLTop_U2,
+        applies = FALSE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = Thermal1,
+        conductor = UDC_PLTop_Y1,
+        applies = FALSE);
+
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_ANALYSIS_FILE (
+        analysis_case = Thermal1,
+        title = "PoCat3_Thermal1",
+        error_code =  analysis_case_error_flag2,
+        results = "GL,TRANS_HF,TRANS_REF",
+        ref_averaged = TRUE,
+        ref_cyclic = TRUE,
+        hf_type = "S,A,P",
+        hf_averaged = TRUE,
+        hf_cyclic = TRUE,
+        environment = 99999,
+        environment_temperature = -270.0,
+        inactive = 99998);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    RUN_ANALYSIS(
+        analysis_case = Thermal1);
+END_IF
+
+
+DELETE analysis_case_error_flag2;
+DELETE Test1;
+DELETE Thermal1;
+RENAME(
+    old_name = "ci_1",
+    new_name = "Bottom_to_SP_NY"
+);
+RENAME(
+    old_name = "ci_2",
+    new_name = "Bottom_to_KS_PX"
+);
+RENAME(
+    old_name = "ci_3",
+    new_name = "Bottom_to_KS_NX"
+);
+GEOMETRY SD_JMTQ_AOCS;
+SD_JMTQ_AOCS = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.00254, 0.01835, -0.00383],
+    point2 = [-0.00254, 0.01835, 0.00125],
+    point4 = [0.00254, 0.01835, -0.00383],
+    point5 = [-0.00254, 0.0219, -0.00383],
+    analysis_type = "Lumped Parameter",
+    bulk = Bulk_Comp_JxSSConnectors,
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_ABS,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "BLUE_CYAN");
+
+SD_JMTQ_AOCS = ROTATE (
+    object_name = SD_JMTQ_AOCS,
+    clear = TRUE);
+
+SD_JMTQ_AOCS = SOLID_RECTANGLE_POINTS (
+    point1 = [-0.00254, 0.018, -0.00383],
+    point2 = [-0.00254, 0.018, 0.00125],
+    point4 = [0.00254, 0.018, -0.00383],
+    point5 = [-0.00254, 0.0227, -0.00383],
+    analysis_type = "Lumped Parameter",
+    bulk = Bulk_Comp_JxSSConnectors,
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_ABS,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "BLUE_CYAN");
+
+SD_JMTQ_AOCS = ROTATE (
+    object_name = SD_JMTQ_AOCS,
+    clear = TRUE);
+
+vertical_connectors = SD_J1ADCSEPS_VC + SD_J1EPSOBC_VC + SD_J1OBCPL_VC + SD_J2EPSOBC_VC + SD_J2OBCPL_VC + SD_J3EPSOBC_VC + SD_J3OBCPL_VC + SD_J4EPSOBC_VC + SD_J2ADCSEPS_VC + SD_J3ADCSEPS_VC + SD_J4ADCSEPS_VC + SD_J4OBCPL_VC + SD_JMTQ_AOCS;
+
+CONDUCTIVE_INTERFACE ci_1;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_1,
+	primitiveA = SD_JMTQ_AOCS,
+	primitiveB = SD_MTQ_PY_Board,
+	surfaceA = 1,
+	surfaceB = 2,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_2;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_2,
+	primitiveA = SD_JMTQ_AOCS,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 2,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+RENAME(
+    old_name = "ci_1",
+    new_name = "MTQ_J_AOCS"
+);
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+);
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+RENAME(
+    old_name = "ci_2",
+    new_name = "AOCS_J_MTQ"
+)
+   /* Error: current function is rename */
+   /* Names must be unique.*/
+
+   /* Error: current function is etmsyyparse */
+   /* invalid parameter value*/
+;
+/* ESATAN-TMS version 2022, run date 17:26 Sat 5 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+SD_BattSuppSpacer_2 = SOLID_CYLINDER_PARAMS (
+    radius = 0.003,
+    hmax = 0.0047,
+    thickness = 0.003,
+    hmin = 0.0,
+    angmin = 0.0,
+    angmax = 360.0,
+    analysis_type = "Lumped Parameter",
+    bulk = Bulk_Comp_Batt_Spacers,
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_Teflon,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "GREY");
+
+SD_BattSuppSpacer_2 = ROTATE (
+    object_name = SD_BattSuppSpacer_2,
+    x_ang = -90.0,
+    clear = TRUE);
+
+SD_BattSuppSpacer_2 = TRANSLATE (
+    object_name = SD_BattSuppSpacer_2,
+    x_dist = 0.0165,
+    y_dist = 0.018,
+    z_dist = -0.0165);
+
+SD_BattSuppSpacer_4 = SOLID_CYLINDER_PARAMS (
+    radius = 0.003,
+    hmax = 0.0047,
+    thickness = 0.003,
+    hmin = 0.0,
+    angmin = 0.0,
+    angmax = 360.0,
+    analysis_type = "Lumped Parameter",
+    bulk = Bulk_Comp_Batt_Spacers,
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_Teflon,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "GREY");
+
+SD_BattSuppSpacer_4 = ROTATE (
+    object_name = SD_BattSuppSpacer_4,
+    x_ang = -90.0,
+    clear = TRUE);
+
+SD_BattSuppSpacer_4 = TRANSLATE (
+    object_name = SD_BattSuppSpacer_4,
+    x_dist = 0.0165,
+    y_dist = 0.018,
+    z_dist = 0.0165);
+
+SD_BattSuppSpacer_3 = SOLID_CYLINDER_PARAMS (
+    radius = 0.003,
+    hmax = 0.0047,
+    thickness = 0.003,
+    hmin = 0.0,
+    angmin = 0.0,
+    angmax = 360.0,
+    analysis_type = "Lumped Parameter",
+    bulk = Bulk_Comp_Batt_Spacers,
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_Teflon,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "GREY");
+
+SD_BattSuppSpacer_3 = ROTATE (
+    object_name = SD_BattSuppSpacer_3,
+    x_ang = -90.0,
+    clear = TRUE);
+
+SD_BattSuppSpacer_3 = TRANSLATE (
+    object_name = SD_BattSuppSpacer_3,
+    x_dist = -0.0165,
+    y_dist = 0.018,
+    z_dist = 0.0165);
+
+SD_BattSuppSpacer_1 = SOLID_CYLINDER_PARAMS (
+    radius = 0.003,
+    hmax = 0.0047,
+    thickness = 0.003,
+    hmin = 0.0,
+    angmin = 0.0,
+    angmax = 360.0,
+    analysis_type = "Lumped Parameter",
+    bulk = Bulk_Comp_Batt_Spacers,
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_Teflon,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "GREY");
+
+SD_BattSuppSpacer_1 = ROTATE (
+    object_name = SD_BattSuppSpacer_1,
+    x_ang = -90.0,
+    clear = TRUE);
+
+SD_BattSuppSpacer_1 = TRANSLATE (
+    object_name = SD_BattSuppSpacer_1,
+    x_dist = -0.0165,
+    y_dist = 0.018,
+    z_dist = -0.0165);
+
+
+CONDUCTIVE_INTERFACE ci_1;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_1,
+	primitiveA = SD_BattSuppSpacer_2,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 4,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_2;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_2,
+	primitiveA = SD_BattSuppSpacer_4,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 4,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_3;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_3,
+	primitiveA = SD_BattSuppSpacer_1,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 4,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+
+CONDUCTIVE_INTERFACE ci_4;
+DEFINE_CONDUCTIVE_INTERFACE(
+	conductive_interface = ci_4,
+	primitiveA = SD_BattSuppSpacer_3,
+	primitiveB = SD_PCB_AOCS,
+	surfaceA = 4,
+	surfaceB = 1,
+	connect_type = "FUSED");
+
+RENAME(
+    old_name = "ci_1",
+    new_name = "BattSpacer2_to_AOCS"
+);
+RENAME(
+    old_name = "ci_2",
+    new_name = "BattSpacer4_to_AOCS"
+);
+RENAME(
+    old_name = "ci_3",
+    new_name = "BattSpacer1_to_AOCS"
+);
+RENAME(
+    old_name = "ci_4",
+    new_name = "BattSpacer3_to_AOCS"
+);
+SD_COMMS_Antenna = SOLID_RECTANGLE_POINTS (
+    point1 = [0.0228, 0.02198, -0.025],
+    point2 = [0.0228, 0.02198, -0.145],
+    point4 = [0.0226, 0.02198, -0.025],
+    point5 = [0.0228, 0.02598, -0.025],
+    analysis_type = "Lumped Parameter",
+    bulk = Bulk_Raw_AISI304SS,
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_Stainless,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "GREEN");
+
+SD_COMMS_Antenna = ROTATE (
+    object_name = SD_COMMS_Antenna,
+    clear = TRUE);
+
+SD_COMMS_Antenna = SOLID_RECTANGLE_POINTS (
+    point1 = [0.0228, 0.02198, -0.025],
+    point2 = [0.0228, 0.02198, -0.145],
+    point4 = [0.0226, 0.02198, -0.025],
+    point5 = [0.0228, 0.02598, -0.025],
+    analysis_type = "Lumped Parameter",
+    bulk = Bulk_Raw_AISI304SS,
+    meshType1 = "regular",
+    nodes1 = 1,
+    ratio1 = 1.0,
+    meshType2 = "regular",
+    nodes2 = 1,
+    ratio2 = 1.0,
+    meshType3 = "regular",
+    nodes3 = 1,
+    ratio3 = 1.0,
+    nbaseVolume = 0,
+    ndeltaVolume = 1,
+    optical = Opt_Stainless,
+    activity = "Active",
+    criticality = "NORMAL",
+    colour = "YELLOW");
+
+SD_COMMS_Antenna = ROTATE (
+    object_name = SD_COMMS_Antenna,
+    clear = TRUE);
+
+CONDUCTOR UDC_Antenna_to_NX;
+UDC_Antenna_to_NX = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_COMMS_Antenna:face5",
+    destination_reference = "SD_PX_Lateral_Board:face24",
+    conductor_override = 0.62);
+
+UDC_Antenna_to_NX = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_COMMS_Antenna:face5",
+    destination_reference = "SD_PX_Lateral_Board:face24",
+    conductor_override = -10000.0,
+    shape_factor = 0.005,
+    conductivity = 62.0);
+
+DELETE Test;
+/* ESATAN-TMS version 2022, run date 10:23 Sun 6 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+/* END_MODEL */
+/* ESATAN-TMS version 2022, run date 10:04 Mon 7 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+RADIATIVE_CASE WCC_Standby;
+DEFINE_RADIATIVE_CASE (
+    radiative_case = WCC_Standby,
+    title = "WCC in Commisioning",
+    description = "Worst Cold Case radiative analysis during the commisioning phase.",
+    mission_type = "ORBITAL",
+    environment = TRUE);
+
+DEFINE_MISSION (
+    radiative_case = WCC_Standby,
+    orbit_centre = "PLANET",
+    planet_radius = 6371000.0,
+    sun_radius = 6.96E8,
+    sun_distance = 1.49751916865E11,
+    solar_decln = 6.84,
+    gc = 9.798,
+    sun_alpha = 16.052,
+    alt_p = 800000.0,
+    alt_a = 800000.0,
+    position_method = "ANGLE",
+    angle_gap = 45.0,
+    final_anomaly = 360.0,
+    eclipse_points = TRUE,
+    eclipse_offset = 0.5,
+    orientation = "POINTING",
+    primary_vector = [0.0, 0.0, 1.0],
+    primary_direction = "ZENITH",
+    second_vector = [0.0, 1.0, 0.0],
+    second_direction = "NORMAL_TO_ORBIT",
+    euler_order = "phi, psi, omega",
+    spinning_craft = FALSE,
+    sun_temperature = 5778.0,
+    sun_size_finite = FALSE,
+    planet_temperature_method = "UNIFORM",
+    planet_temperature = 263.4,
+    planet_infra_red_emissivity = 1.0,
+    albedo_reflect_coeff = 0.4,
+    celestial_body_image = "Earth");
+
+GC = EVAL(WCC_Standby.GC);
+R_PLANET = EVAL(WCC_Standby.ORBIT.PLANET_RADIUS);
+R_SUN = EVAL(WCC_Standby.ORBIT.SUN_RADIUS);
+IF (EVAL(WCC_Standby.SUN_DISTANCE_OVERRIDE) == 0.0) THEN
+    SUN_PLANET_DIST = EVAL(WCC_Standby.ORBIT.SUN_DISTANCE);
+ELSE
+    SUN_PLANET_DIST = EVAL(WCC_Standby.SUN_DISTANCE_OVERRIDE);
+END_IF
+T_SUN = EVAL(WCC_Standby.T_SUN);
+SOLAR_DECLINATION = EVAL(WCC_Standby.ORBIT.SOLAR_DECLN);
+
+PROP_ENV = WCC_Standby.PROP_ENV;
+
+RADIATIVE_CASE WCC_Standby;
+DEFINE_RADIATIVE_CASE (
+    radiative_case = WCC_Standby,
+    title = "WCC in Commisioning",
+    description = "Worst Cold Case radiative analysis during the commisioning phase.",
+    mission_type = "ORBITAL",
+    environment = TRUE);
+
+DEFINE_MISSION (
+    radiative_case = WCC_Standby,
+    orbit_centre = "PLANET",
+    planet_radius = 6371000.0,
+    sun_radius = 6.96E8,
+    sun_distance = 1.49751916865E11,
+    solar_decln = 6.84,
+    gc = 9.798,
+    sun_alpha = 16.052,
+    incln = 80.0,
+    alt_p = 450000.0,
+    alt_a = 450000.0,
+    position_method = "ANGLE",
+    angle_gap = 30.0,
+    final_anomaly = 360.0,
+    eclipse_points = TRUE,
+    eclipse_offset = 0.5,
+    orientation = "POINTING",
+    primary_vector = [0.0, 1.0, 0.0],
+    primary_direction = "NADIR",
+    second_vector = [0.0, 0.0, 1.0],
+    second_direction = "NORMAL_TO_ORBIT",
+    euler_order = "phi, psi, omega",
+    spinning_craft = TRUE,
+    spin_orientations = 10,
+    spin = [0.0, 1.0, 0.0],
+    sun_temperature = 5778.0,
+    sun_size_finite = FALSE,
+    planet_temperature_method = "UNIFORM",
+    planet_temperature = 263.4,
+    planet_infra_red_emissivity = 1.0,
+    albedo_reflect_coeff = 0.4,
+    celestial_body_image = "Earth");
+
+DEFINE_ACCURACY (
+    radiative_case = WCC_Standby,
+    control_method = "FIXED_RAYS",
+    coupling_min_rays_normal = 10000,
+    coupling_min_rays_critical = 100000,
+    coupling_min_rays_non_critical = 1000,
+    hf_min_rays_normal = 10000,
+    hf_min_rays_critical = 100000,
+    hf_min_rays_non_critical = 1000,
+    ray_total_cutoff = 5.0e-03,
+    seed = 1000,
+    extinct = 1.0e-03);
+
+GC = EVAL(WCC_Standby.GC);
+R_PLANET = EVAL(WCC_Standby.ORBIT.PLANET_RADIUS);
+R_SUN = EVAL(WCC_Standby.ORBIT.SUN_RADIUS);
+IF (EVAL(WCC_Standby.SUN_DISTANCE_OVERRIDE) == 0.0) THEN
+    SUN_PLANET_DIST = EVAL(WCC_Standby.ORBIT.SUN_DISTANCE);
+ELSE
+    SUN_PLANET_DIST = EVAL(WCC_Standby.SUN_DISTANCE_OVERRIDE);
+END_IF
+T_SUN = EVAL(WCC_Standby.T_SUN);
+SOLAR_DECLINATION = EVAL(WCC_Standby.ORBIT.SOLAR_DECLN);
+
+PROP_ENV = WCC_Standby.PROP_ENV;
+
+INTEGER radiative_case_error_flag = 0;
+FOR (orbit_index = 1;
+    orbit_index <= WCC_Standby.NUM_ORBIT_POSITIONS;
+    orbit_index = EVAL(orbit_index + 1))
+
+    CALCULATE (
+        radiative_case = WCC_Standby,
+        calc_types = "REF, SAF, PAF, ALBEDO_PAF",
+        pos_index = orbit_index,
+        eclipse_check = TRUE,
+        error_code = radiative_case_error_flag);
+
+END_FOR
+DELETE radiative_case_error_flag;
+
+RADIATIVE_CASE WCC_Standby;
+DEFINE_RADIATIVE_CASE (
+    radiative_case = WCC_Standby,
+    title = "WCC in Commisioning",
+    description = "Worst Cold Case radiative analysis during the commisioning phase.",
+    mission_type = "ORBITAL",
+    environment = TRUE);
+
+DEFINE_MISSION (
+    radiative_case = WCC_Standby,
+    orbit_centre = "PLANET",
+    planet_radius = 6371000.0,
+    sun_radius = 6.96E8,
+    sun_distance = 1.49751916865E11,
+    solar_decln = 6.84,
+    gc = 9.798,
+    sun_alpha = 16.052,
+    incln = 80.0,
+    alt_p = 450000.0,
+    alt_a = 450000.0,
+    position_method = "ANGLE",
+    angle_gap = 30.0,
+    final_anomaly = 360.0,
+    eclipse_points = TRUE,
+    eclipse_offset = 0.5,
+    orientation = "POINTING",
+    primary_vector = [0.0, 1.0, 0.0],
+    primary_direction = "NADIR",
+    second_vector = [0.0, 0.0, 1.0],
+    second_direction = "NORMAL_TO_ORBIT",
+    euler_order = "phi, psi, omega",
+    spinning_craft = TRUE,
+    spin_orientations = 4,
+    spin = [0.0, 1.0, 0.0],
+    sun_temperature = 5778.0,
+    sun_size_finite = FALSE,
+    planet_temperature_method = "UNIFORM",
+    planet_temperature = 263.4,
+    planet_infra_red_emissivity = 1.0,
+    albedo_reflect_coeff = 0.4,
+    celestial_body_image = "Earth");
+
+DEFINE_ACCURACY (
+    radiative_case = WCC_Standby,
+    control_method = "FIXED_RAYS",
+    coupling_min_rays_normal = 10000,
+    coupling_min_rays_critical = 100000,
+    coupling_min_rays_non_critical = 1000,
+    hf_min_rays_normal = 10000,
+    hf_min_rays_critical = 100000,
+    hf_min_rays_non_critical = 1000,
+    ray_total_cutoff = 5.0e-03,
+    seed = 1000,
+    extinct = 1.0e-03);
+
+GC = EVAL(WCC_Standby.GC);
+R_PLANET = EVAL(WCC_Standby.ORBIT.PLANET_RADIUS);
+R_SUN = EVAL(WCC_Standby.ORBIT.SUN_RADIUS);
+IF (EVAL(WCC_Standby.SUN_DISTANCE_OVERRIDE) == 0.0) THEN
+    SUN_PLANET_DIST = EVAL(WCC_Standby.ORBIT.SUN_DISTANCE);
+ELSE
+    SUN_PLANET_DIST = EVAL(WCC_Standby.SUN_DISTANCE_OVERRIDE);
+END_IF
+T_SUN = EVAL(WCC_Standby.T_SUN);
+SOLAR_DECLINATION = EVAL(WCC_Standby.ORBIT.SOLAR_DECLN);
+
+PROP_ENV = WCC_Standby.PROP_ENV;
+
+INTEGER radiative_case_error_flag = 0;
+FOR (orbit_index = 1;
+    orbit_index <= WCC_Standby.NUM_ORBIT_POSITIONS;
+    orbit_index = EVAL(orbit_index + 1))
+
+    CALCULATE (
+        radiative_case = WCC_Standby,
+        calc_types = "REF, SAF, PAF, ALBEDO_PAF",
+        pos_index = orbit_index,
+        eclipse_check = TRUE,
+        error_code = radiative_case_error_flag);
+
+END_FOR
+DELETE radiative_case_error_flag;
+
+
+INTEGER analysis_case_error_flag2 = 0;
+
+ANALYSIS_CASE WCC_Standby_Thermal;
+
+DEFINE_ANALYSIS_CASE (
+    analysis_case = WCC_Standby_Thermal,
+    title = "WCC Thermal Standby",
+    description = "Worst Cold Case Thermal 
+Analysis ( on Standby)",
+    solver = "ESATAN",
+    analysis_file = "PoCat3_WCC_Standby_Thermal.d",
+    error_code =  analysis_case_error_flag2,
+    analysis_case_type = "Single Radiative Case",
+    radiative_case = WCC_Standby);
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_TEMPLATE (
+        analysis_case = WCC_Standby_Thermal,
+        submodel_files = FALSE,
+        maxmin = FALSE,
+        error_code =  analysis_case_error_flag2,
+        execution_block = 
+"
+C
+      NLOOP=100
+      RELXCA=0.01
+      CALL SOLVFM
+C
+C
+      TIMEND=5612.749
+      OUTINT=300.0
+      NLOOP=100
+      RELXCA=0.01
+      DTIMEI=100.0
+      CALL SOLCYC('SLCRNC',0.01D0,0.01D0,5612.749D0,100,' ','NONE')
+C
+      CALL SLCRNC
+C",
+        output_block = 
+"      CALL PRNDTB(' ', 'L, T, QS, QE, QA, QI, C', CURRENT)
+C
+      CALL DMPTMD(' ', 'NODES, CONDUCTORS, CONSTANTS', CURRENT, ' ')
+",
+        update = TRUE);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    UNSET_HF_MULTIPLIERS(analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U5,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U6,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U7,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_Antenna_to_NX,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_IC1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_IC2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_OBCCOMMS_STM32,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_OBCCOMMS_SX1262,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U5,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U7,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLTop_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLTop_U2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLTop_Y1,
+        applies = TRUE);
+
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_ANALYSIS_FILE (
+        analysis_case = WCC_Standby_Thermal,
+        title = "PoCat3_WCC_Standby_Thermal",
+        error_code =  analysis_case_error_flag2,
+        results = "GL,TRANS_HF,TRANS_REF",
+        ref_averaged = TRUE,
+        ref_cyclic = TRUE,
+        hf_type = "S,A,P",
+        hf_averaged = TRUE,
+        hf_cyclic = TRUE,
+        environment = 99999,
+        environment_temperature = -270.0,
+        inactive = 99998)
+   /* Error: current function is AutomaticConductorGeneratorLP_c::ciShapeFactorUndefinedWarning */
+   /* Primitive A (SD_NZ_Lateral_Board) of conductive interface NZ_to_Slider_R,
+      node[1756] shape factor not calculated       
+      Error number: 1310*/
+
+   /* Error: current function is AutomaticConductorGeneratorLP_c::ciShapeFactorUndefinedWarning */
+   /* Primitive A (SD_PZ_Lateral_Board) of conductive interface PZ_to_Slider_R,
+      node[1631] shape factor not calculated       
+      Error number: 1310*/
+
+   /* Error: current function is AutomaticConductorGeneratorLP_c::ciShapeFactorUndefinedWarning */
+   /* Primitive A (SD_PZ_Lateral_Board) of conductive interface PZ_to_Slider_L,
+      node[1628] shape factor not calculated       
+      Error number: 1310*/
+
+   /* Error: current function is AutomaticConductorGeneratorLP_c::ciShapeFactorUndefinedWarning */
+   /* Primitive A (SD_NZ_Lateral_Board) of conductive interface NZ_to_Slider_L,
+      node[1759] shape factor not calculated       
+      Error number: 1310*/
+;
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    RUN_ANALYSIS(
+        analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+DELETE analysis_case_error_flag2;
+BOUNDARY_CONDITION INIT_STM32;
+INIT_STM32 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_OBC_STM32",
+    value = 0.005);
+
+
+INTEGER analysis_case_error_flag2 = 0;
+
+DEFINE_ANALYSIS_CASE (
+    analysis_case = WCC_Standby_Thermal,
+    title = "WCC Thermal Standby",
+    description = "Worst Cold Case Thermal 
+Analysis ( on Standby)",
+    solver = "ESATAN",
+    analysis_file = "PoCat3_WCC_Standby_Thermal.d",
+    error_code =  analysis_case_error_flag2,
+    analysis_case_type = "Single Radiative Case",
+    radiative_case = WCC_Standby);
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_TEMPLATE (
+        analysis_case = WCC_Standby_Thermal,
+        submodel_files = FALSE,
+        maxmin = FALSE,
+        error_code =  analysis_case_error_flag2,
+        execution_block = 
+"
+C
+      NLOOP=100
+      RELXCA=0.01
+      CALL SOLVFM
+C
+C
+      TIMEND=5612.749
+      OUTINT=300.0
+      NLOOP=100
+      RELXCA=0.01
+      DTIMEI=100.0
+      CALL SOLCYC('SLCRNC',0.01D0,0.01D0,5612.749D0,100,' ','NONE')
+C
+      CALL SLCRNC
+C
+",
+        output_block = 
+"      CALL PRNDTB(' ', 'L, T, QS, QE, QA, QI, C', CURRENT)
+C
+      CALL DMPTMD(' ', 'NODES, CONDUCTORS, CONSTANTS', CURRENT, ' ')
+
+",
+        update = TRUE);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = INIT_STM32,
+        applies = TRUE);
+
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    UNSET_HF_MULTIPLIERS(analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U5,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U6,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U7,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_Antenna_to_NX,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_IC1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_IC2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_OBCCOMMS_STM32,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_OBCCOMMS_SX1262,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U5,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U7,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLTop_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLTop_U2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLTop_Y1,
+        applies = TRUE);
+
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_ANALYSIS_FILE (
+        analysis_case = WCC_Standby_Thermal,
+        title = "PoCat3_WCC_Standby_Thermal",
+        error_code =  analysis_case_error_flag2,
+        results = "GL,TRANS_HF,TRANS_REF",
+        ref_averaged = TRUE,
+        ref_cyclic = TRUE,
+        hf_type = "S,A,P",
+        hf_averaged = TRUE,
+        hf_cyclic = TRUE,
+        environment = 99999,
+        environment_temperature = -270.0,
+        inactive = 99998);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    RUN_ANALYSIS(
+        analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+DELETE analysis_case_error_flag2;
+/* END_MODEL */
+/* ESATAN-TMS version 2022, run date 11:49 Tue 8 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+BOUNDARY_CONDITION NOM_SX1262;
+NOM_SX1262 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_OBC_SX1262",
+    value = 0.1452);
+
+INIT_STM32 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_OBC_STM32",
+    value = 0.044);
+
+RENAME(
+    old_name = "INIT_STM32",
+    new_name = "NOM_STM32"
+);
+BOUNDARY_CONDITION NOM_ADCS_U5;
+NOM_ADCS_U5 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_ADCS_U5",
+    value = 0.0);
+
+BOUNDARY_CONDITION NOM_ADCS_U7;
+NOM_ADCS_U7 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_ADCS_U7",
+    value = 0.0002);
+
+BOUNDARY_CONDITION NOM_ADCS_U1;
+NOM_ADCS_U1 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_ADCS_U1",
+    value = 0.00001);
+
+BOUNDARY_CONDITION NOM_ADCS_U2;
+NOM_ADCS_U2 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_ADCS_U2",
+    value = 0.00001);
+
+BOUNDARY_CONDITION NOM_ADCS_U3;
+NOM_ADCS_U3 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_ADCS_U3",
+    value = 0.00001);
+
+BOUNDARY_CONDITION NOM_ADCS_U4;
+NOM_ADCS_U4 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_ADCS_U4",
+    value = 0.00191);
+
+BOUNDARY_CONDITION NOM_ADCS_U6;
+NOM_ADCS_U6 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_ADCS_U6",
+    value = 0.0);
+
+BOUNDARY_CONDITION NOM_EPS_U3;
+NOM_EPS_U3 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_EPS_U3",
+    value = 0.0);
+
+BOUNDARY_CONDITION NOM_EPS_IC1;
+NOM_EPS_IC1 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_EPS_IC1",
+    value = 0.00024);
+
+BOUNDARY_CONDITION NOM_EPS_IC2;
+NOM_EPS_IC2 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_EPS_IC2",
+    value = 0.00015);
+
+BOUNDARY_CONDITION NOM_EPS_U1;
+NOM_EPS_U1 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_EPS_U1",
+    value = 0.0);
+
+BOUNDARY_CONDITION NOM_EPS_U2;
+NOM_EPS_U2 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_EPS_U2",
+    value = 0.0);
+
+BOUNDARY_CONDITION NOM_EPS_U4;
+NOM_EPS_U4 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_EPS_U4",
+    value = 0.0);
+
+BOUNDARY_CONDITION NOM_PLTOP_U1;
+NOM_PLTOP_U1 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_PLTOP_U1",
+    value = 0.1452);
+
+BOUNDARY_CONDITION NOM_PLTOP_U2;
+NOM_PLTOP_U2 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_PLTOP_U2",
+    value = 0.2277);
+
+BOUNDARY_CONDITION NOM_PLTOP_Y1;
+NOM_PLTOP_Y1 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_PLTOP_Y1",
+    value = 0.2904);
+
+BOUNDARY_CONDITION NOM_PLUNDER_U7;
+NOM_PLUNDER_U7 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_PLUNDER_U7",
+    value = 0.330);
+
+BOUNDARY_CONDITION NOM_PLUNDER_U4;
+NOM_PLUNDER_U4 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_PLUNDER_U4",
+    value = 0.330);
+
+BOUNDARY_CONDITION NOM_PLUNDER_U1;
+NOM_PLUNDER_U1 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_PLUNDER_U1",
+    value = 0.2178);
+
+BOUNDARY_CONDITION NOM_PLUNDER_U5;
+NOM_PLUNDER_U5 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_PLUNDER_U5",
+    value = 0.2178);
+
+NOM_PLUNDER_U5 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_PLUNDER_U5",
+    value = 0.2178);
+
+NOM_PLUNDER_U5 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_PLUNDER_U5",
+    value = 0.500);
+
+BOUNDARY_CONDITION NOM_PLUNDER_U3;
+NOM_PLUNDER_U3 = TOTAL_AREA_HEAT_LOAD (
+    reference = "NGTN_PLUNDER_U3",
+    value = 0.045);
+
+RUN_ANALYSIS (
+    analysis_case = WCC_Standby_Thermal);
+
+INTEGER analysis_case_error_flag2 = 0;
+
+DEFINE_ANALYSIS_CASE (
+    analysis_case = WCC_Standby_Thermal,
+    title = "WCC Thermal Standby",
+    description = "Worst Cold Case Thermal 
+Analysis ( on Standby)",
+    solver = "ESATAN",
+    analysis_file = "PoCat3_WCC_Standby_Thermal.d",
+    error_code =  analysis_case_error_flag2,
+    analysis_case_type = "Single Radiative Case",
+    radiative_case = WCC_Standby);
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_TEMPLATE (
+        analysis_case = WCC_Standby_Thermal,
+        submodel_files = FALSE,
+        maxmin = FALSE,
+        error_code =  analysis_case_error_flag2,
+        execution_block = 
+"
+C
+      NLOOP=100
+      RELXCA=0.01
+      CALL SOLVFM
+C
+C
+      TIMEND=5612.749
+      OUTINT=300.0
+      NLOOP=100
+      RELXCA=0.01
+      DTIMEI=100.0
+      CALL SOLCYC('SLCRNC',0.01D0,0.01D0,5612.749D0,100,' ','NONE')
+C
+      CALL SLCRNC
+C
+
+",
+        output_block = 
+"      CALL PRNDTB(' ', 'L, T, QS, QE, QA, QI, C', CURRENT)
+C
+      CALL DMPTMD(' ', 'NODES, CONDUCTORS, CONSTANTS', CURRENT, ' ')
+
+
+",
+        update = TRUE);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U1,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U2,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U3,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U4,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U5,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U6,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U7,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_IC1,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_IC2,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_U1,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_U2,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_U3,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_U4,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLTOP_U1,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLTOP_U2,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLTOP_Y1,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLUNDER_U1,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLUNDER_U3,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLUNDER_U4,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLUNDER_U5,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLUNDER_U7,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_STM32,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_SX1262,
+        applies = TRUE);
+
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    UNSET_HF_MULTIPLIERS(analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U5,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U6,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U7,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_Antenna_to_NX,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_IC1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_IC2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_OBCCOMMS_STM32,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_OBCCOMMS_SX1262,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U5,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U7,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLTop_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLTop_U2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLTop_Y1,
+        applies = TRUE);
+
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_ANALYSIS_FILE (
+        analysis_case = WCC_Standby_Thermal,
+        title = "PoCat3_WCC_Standby_Thermal",
+        error_code =  analysis_case_error_flag2,
+        results = "GL,TRANS_HF,TRANS_REF",
+        ref_averaged = TRUE,
+        ref_cyclic = TRUE,
+        hf_type = "S,A,P",
+        hf_averaged = TRUE,
+        hf_cyclic = TRUE,
+        environment = 99999,
+        environment_temperature = -270.0,
+        inactive = 99998);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    RUN_ANALYSIS(
+        analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+DELETE analysis_case_error_flag2;
+
+INTEGER analysis_case_error_flag2 = 0;
+
+DEFINE_ANALYSIS_CASE (
+    analysis_case = WCC_Standby_Thermal,
+    title = "WCC Thermal Standby",
+    description = "Worst Cold Case Thermal 
+Analysis ( on Standby)",
+    solver = "ESATAN",
+    analysis_file = "PoCat3_WCC_Standby_Thermal.d",
+    error_code =  analysis_case_error_flag2,
+    analysis_case_type = "Single Radiative Case",
+    radiative_case = WCC_Standby);
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_TEMPLATE (
+        analysis_case = WCC_Standby_Thermal,
+        submodel_files = FALSE,
+        maxmin = FALSE,
+        error_code =  analysis_case_error_flag2,
+        execution_block = 
+"
+C
+      NLOOP=100
+      RELXCA=0.01
+      CALL SOLVFM
+C
+C
+      TIMEND=5612.749
+      OUTINT=300.0
+      NLOOP=100
+      RELXCA=0.01
+      DTIMEI=100.0
+      CALL SOLCYC('SLCRNC',0.01D0,0.01D0,5612.749D0,100,' ','NONE')
+C
+      CALL SLCRNC
+C
+
+
+",
+        output_block = 
+"      CALL PRNDTB(' ', 'L, T, QS, QE, QA, QI, C', CURRENT)
+C
+      CALL DMPTMD(' ', 'NODES, CONDUCTORS, CONSTANTS', CURRENT, ' ')
+
+
+
+",
+        update = TRUE);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U1,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U2,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U3,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U4,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U5,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U6,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U7,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_IC1,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_IC2,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_U1,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_U2,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_U3,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_U4,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLTOP_U1,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLTOP_U2,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLTOP_Y1,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLUNDER_U1,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLUNDER_U3,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLUNDER_U4,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLUNDER_U5,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_PLUNDER_U7,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_STM32,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_SX1262,
+        applies = FALSE);
+
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    UNSET_HF_MULTIPLIERS(analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AE_EO_4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U5,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U6,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_AOCS_U7,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_Antenna_to_NX,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EO_OP_4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_IC1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_IC2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_EPS_U4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_OBCCOMMS_STM32,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_OBCCOMMS_SX1262,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U3,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U4,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U5,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLBot_U7,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLTop_U1,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLTop_U2,
+        applies = TRUE);
+
+    SET_USER_DEFINED_CONDUCTOR(
+        analysis_case = WCC_Standby_Thermal,
+        conductor = UDC_PLTop_Y1,
+        applies = TRUE);
+
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_ANALYSIS_FILE (
+        analysis_case = WCC_Standby_Thermal,
+        title = "PoCat3_WCC_Standby_Thermal",
+        error_code =  analysis_case_error_flag2,
+        results = "GL,TRANS_HF,TRANS_REF",
+        ref_averaged = TRUE,
+        ref_cyclic = TRUE,
+        hf_type = "S,A,P",
+        hf_averaged = TRUE,
+        hf_cyclic = TRUE,
+        environment = 99999,
+        environment_temperature = -270.0,
+        inactive = 99998);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    RUN_ANALYSIS(
+        analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+DELETE analysis_case_error_flag2;
+
+INTEGER analysis_case_error_flag2 = 0;
+
+DEFINE_ANALYSIS_CASE (
+    analysis_case = WCC_Standby_Thermal,
+    title = "WCC Thermal Standby",
+    description = "Worst Cold Case Thermal 
+Analysis ( on Standby)",
+    solver = "ESATAN",
+    analysis_file = "PoCat3_WCC_Standby_Thermal.d",
+    error_code =  analysis_case_error_flag2,
+    analysis_case_type = "Single Radiative Case",
+    radiative_case = WCC_Standby);
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_TEMPLATE (
+        analysis_case = WCC_Standby_Thermal,
+        submodel_files = FALSE,
+        maxmin = FALSE,
+        error_code =  analysis_case_error_flag2,
+        execution_block = 
+"
+C
+      NLOOP=100
+      RELXCA=0.01
+      CALL SOLVFM
+C
+C
+      TIMEND=5612.749
+      OUTINT=300.0
+      NLOOP=100
+      RELXCA=0.01
+      DTIMEI=100.0
+      CALL SOLCYC('SLCRNC',0.01D0,0.01D0,5612.749D0,100,' ','NONE')
+C
+      CALL SLCRNC
+C
+
+
+",
+        output_block = 
+"      CALL PRNDTB(' ', 'L, T, QS, QE, QA, QI, C', CURRENT)
+C
+      CALL DMPTMD(' ', 'NODES, CONDUCTORS, CONSTANTS', CURRENT, ' ')
+
+
+
+",
+        update = TRUE);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_STM32,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_SX1262,
+        applies = TRUE);
+
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    UNSET_HF_MULTIPLIERS(analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_ANALYSIS_FILE (
+        analysis_case = WCC_Standby_Thermal,
+        title = "PoCat3_WCC_Standby_Thermal",
+        error_code =  analysis_case_error_flag2,
+        results = "GL,TRANS_HF,TRANS_REF",
+        ref_averaged = TRUE,
+        ref_cyclic = TRUE,
+        hf_type = "S,A,P",
+        hf_averaged = TRUE,
+        hf_cyclic = TRUE,
+        environment = 99999,
+        environment_temperature = -270.0,
+        inactive = 99998);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    RUN_ANALYSIS(
+        analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+DELETE analysis_case_error_flag2;
+
+INTEGER analysis_case_error_flag2 = 0;
+
+DEFINE_ANALYSIS_CASE (
+    analysis_case = WCC_Standby_Thermal,
+    title = "WCC Thermal Standby",
+    description = "Worst Cold Case Thermal 
+Analysis ( on Standby)",
+    solver = "ESATAN",
+    analysis_file = "PoCat3_WCC_Standby_Thermal.d",
+    error_code =  analysis_case_error_flag2,
+    analysis_case_type = "Single Radiative Case",
+    radiative_case = WCC_Standby);
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_TEMPLATE (
+        analysis_case = WCC_Standby_Thermal,
+        submodel_files = FALSE,
+        maxmin = FALSE,
+        error_code =  analysis_case_error_flag2,
+        execution_block = 
+"
+C
+      NLOOP=100
+      RELXCA=0.01
+      CALL SOLVFM
+C
+C
+      TIMEND=5612.749
+      OUTINT=300.0
+      NLOOP=100
+      RELXCA=0.01
+      DTIMEI=100.0
+      CALL SOLCYC('SLCRNC',0.01D0,0.01D0,5612.749D0,100,' ','NONE')
+C
+      CALL SLCRNC
+C
+
+
+",
+        output_block = 
+"      CALL PRNDTB(' ', 'L, T, QS, QE, QA, QI, C', CURRENT)
+C
+      CALL DMPTMD(' ', 'NODES, CONDUCTORS, CONSTANTS', CURRENT, ' ')
+
+
+
+",
+        update = TRUE);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U1,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U2,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U3,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U4,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U5,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U6,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U7,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_IC1,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_IC2,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_U1,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_U2,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_U3,
+        applies = TRUE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_EPS_U4,
+        applies = TRUE);
+
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    UNSET_HF_MULTIPLIERS(analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_ANALYSIS_FILE (
+        analysis_case = WCC_Standby_Thermal,
+        title = "PoCat3_WCC_Standby_Thermal",
+        error_code =  analysis_case_error_flag2,
+        results = "GL,TRANS_HF,TRANS_REF",
+        ref_averaged = TRUE,
+        ref_cyclic = TRUE,
+        hf_type = "S,A,P",
+        hf_averaged = TRUE,
+        hf_cyclic = TRUE,
+        environment = 99999,
+        environment_temperature = -270.0,
+        inactive = 99998);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    RUN_ANALYSIS(
+        analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+DELETE analysis_case_error_flag2;
+BOUNDARY_CONDITION TEST_BATT;
+TEST_BATT = TOTAL_VOLUME_HEAT_LOAD (
+    reference = "SD_Battery:volume16",
+    value = 0.5);
+
+
+INTEGER analysis_case_error_flag2 = 0;
+
+DEFINE_ANALYSIS_CASE (
+    analysis_case = WCC_Standby_Thermal,
+    title = "WCC Thermal Standby",
+    description = "Worst Cold Case Thermal 
+Analysis ( on Standby)",
+    solver = "ESATAN",
+    analysis_file = "PoCat3_WCC_Standby_Thermal.d",
+    error_code =  analysis_case_error_flag2,
+    analysis_case_type = "Single Radiative Case",
+    radiative_case = WCC_Standby);
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_TEMPLATE (
+        analysis_case = WCC_Standby_Thermal,
+        submodel_files = FALSE,
+        maxmin = FALSE,
+        error_code =  analysis_case_error_flag2,
+        execution_block = 
+"
+C
+      NLOOP=100
+      RELXCA=0.01
+      CALL SOLVFM
+C
+C
+      TIMEND=5612.749
+      OUTINT=300.0
+      NLOOP=100
+      RELXCA=0.01
+      DTIMEI=100.0
+      CALL SOLCYC('SLCRNC',0.01D0,0.01D0,5612.749D0,100,' ','NONE')
+C
+      CALL SLCRNC
+C
+
+
+",
+        output_block = 
+"      CALL PRNDTB(' ', 'L, T, QS, QE, QA, QI, C', CURRENT)
+C
+      CALL DMPTMD(' ', 'NODES, CONDUCTORS, CONSTANTS', CURRENT, ' ')
+
+
+
+",
+        update = TRUE);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = NOM_ADCS_U4,
+        applies = FALSE);
+
+    SET_BOUNDARY_CONDITION(
+        analysis_case = WCC_Standby_Thermal,
+        boundary_condition = TEST_BATT,
+        applies = TRUE);
+
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    UNSET_HF_MULTIPLIERS(analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    GENERATE_ANALYSIS_FILE (
+        analysis_case = WCC_Standby_Thermal,
+        title = "PoCat3_WCC_Standby_Thermal",
+        error_code =  analysis_case_error_flag2,
+        results = "GL,TRANS_HF,TRANS_REF",
+        ref_averaged = TRUE,
+        ref_cyclic = TRUE,
+        hf_type = "S,A,P",
+        hf_averaged = TRUE,
+        hf_cyclic = TRUE,
+        environment = 99999,
+        environment_temperature = -270.0,
+        inactive = 99998);
+END_IF
+
+
+IF (analysis_case_error_flag2 == 0) THEN
+    RUN_ANALYSIS(
+        analysis_case = WCC_Standby_Thermal);
+END_IF
+
+
+DELETE analysis_case_error_flag2;
+/* END_MODEL */
+/* ESATAN-TMS version 2022, run date 17:45 Mon 14 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+/* END_MODEL */
+/* ESATAN-TMS version 2022, run date 9:05 Wed 16 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+/* END_MODEL */
+/* ESATAN-TMS version 2022, run date 9:08 Wed 16 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+DEFINE_BULK (
+    bulk = Bulk_PCB_AOCS,
+    description = "AOCS Board (Components, PCB)",
+    density = 3125.0,
+    sp_heat = 940.3,
+    type = "Orthotropic",
+    cond1 = 170.1,
+    cond2 = 170.1,
+    cond3 = 0.32);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_EPS,
+    description = "EPS Board (Components, PCB)",
+    density = 2773.0,
+    sp_heat = 940.3,
+    type = "Orthotropic",
+    cond1 = 170.1,
+    cond2 = 170.1,
+    cond3 = 0.32);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_MTQPY,
+    description = "Magnetorquer Board (FR4,Copper, Solder Mask)
+",
+    density = 1753.0,
+    sp_heat = 904.0,
+    type = "Orthotropic",
+    cond1 = 170.9,
+    cond2 = 170.9,
+    cond3 = 0.32);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_OBCCOMMS,
+    description = "OBCComms Board (Components, PCB)",
+    density = 2734.0,
+    sp_heat = 940.3,
+    type = "Orthotropic",
+    cond1 = 170.1,
+    cond2 = 170.1,
+    cond3 = 0.32);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_BotLat,
+    description = "Bottom Board, Lateral Board (FR4,Copper, Solder Mask)
+",
+    density = 2133.0,
+    sp_heat = 904.0,
+    type = "Orthotropic",
+    cond1 = 170.9,
+    cond2 = 170.9,
+    cond3 = 0.32);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_BottomBoard,
+    description = "Bottom Board (FR4,Copper,Solder)",
+    density = 2133.0,
+    sp_heat = 904.0,
+    type = "Orthotropic",
+    cond1 = 170.9,
+    cond2 = 170.9,
+    cond3 = 0.32);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_Slider,
+    description = "Slider Board (FR4,Copper, Solder Mask)
+",
+    density = 1953.0,
+    sp_heat = 1050.4,
+    type = "Orthotropic",
+    cond1 = 46.8,
+    cond2 = 46.8,
+    cond3 = 0.3);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_PLUnder,
+    description = "PL Board Inferior (Components, Multiple PCBs)",
+    density = 3594.0,
+    sp_heat = 783.2,
+    type = "Orthotropic",
+    cond1 = 110.1,
+    cond2 = 110.1,
+    cond3 = 0.31);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_PLAntenna,
+    description = "PL Board Over (Components, PCB,Antenna)",
+    density = 3242.0,
+    sp_heat = 904.9,
+    type = "Orthotropic",
+    cond1 = 88.5,
+    cond2 = 88.5,
+    cond3 = 0.29);
+
+/* END_MODEL */
+/* ESATAN-TMS version 2022, run date 9:52 Wed 16 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
 END_MODEL
