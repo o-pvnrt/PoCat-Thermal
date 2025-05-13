@@ -30450,4 +30450,1719 @@ DEFINE_BULK (
 /* END_MODEL */
 /* ESATAN-TMS version 2022, run date 9:52 Wed 16 Apr 2025 */
 /* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
-END_MODEL
+/* /* END_MODEL */ */
+/* ESATAN-TMS version 2022, run date 10:12 Wed 16 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+DELETE WCC_Standby;
+DELETE WCC_Standby_Thermal;
+PURGE_MODEL();
+/* ESATAN-TMS version 2022, run date 10:43 Sun 20 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+/* END_MODEL */
+/* ESATAN-TMS version 2022, run date 17:09 Mon 21 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Lat_NZ_to_PX,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_PX_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Lat_PX_to_PZ,
+    primitiveA = SD_PX_Lateral_Board,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Lat_NX_to_NZ,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_NZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Lat_NX_to_PZ,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 2,
+    surfaceB = 5,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_KS_NX,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_KS_NX,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_KS_PX,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_KS_PX,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_SP_NY,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_SP_NY_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NX_to_SP_NX,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_SP_NX_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_SP_PZ,
+    primitiveA = SD_PZ_Lateral_Board,
+    primitiveB = SD_SP_PZ_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PX_to_SP_PX,
+    primitiveA = SD_PX_Lateral_Board,
+    primitiveB = SD_SP_PX_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_SP_NZ,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_SP_NZ_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+/* END_MODEL */
+/* ESATAN-TMS version 2022, run date 9:48 Mon 28 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+/* /* /* END_MODEL */ */ */
+/* ESATAN-TMS version 2022, run date 9:52 Mon 28 Apr 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+RENAME(
+    old_name = "BattSpacer_to_MQT",
+    new_name = "BattSpacer3_to_MQT"
+);
+/* ESATAN-TMS version 2022, run date 10:25 Tue 6 May 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+CONDUCTOR PLUNDER_to_PLTOP_J1;
+PLUNDER_to_PLTOP_J1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PL:face70",
+    destination_reference = "SD_PCB_PLAntenna:face33",
+    conductor_override = -10000.0,
+    shape_factor = (0.000064516) / (0.0046),
+    conductivity = 27.88);
+
+PLUNDER_to_PLTOP_J1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PL:face70",
+    destination_reference = "SD_PCB_PLAntenna:face34",
+    conductor_override = -10000.0,
+    shape_factor = (0.000064516) / (0.0046),
+    conductivity = 27.88);
+
+CONDUCTOR PLUNDER_to_PLTOP_J2;
+PLUNDER_to_PLTOP_J2 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PL:face49",
+    destination_reference = "SD_PCB_PLAntenna:face13",
+    conductor_override = -10000.0,
+    shape_factor = (0.000064516) / (0.0046),
+    conductivity = 27.88);
+
+CONDUCTOR PLUNDER_to_PLTOP_J3;
+PLUNDER_to_PLTOP_J3 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PL:face40",
+    destination_reference = "SD_PCB_PLAntenna:face4",
+    conductor_override = -10000.0,
+    shape_factor = (0.000064516) / (0.0046),
+    conductivity = 27.88);
+
+PLUNDER_to_PLTOP_J3 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PL:face60",
+    destination_reference = "SD_PCB_PLAntenna:face24",
+    conductor_override = -10000.0,
+    shape_factor = (0.000064516) / (0.0046),
+    conductivity = 27.88);
+
+CONDUCTOR PLUNDER_to_PLTOP_J4;
+PLUNDER_to_PLTOP_J4 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PL:face60",
+    destination_reference = "SD_PCB_PLAntenna:face24",
+    conductor_override = -10000.0,
+    shape_factor = (0.000064516) / (0.0046),
+    conductivity = 27.88);
+
+PLUNDER_to_PLTOP_J3 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PL:face40",
+    destination_reference = "SD_PCB_PLAntenna:face76",
+    conductor_override = -10000.0,
+    shape_factor = (0.000064516) / (0.0046),
+    conductivity = 27.88);
+
+PLUNDER_to_PLTOP_J3 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PL:face40",
+    destination_reference = "SD_PCB_PLAntenna:face4",
+    conductor_override = -10000.0,
+    shape_factor = (0.000064516) / (0.0046),
+    conductivity = 27.88);
+
+CONDUCTOR PLTOP_to_PLUNDER_S1;
+PLTOP_to_PLUNDER_S1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PLAntenna:face31",
+    destination_reference = "SD_PCB_PL:face67",
+    conductor_override = -10000.0,
+    shape_factor = 0.000657543,
+    conductivity = 15.0);
+
+PLTOP_to_PLUNDER_S1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PLAntenna:face31",
+    destination_reference = "SD_PCB_PL:face67",
+    conductor_override = -10000.0,
+    shape_factor = 0.000657543,
+    conductivity = 15.0);
+
+PLTOP_to_PLUNDER_S1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PLAntenna:face31",
+    destination_reference = "SD_PCB_PL:face67",
+    conductor_override = -10000.0,
+    shape_factor = 0.000657543,
+    conductivity = 15.0);
+
+CONDUCTOR PLTOP_to_PLUNDER_S2;
+PLTOP_to_PLUNDER_S2 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PL:face37",
+    destination_reference = "SD_PCB_PLAntenna:face1",
+    conductor_override = -10000.0,
+    shape_factor = 0.000657543,
+    conductivity = 15.0);
+
+CONDUCTOR PLTOP_to_PLUNDER_S3;
+PLTOP_to_PLUNDER_S3 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PL:face42",
+    destination_reference = "SD_PCB_PLAntenna:face6",
+    conductor_override = -10000.0,
+    shape_factor = 0.000657543,
+    conductivity = 15.0);
+
+CONDUCTOR PLTOP_to_PLUNDER_S4;
+PLTOP_to_PLUNDER_S4 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_PCB_PL:face72",
+    destination_reference = "SD_PCB_PLAntenna:face36",
+    conductor_override = -10000.0,
+    shape_factor = 0.000657543,
+    conductivity = 15.0);
+
+UDC_AOCS_U4 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_ADCS_U4",
+    destination_reference = "SD_PCB_AOCS:face58",
+    conductor_override = 0.02);
+
+UDC_AOCS_U5 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_ADCS_U5",
+    destination_reference = "SD_PCB_AOCS:face47",
+    conductor_override = 0.07);
+
+UDC_AOCS_U6 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_ADCS_U6",
+    destination_reference = "SD_PCB_AOCS:face59",
+    conductor_override = 0.02);
+
+UDC_AOCS_U7 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_ADCS_U7",
+    destination_reference = "SD_PCB_AOCS:face45",
+    conductor_override = 0.01);
+
+UDC_EPS_IC1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_EPS_IC1",
+    destination_reference = "SD_PCB_EPS:face64",
+    conductor_override = 0.05);
+
+UDC_EPS_IC2 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_EPS_IC2",
+    destination_reference = "SD_PCB_EPS:face65",
+    conductor_override = 0.04);
+
+UDC_EPS_U1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_EPS_U1",
+    destination_reference = "SD_PCB_EPS:face23",
+    conductor_override = 0.01);
+
+UDC_EPS_U2 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_EPS_U2",
+    destination_reference = "SD_PCB_EPS:face21",
+    conductor_override = 0.01);
+
+UDC_EPS_U3 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_EPS_U3",
+    destination_reference = "SD_PCB_EPS:face20",
+    conductor_override = 0.01);
+
+UDC_EPS_U4 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_EPS_U4",
+    destination_reference = "SD_PCB_EPS:face57",
+    conductor_override = 0.11);
+
+UDC_OBCCOMMS_STM32 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_OBC_STM32",
+    destination_reference = "SD_PCB_OBCCOMMS:face57",
+    conductor_override = 0.29);
+
+UDC_OBCCOMMS_SX1262 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_OBC_SX1262",
+    destination_reference = "SD_PCB_OBCCOMMS:face65",
+    conductor_override = 0.15);
+
+UDC_PLTop_U1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLTOP_U1",
+    destination_reference = "SD_PCB_PLAntenna:face16",
+    conductor_override = 0.08);
+
+UDC_PLTop_U2 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLTOP_U2",
+    destination_reference = "SD_PCB_PLAntenna:face26",
+    conductor_override = 0.14);
+
+UDC_PLTop_Y1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLTOP_Y1",
+    destination_reference = "SD_PCB_PLAntenna:face8",
+    conductor_override = 0.1);
+
+UDC_PLBot_U1 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLUNDER_U1",
+    destination_reference = "SD_PCB_PL:face63",
+    conductor_override = 0.03);
+
+UDC_PLBot_U3 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLUNDER_U3",
+    destination_reference = "SD_PCB_PL:face47",
+    conductor_override = 0.03);
+
+UDC_PLBot_U4 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLUNDER_U4",
+    destination_reference = "SD_PCB_PL:face57",
+    conductor_override = 0.01);
+
+UDC_PLBot_U5 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLUNDER_U5",
+    destination_reference = "SD_PCB_PL:face58",
+    conductor_override = 0.01);
+
+UDC_PLBot_U7 = CONDUCTIVE_CONDUCTOR (
+    source_reference = "NGTN_PLUNDER_U7",
+    destination_reference = "SD_PCB_PL:face44",
+    conductor_override = 0.02);
+
+DELETE UDC_PLTop_U2;
+DELETE UDC_PLTop_Y1;
+DELETE UDC_PLTop_U1;
+DEFINE_BULK (
+    bulk = Bulk_Comp_Batt_Spacers,
+    description = "Battery Spacers properties",
+    density = 4207.0,
+    sp_heat = 729.0,
+    type = "Orthotropic",
+    cond1 = 3.95,
+    cond2 = 3.95,
+    cond3 = 7.64);
+
+DEFINE_BULK (
+    bulk = Bulk_Comp_Spacers,
+    description = "Spacers properties",
+    density = 4551.92,
+    sp_heat = 547.3,
+    type = "Orthotropic",
+    cond1 = 161.0,
+    cond2 = 161.0,
+    cond3 = 112.0);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_BottomBoard,
+    description = "Bottom Board (FR4,Copper,Solder)",
+    density = 2133.0,
+    sp_heat = 904.0,
+    type = "Orthotropic",
+    cond1 = 170.9,
+    cond2 = 170.9,
+    cond3 = 0.32);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_BotLat,
+    description = "Bottom Board, Lateral Board (FR4,Copper, Solder Mask)
+",
+    density = 2133.0,
+    sp_heat = 904.0,
+    type = "Orthotropic",
+    cond1 = 170.9,
+    cond2 = 170.9,
+    cond3 = 0.32);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_Slider,
+    description = "Slider Board (FR4,Copper, Solder Mask)
+",
+    density = 1953.0,
+    sp_heat = 1050.4,
+    type = "Orthotropic",
+    cond1 = 46.8,
+    cond2 = 46.8,
+    cond3 = 0.30);
+
+/* ESATAN-TMS version 2022, run date 15:26 Tue 6 May 2025 */
+/* BEGIN_MODEL PoCat3 WORKBENCH_V1 */
+DEFINE_BULK (
+    bulk = Bulk_PCB_EPS,
+    description = "EPS Board (Components, PCB)",
+    density = 2773.0,
+    sp_heat = 940.3,
+    type = "Orthotropic",
+    cond1 = 170.1,
+    cond2 = 170.1,
+    cond3 = 0.32);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_MTQPY,
+    description = "Magnetorquer Board (FR4,Copper, Solder Mask)
+",
+    density = 1753.0,
+    sp_heat = 904.0,
+    type = "Orthotropic",
+    cond1 = 170.9,
+    cond2 = 170.9,
+    cond3 = 0.32);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_OBCCOMMS,
+    description = "OBCComms Board (Components, PCB)",
+    density = 2734.0,
+    sp_heat = 940.3,
+    type = "Orthotropic",
+    cond1 = 170.1,
+    cond2 = 170.1,
+    cond3 = 0.32);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_PLAntenna,
+    description = "PL Board Over (Components, PCB,Antenna)",
+    density = 3242.0,
+    sp_heat = 904.9,
+    type = "Orthotropic",
+    cond1 = 88.5,
+    cond2 = 88.5,
+    cond3 = 0.29);
+
+DEFINE_BULK (
+    bulk = Bulk_PCB_PLUnder,
+    description = "PL Board Inferior (Components, Multiple PCBs)",
+    density = 3594.0,
+    sp_heat = 783.2,
+    type = "Orthotropic",
+    cond1 = 110.1,
+    cond2 = 110.1,
+    cond3 = 0.31);
+
+CONDUCTOR KS_L_to_Slider;
+KS_L_to_Slider = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_KS_NX:face4",
+    destination_reference = "SD_Bottom_Board:face1",
+    conductor_override = -10000.0,
+    shape_factor = 0.00019,
+    conductivity = 400.0);
+
+KS_L_to_Slider = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_KS_NX:face4",
+    destination_reference = "SD_Bottom_Board:face1",
+    conductor_override = -10000.0,
+    shape_factor = 0.00019,
+    conductivity = 400.0);
+
+CONDUCTOR KS_R_to_Slider;
+KS_R_to_Slider = CONDUCTIVE_CONDUCTOR (
+    source_reference = "SD_KS_PX:face3",
+    destination_reference = "SD_Bottom_Board:face4",
+    conductor_override = -10000.0,
+    shape_factor = 0.00019,
+    conductivity = 400.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_SP_NY,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_SP_NY_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NX_to_SP_NX,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_SP_NX_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_SP_NZ,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_SP_NZ_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PX_to_SP_PX,
+    primitiveA = SD_PX_Lateral_Board,
+    primitiveB = SD_SP_PX_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_SP_PZ,
+    primitiveA = SD_PZ_Lateral_Board,
+    primitiveB = SD_SP_PZ_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_KS_NX,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_KS_NX,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_KS_PX,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_KS_PX,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Lat_NX_to_NZ,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_NZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Lat_NX_to_PZ,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 2,
+    surfaceB = 5,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Lat_PX_to_PZ,
+    primitiveA = SD_PX_Lateral_Board,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Lat_NZ_to_PX,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_PX_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "FUSED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = AOCS_J_MTQ,
+    primitiveA = SD_JMTQ_AOCS,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = AOCS_to_J1EPS,
+    primitiveA = SD_J1ADCSEPS_VC,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = AOCS_to_J2EPS,
+    primitiveA = SD_J2ADCSEPS_VC,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = AOCS_to_J3EPS,
+    primitiveA = SD_J3ADCSEPS_VC,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = AOCS_to_J4EPS,
+    primitiveA = SD_J4ADCSEPS_VC,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = AOCS_to_Spacer_EPS1,
+    primitiveA = SD_PCB_AOCS,
+    primitiveB = SD_Spacer_ADCStoEPS1,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = AOCS_to_Spacer_EPS2,
+    primitiveA = SD_PCB_AOCS,
+    primitiveB = SD_Spacer_ADCStoEPS2,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = AOCS_to_Spacer_EPS3,
+    primitiveA = SD_PCB_AOCS,
+    primitiveB = SD_Spacer_ADCStoEPS3,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = AOCS_to_Spacer_EPS4,
+    primitiveA = SD_PCB_AOCS,
+    primitiveB = SD_Spacer_ADCStoEPS4,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+RENAME(
+    old_name = "BattSupp_R_to_PX",
+    new_name = "PX_to_BattSupp_R"
+);
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer1_to_AOCS,
+    primitiveA = SD_BattSuppSpacer_1,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 4,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 1000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer1_to_MQT,
+    primitiveA = SD_BattSuppSpacer_1,
+    primitiveB = SD_MTQ_PY_Board,
+    surfaceA = 3,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer2_to_AOCS,
+    primitiveA = SD_BattSuppSpacer_2,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 4,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 1000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer2_to_MQT,
+    primitiveA = SD_Battery,
+    primitiveB = SD_BottStruc_Up,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer2_to_MTQ,
+    primitiveA = SD_BattSuppSpacer_2,
+    primitiveB = SD_MTQ_PY_Board,
+    surfaceA = 3,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer3_to_AOCS,
+    primitiveA = SD_BattSuppSpacer_3,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 4,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 1000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer3_to_MQT,
+    primitiveA = SD_BattSuppSpacer_3,
+    primitiveB = SD_MTQ_PY_Board,
+    surfaceA = 3,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer4_to_AOCS,
+    primitiveA = SD_BattSuppSpacer_4,
+    primitiveB = SD_PCB_AOCS,
+    surfaceA = 4,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 1000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSpacer4_to_MQT,
+    primitiveA = SD_BattSuppSpacer_4,
+    primitiveB = SD_MTQ_PY_Board,
+    surfaceA = 3,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSup_L_to_MTQ,
+    primitiveA = SD_BottStruc_L,
+    primitiveB = SD_MTQ_PY_Board,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 492.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSupp_DB_to_Slider_B,
+    primitiveA = SD_BottStruc_DownBack,
+    primitiveB = SD_Slider_Back,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1517.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSupp_DB_to_Slider_L,
+    primitiveA = SD_BottStruc_DownBack,
+    primitiveB = SD_Slider_L,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1517.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSupp_DB_to_Slider_R,
+    primitiveA = SD_BottStruc_DownBack,
+    primitiveB = SD_Slider_R,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1517.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSupp_DF_to_Slider_F,
+    primitiveA = SD_BottStruc_DownFront,
+    primitiveB = SD_Slider_Front,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1517.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSupp_DF_to_Slider_L,
+    primitiveA = SD_BottStruc_DownFront,
+    primitiveB = SD_Slider_L,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1517.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSupp_L_to_Sider_L,
+    primitiveA = SD_BottStruc_L,
+    primitiveB = SD_Slider_L,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1517.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSupp_DF_to_Slider_R,
+    primitiveA = SD_BottStruc_DownFront,
+    primitiveB = SD_Slider_R,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1517.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSupp_R_to_MTQ,
+    primitiveA = SD_BottStruc_R,
+    primitiveB = SD_MTQ_PY_Board,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 492.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSupp_R_to_Slider_R,
+    primitiveA = SD_BottStruc_R,
+    primitiveB = SD_Slider_R,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1517.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = BattSupp_Up_to_MTQ,
+    primitiveA = SD_BottStruc_Up,
+    primitiveB = SD_MTQ_PY_Board,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 492.0);
+
+RENAME(
+    old_name = "Batt_to_BattSupp_R",
+    new_name = "Battery_to_BattSupp_R"
+);
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Battery_To_BattSupp_L,
+    primitiveA = SD_Battery,
+    primitiveB = SD_BottStruc_L,
+    surfaceA = 3,
+    surfaceB = 4,
+    connect_type = "NOT_REQUIRED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Battery_To_BattSupp_L,
+    primitiveA = SD_Battery,
+    primitiveB = SD_BottStruc_L,
+    surfaceA = 3,
+    surfaceB = 4,
+    connect_type = "NOT_REQUIRED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Battery_to_BattSupp_R,
+    primitiveA = SD_Battery,
+    primitiveB = SD_BottStruc_R,
+    surfaceA = 4,
+    surfaceB = 3,
+    connect_type = "NOT_REQUIRED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Battey_to_BattSupp_BM,
+    primitiveA = SD_Battery,
+    primitiveB = SD_BottStruc_BackMid,
+    surfaceA = 5,
+    surfaceB = 6,
+    connect_type = "NOT_REQUIRED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_KS_NX,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_KS_NX,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_KS_PX,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_KS_PX,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Bottom_to_SP_NY,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_SP_NY_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_J1AOCS,
+    primitiveA = SD_J1ADCSEPS_VC,
+    primitiveB = SD_PCB_EPS,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_J1OBC,
+    primitiveA = SD_J1EPSOBC_VC,
+    primitiveB = SD_PCB_EPS,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_J2AOCS,
+    primitiveA = SD_J2ADCSEPS_VC,
+    primitiveB = SD_PCB_EPS,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_J2OBC,
+    primitiveA = SD_J2EPSOBC_VC,
+    primitiveB = SD_PCB_EPS,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_J3AOCS,
+    primitiveA = SD_J3ADCSEPS_VC,
+    primitiveB = SD_PCB_EPS,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_J3OBC,
+    primitiveA = SD_J3EPSOBC_VC,
+    primitiveB = SD_PCB_EPS,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_J4AOCS,
+    primitiveA = SD_J4ADCSEPS_VC,
+    primitiveB = SD_PCB_EPS,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_J4OBC,
+    primitiveA = SD_J4EPSOBC_VC,
+    primitiveB = SD_PCB_EPS,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_Spacer_AOCS1,
+    primitiveA = SD_PCB_EPS,
+    primitiveB = SD_Spacer_ADCStoEPS1,
+    surfaceA = 1,
+    surfaceB = 4,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_Spacer_AOCS2,
+    primitiveA = SD_PCB_EPS,
+    primitiveB = SD_Spacer_ADCStoEPS2,
+    surfaceA = 1,
+    surfaceB = 4,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_Spacer_AOCS3,
+    primitiveA = SD_PCB_EPS,
+    primitiveB = SD_Spacer_ADCStoEPS3,
+    surfaceA = 1,
+    surfaceB = 4,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_Spacer_AOCS4,
+    primitiveA = SD_PCB_EPS,
+    primitiveB = SD_Spacer_ADCStoEPS4,
+    surfaceA = 1,
+    surfaceB = 4,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_Spacer_OBC1,
+    primitiveA = SD_PCB_EPS,
+    primitiveB = SD_Spacer_EPStoOBC1,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_Spacer_OBC2,
+    primitiveA = SD_PCB_EPS,
+    primitiveB = SD_Spacer_EPStoOBC2,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_Spacer_OBC3,
+    primitiveA = SD_PCB_EPS,
+    primitiveB = SD_Spacer_EPStoOBC3,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = EPS_to_Spacer_OBC4,
+    primitiveA = SD_PCB_EPS,
+    primitiveB = SD_Spacer_EPStoOBC4,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = KSupp_3a_to_PX,
+    primitiveA = SD_PLSupp_Aux3a,
+    primitiveB = SD_PX_Lateral_Board,
+    surfaceA = 3,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = MTQ_J_AOCS,
+    primitiveA = SD_JMTQ_AOCS,
+    primitiveB = SD_MTQ_PY_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Lat_NX_to_NZ,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_NZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Lat_NX_to_PZ,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 2,
+    surfaceB = 5,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Lat_NZ_to_PX,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_PX_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Lat_PX_to_PZ,
+    primitiveA = SD_PX_Lateral_Board,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NX_to_BattSupp_L,
+    primitiveA = SD_BottStruc_L,
+    primitiveB = SD_NX_Lateral_Board,
+    surfaceA = 3,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 744.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NX_to_KSupp_1a,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_PLSupp_Aux1a,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NX_to_KSupp_1b,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_PLSupp_Aux1b,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NX_to_KSupp_2a,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_PLSupp_Aux2a,
+    surfaceA = 2,
+    surfaceB = 5,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NX_to_KSupp_Mid,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_PLSupp_Mid,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NX_to_SP_NX,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_SP_NX_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NX_to_Slider_L,
+    primitiveA = SD_NX_Lateral_Board,
+    primitiveB = SD_Slider_L,
+    surfaceA = 4,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_BattSupp_BM,
+    primitiveA = SD_BottStruc_BackMid,
+    primitiveB = SD_NZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 744.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_BattSupp_DB,
+    primitiveA = SD_BottStruc_DownBack,
+    primitiveB = SD_NZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 744.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_BattSupp_L,
+    primitiveA = SD_BottStruc_L,
+    primitiveB = SD_NZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 744.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_BattSupp_R,
+    primitiveA = SD_BottStruc_R,
+    primitiveB = SD_NZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 744.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_BattSupp_Up,
+    primitiveA = SD_BottStruc_Up,
+    primitiveB = SD_NZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 744.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_KSupp_1a,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_PLSupp_Aux1a,
+    surfaceA = 2,
+    surfaceB = 5,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_KSupp_4a,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_PLSupp_Aux4a,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_KSupp_4b,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_PLSupp_Aux4b,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_KSupp_Mid,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_PLSupp_Mid,
+    surfaceA = 2,
+    surfaceB = 5,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_SP_NZ,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_SP_NZ_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_Slider_B,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_Slider_Back,
+    surfaceA = 4,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_Slider_L,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_Slider_L,
+    surfaceA = 4,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = NZ_to_Slider_R,
+    primitiveA = SD_NZ_Lateral_Board,
+    primitiveB = SD_Slider_R,
+    surfaceA = 4,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_J1EPS,
+    primitiveA = SD_J1EPSOBC_VC,
+    primitiveB = SD_PCB_OBCCOMMS,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_J1PL,
+    primitiveA = SD_J1OBCPL_VC,
+    primitiveB = SD_PCB_OBCCOMMS,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_J2EPS,
+    primitiveA = SD_J2EPSOBC_VC,
+    primitiveB = SD_PCB_OBCCOMMS,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_J2PL,
+    primitiveA = SD_J2OBCPL_VC,
+    primitiveB = SD_PCB_OBCCOMMS,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_J3EPS,
+    primitiveA = SD_J3EPSOBC_VC,
+    primitiveB = SD_PCB_OBCCOMMS,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_J3PL,
+    primitiveA = SD_J3OBCPL_VC,
+    primitiveB = SD_PCB_OBCCOMMS,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_J4EPS,
+    primitiveA = SD_J4EPSOBC_VC,
+    primitiveB = SD_PCB_OBCCOMMS,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_J4PL,
+    primitiveA = SD_J4OBCPL_VC,
+    primitiveB = SD_PCB_OBCCOMMS,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_Spacer_EPS1,
+    primitiveA = SD_PCB_OBCCOMMS,
+    primitiveB = SD_Spacer_EPStoOBC1,
+    surfaceA = 1,
+    surfaceB = 4,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_Spacer_EPS2,
+    primitiveA = SD_PCB_OBCCOMMS,
+    primitiveB = SD_Spacer_EPStoOBC2,
+    surfaceA = 1,
+    surfaceB = 4,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_Spacer_EPS3,
+    primitiveA = SD_PCB_OBCCOMMS,
+    primitiveB = SD_Spacer_EPStoOBC3,
+    surfaceA = 1,
+    surfaceB = 4,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_Spacer_EPS4,
+    primitiveA = SD_PCB_OBCCOMMS,
+    primitiveB = SD_Spacer_EPStoOBC4,
+    surfaceA = 1,
+    surfaceB = 4,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_Spacer_PL1,
+    primitiveA = SD_PCB_OBCCOMMS,
+    primitiveB = SD_Spacer_OBCtoPL1,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_Spacer_PL2,
+    primitiveA = SD_PCB_OBCCOMMS,
+    primitiveB = SD_Spacer_OBCtoPL2,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_Spacer_PL3,
+    primitiveA = SD_PCB_OBCCOMMS,
+    primitiveB = SD_Spacer_OBCtoPL3,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = OBC_to_Spacer_PL4,
+    primitiveA = SD_PCB_OBCCOMMS,
+    primitiveB = SD_Spacer_OBCtoPL4,
+    surfaceA = 2,
+    surfaceB = 3,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PLAntenna_to_KSuppTop,
+    primitiveA = SD_PCB_PLAntenna,
+    primitiveB = SD_PLSupp_Top,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 127.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_J1OBC,
+    primitiveA = SD_J1OBCPL_VC,
+    primitiveB = SD_PCB_PL,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_J2OBC,
+    primitiveA = SD_J2OBCPL_VC,
+    primitiveB = SD_PCB_PL,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_J3OBC,
+    primitiveA = SD_J3OBCPL_VC,
+    primitiveB = SD_PCB_PL,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_J4OBC,
+    primitiveA = SD_J4OBCPL_VC,
+    primitiveB = SD_PCB_PL,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 250.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_KSupp1a,
+    primitiveA = SD_PCB_PL,
+    primitiveB = SD_PLSupp_Aux1a,
+    surfaceA = 4,
+    surfaceB = 6,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_KSupp1b,
+    primitiveA = SD_PCB_PL,
+    primitiveB = SD_PLSupp_Aux1b,
+    surfaceA = 5,
+    surfaceB = 4,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_KSupp3a,
+    primitiveA = SD_PCB_PL,
+    primitiveB = SD_PLSupp_Aux3a,
+    surfaceA = 3,
+    surfaceB = 6,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_KSupp4b,
+    primitiveA = SD_PCB_PL,
+    primitiveB = SD_PLSupp_Aux4b,
+    surfaceA = 4,
+    surfaceB = 4,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_KSupp3b,
+    primitiveA = SD_PCB_PL,
+    primitiveB = SD_PLSupp_Aux3b,
+    surfaceA = 6,
+    surfaceB = 4,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_Ksupp2a,
+    primitiveA = SD_PCB_PL,
+    primitiveB = SD_PLSupp_Aux2a,
+    surfaceA = 5,
+    surfaceB = 6,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_Ksupp2b,
+    primitiveA = SD_PCB_PL,
+    primitiveB = SD_PLSupp_Aux2b,
+    surfaceA = 3,
+    surfaceB = 4,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_Ksupp4a,
+    primitiveA = SD_PCB_PL,
+    primitiveB = SD_PLSupp_Aux4a,
+    surfaceA = 6,
+    surfaceB = 6,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_Spacer_OBC1,
+    primitiveA = SD_PCB_PL,
+    primitiveB = SD_Spacer_OBCtoPL1,
+    surfaceA = 1,
+    surfaceB = 4,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_Spacer_OBC2,
+    primitiveA = SD_PCB_PL,
+    primitiveB = SD_Spacer_OBCtoPL2,
+    surfaceA = 1,
+    surfaceB = 4,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_Spacer_OBC3,
+    primitiveA = SD_PCB_PL,
+    primitiveB = SD_Spacer_OBCtoPL3,
+    surfaceA = 1,
+    surfaceB = 4,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PL_to_Spacer_OBC4,
+    primitiveA = SD_PCB_PL,
+    primitiveB = SD_Spacer_OBCtoPL4,
+    surfaceA = 1,
+    surfaceB = 4,
+    connect_type = "CONTACT",
+    contact_conductance = 7000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PX_to_BattSupp_R,
+    primitiveA = SD_BottStruc_R,
+    primitiveB = SD_PX_Lateral_Board,
+    surfaceA = 4,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 744.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PX_to_KSupp_3b,
+    primitiveA = SD_PLSupp_Aux3b,
+    primitiveB = SD_PX_Lateral_Board,
+    surfaceA = 3,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PX_to_KSupp_4a,
+    primitiveA = SD_PLSupp_Aux4a,
+    primitiveB = SD_PX_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PX_to_KSupp_Mid,
+    primitiveA = SD_PLSupp_Mid,
+    primitiveB = SD_PX_Lateral_Board,
+    surfaceA = 4,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PX_to_SP_PX,
+    primitiveA = SD_PX_Lateral_Board,
+    primitiveB = SD_SP_PX_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PX_to_Slider_R,
+    primitiveA = SD_PX_Lateral_Board,
+    primitiveB = SD_Slider_R,
+    surfaceA = 4,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_BattSupp_DF,
+    primitiveA = SD_BottStruc_DownFront,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 6,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1793.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_BattSupp_L,
+    primitiveA = SD_BottStruc_L,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 6,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1793.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_BattSupp_R,
+    primitiveA = SD_BottStruc_R,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 6,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1793.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_BattSupp_Up,
+    primitiveA = SD_BottStruc_Up,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 6,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1793.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_KSupp2a,
+    primitiveA = SD_PLSupp_Aux2a,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 3,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_KSupp_2b,
+    primitiveA = SD_PLSupp_Aux2b,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 3,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_KSupp_3a,
+    primitiveA = SD_PLSupp_Aux3a,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 5,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_KSupp_Mid,
+    primitiveA = SD_PLSupp_Mid,
+    primitiveB = SD_PZ_Lateral_Board,
+    surfaceA = 6,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 268.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_SP_PZ,
+    primitiveA = SD_PZ_Lateral_Board,
+    primitiveB = SD_SP_PZ_Board,
+    surfaceA = 1,
+    surfaceB = 2,
+    connect_type = "CONTACT",
+    contact_conductance = 1000.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_Slider_F,
+    primitiveA = SD_PZ_Lateral_Board,
+    primitiveB = SD_Slider_Front,
+    surfaceA = 4,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_Slider_L,
+    primitiveA = SD_PZ_Lateral_Board,
+    primitiveB = SD_Slider_L,
+    surfaceA = 4,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = PZ_to_Slider_R,
+    primitiveA = SD_PZ_Lateral_Board,
+    primitiveB = SD_Slider_R,
+    surfaceA = 4,
+    surfaceB = 2,
+    connect_type = "NOT_CONNECTED");
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Slider_B_to_Bottom,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_Slider_Back,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 1937.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Slider_F_to_Bottom,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_Slider_Front,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 1937.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Slider_L_to_Bottom,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_Slider_L,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 1937.0);
+
+DEFINE_CONDUCTIVE_INTERFACE (
+    conductive_interface = Slider_R_to_Bottom,
+    primitiveA = SD_Bottom_Board,
+    primitiveB = SD_Slider_R,
+    surfaceA = 2,
+    surfaceB = 1,
+    connect_type = "CONTACT",
+    contact_conductance = 1937.0);
+
+COND
